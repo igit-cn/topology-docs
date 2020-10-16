@@ -1,9 +1,9 @@
 <template>
-  <div class="support">
-    <!-- <Header />
-    <h1>This is an support page</h1>
-    <Footer /> -->
-    支持我们
+  <div>
+    常见问题
+    <a-button type="primary">
+      Primary
+    </a-button>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Support',
+  name: 'Faq',
   components: {}
 });
 </script>

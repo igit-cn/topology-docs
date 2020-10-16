@@ -1,7 +1,14 @@
 <template>
   <div class="home">
     <Header />
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <section>
+      <div class="menu">
+        <Menu />
+      </div>
+      <div class="content">
+        <router-view />
+      </div>
+    </section>
     <Footer />
   </div>
 </template>
@@ -10,13 +17,21 @@
 import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import Menu from '@/components/Menu.vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
     Header,
-    Footer
+    Footer,
+    Menu
   }
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home {
+  section {
+    display: flex;
+  }
+}
+</style>

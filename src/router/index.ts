@@ -5,7 +5,21 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: 'faq',
+        name: 'Faq',
+        component: () =>
+          import(/* webpackChunkName: "guide" */ '../views/Faq.vue')
+      },
+      {
+        path: 'support',
+        name: 'Support',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/Support.vue')
+      }
+    ]
   },
   {
     path: '/guide',
@@ -24,12 +38,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Community',
     component: () =>
       import(/* webpackChunkName: "community" */ '../views/Community.vue')
-  },
-  {
-    path: '/support',
-    name: 'Support',
-    component: () =>
-      import(/* webpackChunkName: "support" */ '../views/Support.vue')
   }
 ];
 

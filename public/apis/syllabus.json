@@ -3,5 +3,85 @@
     "text": "目录1",
     "route": "/abc",
     "url": "http://le5le.com"
+  },
+  {
+    "text": "介绍",
+    "children": [
+      {
+        "text": "Topology是什么",
+        "router": ""
+      },
+      {
+        "text": "关于我们",
+        "router": ""
+      },
+      {
+        "text": "企业版",
+        "router": ""
+      },
+      {
+        "text": "网友作品",
+        "router": ""
+      },
+      {
+        "text": "特别感谢",
+        "router": ""
+      }
+    ]
+  },
+  {
+    "text": "docker方式本地部署",
+    "children": [
+      {
+        "text": "单镜像部署",
+        "router": ""
+      }
+    ]
+  },
+  {
+    "text": "开发教程",
+    "children": [
+      {
+        "text": "安装",
+        "router": ""
+      },
+      {
+        "text": "起步",
+        "router": ""
+      },
+      {
+        "text": "angular/react/vue安装",
+        "router": ""
+      },
+      {
+        "text": "使用bundle.js(已打包压缩的普通js文件)",
+        "router": ""
+      },
+      {
+        "text": "typescript(es6)使用图形库",
+        "router": ""
+      },
+      {
+        "text": "开发自己的图形库",
+        "router": ""
+      },
+      {
+        "text": "编译topology源码",
+        "router": ""
+      }
+    ]
+  },
+  {
+    "text": "API文档",
+    "children": [
+      {
+        "text": "[重要] 注意事项",
+        "router": ""
+      },
+      {
+        "text": "设计概要",
+        "router": ""
+      }
+    ]
   }
 ]
