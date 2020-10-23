@@ -1,10 +1,48 @@
 <template>
   <div class="header">
-    <div class="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/guide">Guide</router-link> |
-      <router-link to="/support">Support us</router-link>
+    <div class="left">
+      <img src="../assets/logo.png" alt="" />
+      <span>Le5le Topology</span>
+      <div class="search">
+        <input
+          type="text"
+          placeholder="搜索组件"
+          v-model="searchValue"
+          @keyup="searchFor"
+        />
+        <img
+          src="../assets/search.png"
+          class="t-search"
+          alt=""
+          @click="searchFor"
+        />
+      </div>
     </div>
+    <div class="right">
+      <div class="nav">
+        <div class="item" v-for="(item, index) in nav" :key="index">
+          <router-link v-if="item.router" :to="item.router">{{
+            item.title
+          }}</router-link>
+          <a v-else :href="item.url" target="_blank">{{ item.title }}</a>
+        </div>
+      </div>
+
+      <div class="language">
+        EN <i class="t-icon t-angle-down"></i>
+        </div>
+      
+
+      <div class="user">
+        <!-- <img src="" alt="" /> -->
+      </div>
+    </div>
+
+    <!-- <div class="nav"> -->
+    <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/guide">Guide</router-link> |
+      <router-link to="/support">Support us</router-link> -->
+    <!-- </div> -->
   </div>
 </template>
 
@@ -13,8 +51,132 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Header',
-  props: {}
+  props: {},
+  data() {
+    return {
+      searchValue: '', //搜索组件
+      a: 1,
+      nav: [
+        {
+          title: '首页',
+          router: '/'
+        },
+        {
+          title: '开发文档',
+          url: 'https://www.yuque.com/alsmile/topology/umsiq3'
+        },
+        {
+          title: '视频教程',
+          url: 'https://www.baidu.com/'
+        },
+        {
+          title: '社区',
+          url: 'https://www.baidu.com/'
+        },
+        {
+          title: '支持我们',
+          router: '/support'
+        }
+      ]
+    };
+  }
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '@/styles/index.scss';
+
+.header {
+  width: 100%;
+  height: $head-height;
+  padding: 0 45px;
+  box-sizing: border-box;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom: 1px solid #eeeeee;
+  .left {
+    display: flex;
+    align-items: center;
+    img {
+      height: 33px;
+      widows: 33px;
+    }
+    span {
+      font-size: 19px;
+      font-family: Arial, Segoe UI, Segoe UI-Semibold;
+      font-weight: 600;
+      margin-left: 17px;
+      color: #333333;
+      transform: translateY(-2px);
+    }
+    .search {
+      position: relative;
+      margin-left: 34px;
+      input {
+        width: 184px;
+        height: 27px;
+        background: #eeeeee;
+        border-radius: 14px;
+        border: none;
+        outline: none;
+        padding-left: 14px;
+        font-size: 14px;
+        &::-webkit-input-placeholder {
+          font-size: 14px;
+          font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+          font-weight: 400;
+          color: #cccccc;
+        }
+      }
+
+      .t-search {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 12px;
+        cursor: pointer;
+        font-size: 12px;
+        height: 12px;
+        width: 12px;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    .nav {
+      display: flex;
+      .item {
+        margin-right: 38px;
+        a {
+          font-size: 14px;
+          font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+          font-weight: 400;
+          text-align: left;
+          color: #333333;
+        }
+      }
+    }
+    .language {
+      cursor: pointer;
+      margin-right: 38px;
+    }
+    .user {
+      height: 27px;
+      width: 27px;
+      border-radius: 50%;
+      background: black;
+
+      img {
+        height: 27px;
+        width: 27px;
+        border-radius: 50%;
+        background: black;
+      }
+    }
+  }
+}
+</style>

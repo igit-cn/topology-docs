@@ -5,7 +5,38 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path:'/introduce',
+        name:'Introduce',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/Introduce.vue')
+      },
+      {
+        path: 'faq',
+        name: 'Faq',
+        component: () =>
+          import(/* webpackChunkName: "guide" */ '../views/Faq.vue')
+      },
+      {
+        path: 'support',
+        name: 'Support',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/Support.vue')
+      },
+      {
+        path: 'canvas',
+        name: 'Canvas',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/Canvas.vue')
+      },{
+        path: 'updatelog',
+        name: 'UpdateLog',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/UpdateLog.vue')
+      }
+    ]
   },
   {
     path: '/guide',
@@ -24,12 +55,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Community',
     component: () =>
       import(/* webpackChunkName: "community" */ '../views/Community.vue')
-  },
-  {
-    path: '/support',
-    name: 'Support',
-    component: () =>
-      import(/* webpackChunkName: "support" */ '../views/Support.vue')
   }
 ];
 

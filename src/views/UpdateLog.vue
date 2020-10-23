@@ -3,7 +3,7 @@
     <!-- <Header />
     <h1>This is an support page</h1>
     <Footer /> -->
-    支持我们
+    更新日志
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Support',
+  name: 'UpdateLog',
   components: {}
 });
 </script>
