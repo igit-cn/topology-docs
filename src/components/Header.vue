@@ -28,7 +28,10 @@
         </div>
       </div>
 
-      <div class="language">EN <i class="t-icon t-angle-down"></i></div>
+      <div class="language">
+        EN <i class="t-icon t-angle-down"></i>
+        </div>
+      
 
       <div class="user">
         <!-- <img src="" alt="" /> -->
@@ -81,9 +84,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/index.scss';
+
 .header {
   width: 100%;
-  height: 61px;
+  height: $head-height;
   padding: 0 45px;
   box-sizing: border-box;
   margin: 0px auto;

@@ -8,6 +8,12 @@ const routes: Array<RouteRecordRaw> = [
     component: Home,
     children: [
       {
+        path:'/introduce',
+        name:'Introduce',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/Introduce.vue')
+      },
+      {
         path: 'faq',
         name: 'Faq',
         component: () =>
@@ -18,6 +24,17 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Support',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/Support.vue')
+      },
+      {
+        path: 'canvas',
+        name: 'Canvas',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/Canvas.vue')
+      },{
+        path: 'updatelog',
+        name: 'UpdateLog',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/UpdateLog.vue')
       }
     ]
   },

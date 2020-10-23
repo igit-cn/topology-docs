@@ -27,7 +27,7 @@ export default defineComponent({
     };
   },
   async created() {
-    this.syllabus = await axios.get('/apis/syllabus.json');
+    this.syllabus = await axios.get('/apis/syllabus.json'); 
   }
 });
 </script>

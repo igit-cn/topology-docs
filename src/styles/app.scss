@@ -80,7 +80,6 @@ a {
   margin-bottom: 16px;
 }
 
-
 .mt64 {
   margin-top: 64px !important;
 }
@@ -187,12 +186,51 @@ a {
   background-color: transparent !important;
 }
 
-
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 input[type='number'] {
   -moz-appearance: textfield;
+}
+//标点符号
+.punctuation {
+  color: #999999;
+}
+
+//标签，函数名，
+.tag,
+.function,
+.property,
+.number {
+  color: #f81d22;
+}
+
+//属性名
+.html-attr-name,
+.javascript-attr-value {
+  color: #0b8235;
+}
+
+//属性值
+.html-attr-value {
+  color: #008dff;
+}
+
+//变量
+.variable {
+  color: #000;
+}
+//注释
+.comment {
+  color: #708090;
+}
+.language-html {
+  padding: 20px;
+  width: 100%;
+  background: #f8f8f8;
+}
+
+.danger {
+  color: #ff4d4f;
 }

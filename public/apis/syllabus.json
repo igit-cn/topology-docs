@@ -1,87 +1,107 @@
 [
   {
-    "text": "目录1",
-    "route": "/abc",
-    "url": "http://le5le.com"
+    "text": "Topology",
+    "router": "/introduce"
+  },{
+    "text":"快速上手",
+    "router":"/"
+  },{
+    "text":"常见问题",
+    "router":"/faq"
+  },{
+    "text":"支持我们",
+    "router":"/support"
+  },{
+    "text":"更新日志",
+    "router":"/updatelog"
   },
   {
     "text": "介绍",
+    "router":"/",
+    "hide":true,
     "children": [
       {
         "text": "Topology是什么",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "关于我们",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "企业版",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "网友作品",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "特别感谢",
-        "router": ""
+        "router": "/"
       }
     ]
   },
   {
     "text": "docker方式本地部署",
+    "router":"/",
+    "hide":true,
     "children": [
       {
         "text": "单镜像部署",
-        "router": ""
+        "router": "/"
       }
     ]
   },
   {
     "text": "开发教程",
+    "router":"/",
+    "hide":true,
     "children": [
       {
         "text": "安装",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "起步",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "angular/react/vue安装",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "使用bundle.js(已打包压缩的普通js文件)",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "typescript(es6)使用图形库",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "开发自己的图形库",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "编译topology源码",
-        "router": ""
+        "router": "/"
       }
     ]
   },
   {
     "text": "API文档",
+    "router":"/",
+    "hide":false,
     "children": [
       {
         "text": "[重要] 注意事项",
-        "router": ""
+        "router": "/"
       },
       {
         "text": "设计概要",
-        "router": ""
+        "router": "/"
       }
     ]
   }
 ]
+
