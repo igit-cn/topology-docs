@@ -12,23 +12,9 @@
       <div class="wrapper">
         <!-- 锚点 区域 -->
         <a-anchor>
-          <a-anchor-link
-            href="#components-anchor-demo-basic"
-            title="Basic demo"
-          />
-          <a-anchor-link
-            href="#components-anchor-demo-static"
-            title="Static demo"
-          />
-          <a-anchor-link
-            href="#components-anchor-demo-basic"
-            title="Basic demo with Target"
-            target="_blank"
-          />
-          <a-anchor-link href="#API" title="API">
-            <a-anchor-link href="#Anchor-Props" title="Anchor Props" />
-            <a-anchor-link href="#Link-Props" title="Link Props" />
-          </a-anchor-link>
+          <a-anchor-link 
+          v-for="(item,index) in anchorList" 
+          :key="index" :href="'#'+item" :title="item"></a-anchor-link>
         </a-anchor>
       </div>
     </section>
@@ -48,6 +34,18 @@ export default defineComponent({
     Header,
     Footer,
     Menu
+  },
+  data():{anchorList:string[]} {
+    return {
+      anchorList:[]
+    }
+  },
+  mounted(){
+    // 实时监听变化
+  const subscribe = (window as any).Store.subscribe('anchorList',(value:any) => {
+      console.log(9999,value)
+      this.anchorList = value
+  });
   }
 });
 </script>
@@ -59,12 +57,15 @@ export default defineComponent({
     display: flex;
     .content {
       width: calc(100% - 149px - 258.5px);
+      max-height: calc(100vh - 61px);
+      overflow: auto;
+      &::-webkit-scrollbar { width: 0 !important }
     }
     .wrapper {
       width: 149px;
       position: fixed;
       height: 300px;
-      background: green;
+      // background: green;
       right: 0;
       top: $head-height;
       margin-top: 20px;

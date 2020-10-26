@@ -62,7 +62,7 @@ npm install topology-bundle
 
 ## package.json参考
 
-``` javascript
+```javascript
 {
   "name": "topology-demo",
   "version": "0.0.1",

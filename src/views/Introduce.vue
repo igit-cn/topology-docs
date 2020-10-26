@@ -10,14 +10,19 @@ import axios from '@/http';
 import marked from 'marked'
 import hljs from "highlight.js";
 import javascript from 'highlight.js/lib/languages/javascript';
-import 'highlight.js/styles/monokai-sublime.css';
+import typescript from 'highlight.js/lib/languages/javascript';
+// import 'highlight.js/styles/hybrid.css';
+// import 'highlight.js/styles/monokai-sublime.css';
 export default defineComponent({
   name: 'Introduce',
-  components: { 
+  components: {
   },
-  data(){
+  data():{
+    anchorList:string[];
+    introduce:string}{
      return{
-        introduce:''
+        introduce:'',
+        anchorList:[]
      }
   },
   async created(){
@@ -25,9 +30,24 @@ export default defineComponent({
     // console.log(222,this.introduce);
   },
   async mounted(){
-    this.introduce = await axios.get('/markdown/demo.md'); 
+    this.introduce = await axios.get('/markdown/topology.md'); 
+    const  renderer = new marked.Renderer();
+    renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
+        const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+        console.log(111,this.anchorList,)
+        if(level === 1 || level === 2){
+          this.anchorList.push(text)
+        }
+        (window as any).Store.set('anchorList', this.anchorList);
+        return '<h' + level + ' id='+text+'><a name="' +
+                    escapedText +
+                    '" class="anchor" href="#' +
+                    text +
+                    '"><span class="header-link"></span></a>' +
+                      text + '</h' + level + '>';
+    };
     marked.setOptions({
-          renderer: new marked.Renderer(),
+          renderer,
           highlight: function(code:any) {
             return hljs.highlightAuto(code).value;
           },
