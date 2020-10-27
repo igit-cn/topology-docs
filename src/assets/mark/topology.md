@@ -35,6 +35,7 @@
 
 我们推荐使用 npm 或 yarn 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
 
+
 ```javascript
 # 安装绘图引擎
 npm  install @topology/core
@@ -53,7 +54,6 @@ npm  install @topology/sequence-diagram
 
 # 其他共享图形库
 # ...
-
 
 # 集成打包版本
 npm install topology-bundle
@@ -98,6 +98,7 @@ npm install topology-bundle
 }
 ```
 
+
 ## 使用
 
 ``` javascript
@@ -118,8 +119,10 @@ canvasRegister() {
   registerChart();
   // ... 其他图形库
 }
-canvasRegister();
+canvasRegister(); 
+
 ```
+
 
 ## 谁在使用
 

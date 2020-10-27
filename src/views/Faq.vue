@@ -267,9 +267,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-.faq {
-  padding: 32px 0;
-  margin: 0 60px;
+.faq {  
   font-family: Chinese Quote, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif,
     Apple Color Emoji;
