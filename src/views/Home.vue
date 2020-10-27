@@ -6,7 +6,7 @@
         <Menu />
       </div>
       <div class="content">
-        <div class="modal">
+        <div :class="['modal',{'isShow':isShow}]">
             <Modal />
         </div>
         <router-view />
@@ -39,10 +39,11 @@ export default defineComponent({
     Menu,
     Modal
   },
-  data():{anchorList:string[],targetOffset:any} {
+  data():{anchorList:string[],targetOffset:any,isShow:boolean} {
     return {
       anchorList:[],
-      targetOffset:undefined
+      targetOffset:undefined,
+      isShow:false
     }
   },
   mounted(){
@@ -53,6 +54,17 @@ export default defineComponent({
     });
     this.targetOffset = window.innerHeight / 2;
     console.log(this.targetOffset);
+
+
+
+    const tryCode = (window as any).Store.subscribe('tryCode',(value:any) => {
+        console.log(value,'show') 
+        this.isShow = value
+    });
+
+
+
+
   },
   methods:{
     
@@ -84,6 +96,17 @@ export default defineComponent({
     }
     .modal{
       display: none;
+      position: fixed;
+      border-left: 1px solid #eeeeee;;
+      top:62px;
+      right: 20px;
+      height: calc(100vh - #{$head-height});
+      width: 363px;
+      background: #ffffff;
+      z-index: 9;
+      &.isShow{
+        display: block
+      }
     }
   }
 }

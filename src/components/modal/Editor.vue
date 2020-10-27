@@ -11,4 +11,10 @@ export default defineComponent({
   components: {}
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.editor{
+    height: 420px;
+    border-bottom: 1px solid #eeeeee;;
+}
+
+</style>

@@ -1,5 +1,7 @@
 <template>
   <div class="Modal">
+      <i class="t-icon t-close" @click="hanledclose"></i>
+
     <Teditor />
     <Tcanvas /> 
   </div>
@@ -14,7 +16,21 @@ export default defineComponent({
   components: {
       Tcanvas,
       Teditor
+  },
+  methods:{
+      hanledclose(){
+          (window as any).Store.set('tryCode',false)
+      }
   }
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .Modal{
+        position: relative;
+        .t-close{
+            position: absolute;
+            cursor: pointer;
+        }
+    }
+
+</style>
