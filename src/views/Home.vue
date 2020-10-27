@@ -7,8 +7,7 @@
       </div>
       <div class="content">
         <router-view />
-      </div>
-
+      </div> 
       <div class="wrapper">
         <!-- 锚点 区域 -->
         <a-anchor>
@@ -35,17 +34,23 @@ export default defineComponent({
     Footer,
     Menu
   },
-  data():{anchorList:string[]} {
+  data():{anchorList:string[],targetOffset:any} {
     return {
-      anchorList:[]
+      anchorList:[],
+      targetOffset:undefined
     }
   },
   mounted(){
     // 实时监听变化
-  const subscribe = (window as any).Store.subscribe('anchorList',(value:any) => {
-      console.log(9999,value)
-      this.anchorList = value
-  });
+    const subscribe = (window as any).Store.subscribe('anchorList',(value:any) => {
+        console.log(9999,value)
+        this.anchorList = value
+    });
+    this.targetOffset = window.innerHeight / 2;
+    console.log(this.targetOffset);
+  },
+  methods:{
+    
   }
 });
 </script>
@@ -58,6 +63,8 @@ export default defineComponent({
     .content {
       width: calc(100% - 149px - 258.5px);
       max-height: calc(100vh - 61px);
+      padding: 20px 20px 0;
+      box-sizing: border-box;
       overflow: auto;
       &::-webkit-scrollbar { width: 0 !important }
     }
