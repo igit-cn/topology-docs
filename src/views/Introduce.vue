@@ -1,6 +1,7 @@
 <template>
   <div class="introduce">
-    <div class="hljs" ref="hlDiv" @click.stop="handleClick" v-html="introduce"></div>
+    <div class="hljs" ref="hlDiv"  @click.stop="handleClick" v-html="introduce"></div>
+
   </div>
 </template>
 
@@ -15,7 +16,7 @@ import typescript from 'highlight.js/lib/languages/javascript';
 // import 'highlight.js/styles/monokai-sublime.css';
 export default defineComponent({
   name: 'Introduce',
-  components: {
+  components: { 
   },
   data():{
     anchorList:string[];
@@ -64,23 +65,10 @@ export default defineComponent({
       this.introduce = marked(this.introduce)
   },
   methods:{
-    handleClick(event:any){
-      console.log(event.target.dataset.set)
-    }
+     handleClick(event:any){
+      console.log(event.target.dataset.set)
+    }
   }
 });
 </script>
-<style lang="scss" scoped>
-.introduce{
-  ::v-deep .try-code{
-    position: relative;
-    background-color: #f8f8f8;
-    .try{
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #FB8501;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

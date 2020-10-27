@@ -2796,12 +2796,7 @@ coa@^2.0.2:
     chalk "^2.4.1"
     q "^1.1.2"
 
-codemirror@^5.41.0:
-  version "5.58.2"
-  resolved "https://registry.npm.taobao.org/codemirror/download/codemirror-5.58.2.tgz#ed54a1796de1498688bea1cdd4e9eeb187565d1b"
-  integrity sha1-7VSheW3hSYaIvqHN1OnusYdWXRs=
-
-codemirror@^5.58.2:
+codemirror@^5.41.0, codemirror@^5.58.2:
   version "5.58.2"
   resolved "https://registry.npm.taobao.org/codemirror/download/codemirror-5.58.2.tgz?cache=0&sync_timestamp=1603481865446&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcodemirror%2Fdownload%2Fcodemirror-5.58.2.tgz#ed54a1796de1498688bea1cdd4e9eeb187565d1b"
   integrity sha1-7VSheW3hSYaIvqHN1OnusYdWXRs=

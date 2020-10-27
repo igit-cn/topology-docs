@@ -6,6 +6,9 @@
         <Menu />
       </div>
       <div class="content">
+        <div class="modal">
+            <Modal />
+        </div>
         <router-view />
       </div> 
       <div class="wrapper">
@@ -26,13 +29,15 @@ import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import Menu from '@/components/Menu.vue';
+import Modal from '@/components/modal/Index.vue'
 
 export default defineComponent({
   name: 'Home',
   components: {
     Header,
     Footer,
-    Menu
+    Menu,
+    Modal
   },
   data():{anchorList:string[],targetOffset:any} {
     return {
@@ -76,6 +81,9 @@ export default defineComponent({
       right: 0;
       top: $head-height;
       margin-top: 20px;
+    }
+    .modal{
+      display: none;
     }
   }
 }
