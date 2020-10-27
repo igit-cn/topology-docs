@@ -62,5 +62,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 });
-
+router.beforeEach((to, from, next) => {
+  // (window as any).Store.set('anchorList', [])
+  next()
+})
 export default router;

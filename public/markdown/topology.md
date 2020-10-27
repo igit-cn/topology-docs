@@ -61,6 +61,7 @@ npm install topology-bundle
 
 
 ## package.json参考
+<div class="try-code">
 
 ```javascript
 {
@@ -98,9 +99,12 @@ npm install topology-bundle
 }
 ```
 
+<a class="try" data-set="1">试一试</a>
+</div>
+
 ## 使用
 
-``` javascript
+```typescript
 // 先导入库
 import { Topology, Options, registerNode } from '@topology/core';
 import { register as registerFlow } from '@topology/flow-diagram';
