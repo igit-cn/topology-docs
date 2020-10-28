@@ -13,6 +13,7 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/javascript';
 // import 'highlight.js/styles/hybrid.css';
 // import 'highlight.js/styles/monokai-sublime.css';
+import {Throttle} from '../utils/utils.ts'
 export default defineComponent({
   name: 'Introduce',
   components: { 
@@ -34,11 +35,11 @@ export default defineComponent({
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        console.log(111,this.anchorList,)
         if(level === 1 || level === 2){
           this.anchorList.push(text)
         }
-        (window as any).Store.set('anchorList', this.anchorList);
+        // 降低md里面的一级标题和二级标题渲染频率
+        this.startThrottle(this.anchorList)
         return '<h' + level + ' id='+text+'><a name="' +
                     escapedText +
                     '" class="anchor" href="#' +
@@ -64,9 +65,11 @@ export default defineComponent({
       this.introduce = marked(this.introduce)
   },
   methods:{
+    startThrottle:new Throttle().use((val:string[])=>{
+      (window as any).Store.set('anchorList', val);
+    },300,false),
     handleClick(event:any){ 
       (window as any).Store.set('tryCode',true)
-//     console.log(event.target.dataset.set)
    }
   }
 });

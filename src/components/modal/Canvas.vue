@@ -60,11 +60,11 @@ export default defineComponent({
     new Topology('topology-canvas',this.topologyOptions);
     this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
       console.log(1111,this.renderFlag,val)
-      // if(!this.renderFlag){
-      //   this.renderFlag = true
-      // }else{
+      if(!this.renderFlag){
+        this.renderFlag = true
+      }else{
         this.clearCanvas()
-      // }
+      }
       eval(val);
     });
 

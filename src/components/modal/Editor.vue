@@ -15,6 +15,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import MonacoEditor from 'vue-monaco-editor'
+import {Debounced} from '@/utils/utils.ts'
 
 export default defineComponent({
   name: 'Editor',
@@ -47,9 +48,13 @@ export default defineComponent({
     onMounted(editor:object) {
       this.editor = editor;
     },
-    onCodeChange(editor:object) {
-      console.log((editor as any).getValue());
+    startThrottle:new Debounced().use((editor:object)=>{
+      console.log(8888,(editor as any).getValue());
       (window as any).Store.set('t-data',(editor as any).getValue())
+    },1000,false),
+    onCodeChange(editor:object) {
+      this.startThrottle(editor)
+    
     }
   },
 });
