@@ -1,8 +1,6 @@
 <template>
   <div class="canvas">
-    <!-- <Header />
-    <h1>This is an support page</h1>
-    <Footer /> -->
+ 
   </div>
 </template>
 
@@ -20,7 +18,8 @@ export default defineComponent({
       return{
         //   markDownCanvas:markDownCanvas
       }
-  }
+  },
+
 });
 </script>
 <style lang="scss" scoped></style>

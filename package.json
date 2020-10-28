@@ -18,7 +18,14 @@
     "marked": "^1.2.2",
     "vue": "^3.0.0",
     "vue-codemirror": "^4.0.6",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "@topology/activity-diagram": "^0.3.1",
+    "@topology/chart-diagram": "^0.3.0",
+    "@topology/class-diagram": "^0.3.0",
+    "@topology/core": "^0.3.0",
+    "@topology/flow-diagram": "^0.3.0",
+    "@topology/layout": "^0.3.0",
+    "@topology/sequence-diagram": "^0.3.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
