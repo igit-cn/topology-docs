@@ -9,7 +9,7 @@
           v-if="item.children"
           @click.prevent="menuClick(index)"
         >
-          {{ item.text }}
+          22{{ item.text }}
           <i
             :class="
               item.children && item.hide ? 't-angle-right' : 't-angle-down'
@@ -19,17 +19,17 @@
         </router-link>
 
         <router-link :to="item.router" v-else>
-          {{ item.text }}
+          11{{ item.text }}
         </router-link>
 
         <div
           v-for="(e, i) in item.children"
           :key="i"
           class="children"
-          :class="item.hide ? 'hidden' : 'block'"
+          :class="[item.hide ? 'hidden' : 'block',item.isActive?'active':'']"
         >
           <router-link :to="e.router">
-            {{ e.text }}
+            33{{ e.text }}
           </router-link>
         </div>
       </div>
@@ -76,6 +76,7 @@ export default defineComponent({
   },
   async created() {
     this.menu = await axios.get('/apis/syllabus.json');
+    console.log(111,this.menu)
   },
   methods: {
     menuClick(i: number) { 

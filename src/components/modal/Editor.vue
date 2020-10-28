@@ -80,7 +80,7 @@ export default defineComponent({
 
 </style>
 <style>
-/* .editor .monaco-editor.vs-dark .monaco-editor-background,
+.editor .monaco-editor.vs-dark .monaco-editor-background,
 .editor .monaco-editor.vs-dark .glyph-margin{
     background: #f8f8f8;
   }
@@ -89,5 +89,5 @@ export default defineComponent({
   }
   .editor .monaco-editor.vs-dark .token {
     color: #000;
-  } */
+  }
 </style>
