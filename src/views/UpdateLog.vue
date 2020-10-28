@@ -9,6 +9,8 @@ import { defineComponent } from 'vue';
 import axios from '@/http';
 import marked from 'marked'
 import hljs from "highlight.js";
+import {Throttle} from '@/utils/utils.ts'
+
 export default defineComponent({
   name: 'UpdateLog',
   components: {},
@@ -27,10 +29,13 @@ export default defineComponent({
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        console.log(111,this.anchorList,)
         if(level === 2){
           this.anchorList.push(text.substring(15,30))
-        }
+        } 
+        console.log(111,this.anchorList, this.startThrottle);
+        
+        // this.startThrottle(this.anchorList)
+
         (window as any).Store.set('anchorList', this.anchorList);
         return '<h' + level + ' id='+text+'><a name="' +
                     escapedText +
@@ -56,6 +61,13 @@ export default defineComponent({
       );
       this.updateLog = marked(this.updateLog)
   },
+  methods:{
+       startThrottle:new Throttle().use((val:string[])=>{
+           console.log(val,989898989);
+           
+      (window as any).Store.set('anchorList', val);
+    },300,false),
+  }
 });
 </script>
 <style lang="scss" scoped></style>

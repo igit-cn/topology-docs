@@ -80,14 +80,62 @@ export default defineComponent({
 
 </style>
 <style>
-/* .editor .monaco-editor.vs-dark .monaco-editor-background,
+.editor .monaco-editor.vs-dark .monaco-editor-background,
 .editor .monaco-editor.vs-dark .glyph-margin{
     background: #f8f8f8;
   }
   .editor .monaco-editor.vs-dark .scroll-decoration{
     box-shadow: none;
   }
-  .editor .monaco-editor.vs-dark .token {
+  /* .editor .monaco-editor.vs-dark .token {
     color: #000;
   } */
+  .monaco-editor.vs-dark .token.keyword, 
+  .monaco-editor.vs-dark .token.keyword.control{
+    color:  #008dff;
+  }
+  .editor .monaco-editor.vs-dark .token.delimiter{
+    color: #999;
+  }
+  .editor .monaco-editor.vs-dark .token.token.number{
+    color: #008dff;
+  }
+
+  .editor .monaco-editor.vs-dark .token.token.string{
+    color: #0b8235;
+  }
+  .editor .monaco-editor{
+    width: 100%!important;
+  }
+ 
+ .editor .monaco-editor .overflow-guard{
+    width: 100%!important;
+  }
+  
+
+.editor .monaco-editor.vs-dark .token.invalid{border-bottom:reddotted1px}
+.editor .monaco-editor.vs-dark .token.identifier{color: black;}
+.editor .monaco-editor.vs-dark .token.comment.doc{font-style:normal;}
+
+.editor .monaco-editor.vs-dark .token.type{color:teal;}
+.editor .monaco-editor.vs-dark .token.type.delimiter{color:teal;}
+.editor .monaco-editor.vs-dark .token.predefined{color:navy;}
+.editor .monaco-editor.vs-dark .token.namespace{color:navy;}
+.editor .monaco-editor.vs-dark .token.constructor{color:purple;}
+
+
+.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.type{color:darkcyan;}
+.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.predefined{color:darkorchid;}
+.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.namespace{color:lightsteelblue;}
+.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.constructor{color:palegoldenrod;}
+
+.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.type{color:darkcyan;}
+.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.predefined{color:aquamarine;}
+.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.namespace{color:lightsteelblue;}
+.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.constructor{color:palegoldenrod;}
+
+/*specialsforfunctionallanguages*/
+.token.keyword.dot{color:black;}
+.token.typeparam{color:#555;}
+.token.typevar{font-style:italic;}
 </style>

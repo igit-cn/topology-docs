@@ -29,7 +29,7 @@ export default defineComponent({
         position: relative;
         height: 100%;
         .t-close{
-            color: #fff;
+            color: #000;
             z-index: 10;
             left: 4px;
             font-size: 14px;
