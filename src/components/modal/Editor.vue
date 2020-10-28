@@ -13,7 +13,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .editor{
-    height: 420px;
+    height: 57%;
     border-bottom: 1px solid #eeeeee;;
 }
 

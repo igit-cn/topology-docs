@@ -1,5 +1,5 @@
 <template>
-  <div class="Modal">
+  <div class="modal-wrapper">
       <i class="t-icon t-close" @click="hanledclose"></i>
 
     <Teditor />
@@ -25,8 +25,9 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-    .Modal{
+    .modal-wrapper{
         position: relative;
+        height: 100%;
         .t-close{
             position: absolute;
             cursor: pointer;
