@@ -48,23 +48,22 @@ export default defineComponent({
   mounted(){
     new Topology('topology-canvas',this.topologyOptions);
     this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
-      eval(val);
-    });
+        this.clearCanvas()
+        topology.data.locked = 1;
 
-    // const newNode = topology.addNode({
-    //     rect: {
-    //         x:10,
-    //         y: 10,
-    //         width: 50,
-    //         height: 50
-    //         },
-    //     name: 'circle',
-    //     strokeStyle: 'red',
-
-    //     });
-    //     topology.data.locked = 1;
-    //     topology.render();
+        eval(val);
+    }); 
     },
+
+    methods:{
+        clearCanvas()  {  
+           topology.data.pens.forEach((e:any) => {
+                topology.activeLayer.pens = [topology.find(e.id)];
+                topology.find(e.id).locked = 0;
+                topology.delete();
+            });
+        }
+    }
 //     destroyed() {
 //     this.subscribe.unsubscribe();
 //     topology.destroy();
