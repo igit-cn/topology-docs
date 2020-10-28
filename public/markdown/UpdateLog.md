@@ -1,7 +1,7 @@
 # 版本发布记录
 
 ## @topology/core@0.3.1
-## 2020.09.29
+### 2020.09.29
 
 * [feature]topology.data.tooltip控制是否显示提示
 * [feature][fitView](https://github.com/le5le-com/topology/commit/bac5d7feb607bffa6e6526b6d406372e1864f6db)自适应屏幕大小（0.2.30版本新增特性）
@@ -14,7 +14,7 @@
 
 
 ## @topology/core@0.2.18
-## 2020.07.04
+### 2020.07.04
 
 * 节点特效切换后，为什么不播放了(需要执行initAnimateProps())
 * 缩放没计算文字行高
@@ -27,8 +27,8 @@
 * 独立旋转子节点，移动父节点，旋转被重置
 * 自定义事件，新增：修改属性值
 
-## topology/core@0.2.11
-## 020.06.13
+## @topology/core@0.2.11
+### 2020.06.13
 
 * MQTT支持
 * mind脑图曲线样式调整
@@ -38,7 +38,7 @@
 * 先选中节点A，再点击节点B的子节点，依旧选中的A
 
 ## @topology/core@0.2.5 
-## 2020.05.26
+### 2020.05.26
 
 * 锁定状态 为1时， 节点的cursor 由 move改为pointer
 * 节点隐藏
@@ -47,14 +47,16 @@
 * 修复动画过程中，拖拽node位置问题
 * <font color=red>源码结构调整为monoreop；包名调整为scope方式</font>
 
-## topology-core@0.2.10
-## 2020.05.05
+## @topology-core@0.2.10 
+
+### 2020.05.05
 
 * 新增websocket事件支持
 * 画布事件结构调整
 
-## topology-core@0.2.9
-## 2020.05.01
+## @topology-core@0.2.9 
+
+### 2020.05.01
 
 修复bug和完善细节：
 
@@ -69,8 +71,8 @@
 * 节点组合之后 无法执行动画
 * 线条执行动画过程中 线条删除后  动画层数据没有被删掉
 
-## topology-core@0.2.7-dev
-## 2020.04.19
+## @topology-core@0.2.7-dev
+### 2020.04.19
 
 修复bug和完善细节：
  * space 消息返回鼠标坐标

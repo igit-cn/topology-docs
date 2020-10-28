@@ -4,7 +4,7 @@
     "router": "/introduce"
   },{
     "text":"快速上手",
-    "router":"/"
+    "router":"/quickstart"
   },{
     "text":"常见问题",
     "router":"/faq"

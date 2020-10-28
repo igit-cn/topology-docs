@@ -80,7 +80,7 @@ export default defineComponent({
     .content {
       width: calc(100% - 149px - 258.5px);
       max-height: calc(100vh - 61px);
-      padding: 20px 20px 0;
+      padding: 20px 60px 0;
       box-sizing: border-box;
       overflow: auto;
       &::-webkit-scrollbar { width: 0 !important }

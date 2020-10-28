@@ -1,6 +1,6 @@
 <template>
-  <div class="updateLog">
-    <div class="hljs" ref="hlDiv" @click.stop="handleClick" v-html="updateLog"></div>
+  <div class="quickstart">
+    <div class="hljs" ref="hlDiv" @click.stop="handleClick" v-html="quickstart"></div>
   </div>
 </template>
 
@@ -9,21 +9,23 @@ import { defineComponent } from 'vue';
 import axios from '@/http';
 import marked from 'marked'
 import hljs from "highlight.js";
+import 'highlight.js/styles/xcode.css';
+
 export default defineComponent({
-  name: 'UpdateLog',
+  name: 'Quickstart',
   components: {},
   data():{
-      updateLog:string,
+      quickstart:string,
       anchorList:string[]
   }{
       return{
-          updateLog:'',
-            anchorList:[]
+          quickstart:'',
+          anchorList:[]
 
       }
   },
   async mounted(){
-    this.updateLog = await axios.get('/markdown/updateLog.md'); 
+    this.quickstart = await axios.get('/markdown/quickstart.md'); 
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
@@ -54,7 +56,7 @@ export default defineComponent({
           xhtml: false
         }
       );
-      this.updateLog = marked(this.updateLog)
+      this.quickstart = marked(this.quickstart)
   },
 });
 </script>

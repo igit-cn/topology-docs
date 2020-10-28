@@ -12,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
         name:'Introduce',
         component:() => 
           import(/* webpackChunkName: "introduce" */ '../views/Introduce.vue')
+      },{
+        path:'/quickstart',
+        name:'Quickstart',
+        component:() =>
+          import(/* webpackChunkName: "introduce" */ '../views/Quickstart.vue')
       },
       {
         path: 'faq',
