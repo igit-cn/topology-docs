@@ -64,23 +64,10 @@ export default defineComponent({
         this.renderFlag = true
       }else{
         this.clearCanvas()
+         topology.data.locked = 1;
       }
       eval(val);
     });
-
-    // const newNode = topology.addNode({
-    //     rect: {
-    //         x:10,
-    //         y: 10,
-    //         width: 50,
-    //         height: 50
-    //         },
-    //     name: 'circle',
-    //     strokeStyle: 'red',
-
-    //     });
-    //     topology.data.locked = 1;
-    //     topology.render();
     },
 //     destroyed() {
 //     this.subscribe.unsubscribe();
