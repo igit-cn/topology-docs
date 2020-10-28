@@ -1,10 +1,11 @@
 <template>
   <div class="editor">
     <MonacoEditor
-    height="600"
+    height="100%"
     language="typescript"
     :code="code"
     :editorOptions="options"
+    :key="randomKey"
     @mounted="onMounted"
     @codeChange="onCodeChange"
     >
@@ -25,7 +26,8 @@ export default defineComponent({
   data():{
     options:object,
     code:string,
-    editor:object
+    editor:object,
+    randomKey:number
   } {
     return {
       code: '',
@@ -41,12 +43,15 @@ export default defineComponent({
           formatOnType: true,
           folding: true,
       },
-      editor:{}
+      editor:{},
+      randomKey: Math.random()
     }
   },
   methods: {
     onMounted(editor:object) {
       this.editor = editor;
+      console.log((this.editor as any))
+
     },
     startThrottle:new Debounced().use((editor:object)=>{
       console.log(8888,(editor as any).getValue());
@@ -57,13 +62,32 @@ export default defineComponent({
     
     }
   },
+  mounted() {
+    const tryCode = (window as any).Store.subscribe('updateCode',(value:any) => {
+        console.log(value,'update');
+        this.code = value;
+        (window as any).Store.set('t-data',value);
+        this.randomKey = Math.random();
+    });
+  },
 });
 </script>
 <style lang="scss" scoped>
 .editor{
     height: 57%;
-    overflow: auto;
-    border-bottom: 1px solid #eeeeee;;
+    border-bottom: 1px solid #eeeeee;
 }
 
+</style>
+<style>
+/* .editor .monaco-editor.vs-dark .monaco-editor-background,
+.editor .monaco-editor.vs-dark .glyph-margin{
+    background: #f8f8f8;
+  }
+  .editor .monaco-editor.vs-dark .scroll-decoration{
+    box-shadow: none;
+  }
+  .editor .monaco-editor.vs-dark .token {
+    color: #000;
+  } */
 </style>

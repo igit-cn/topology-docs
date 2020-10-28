@@ -11,7 +11,7 @@ import marked from 'marked'
 import hljs from "highlight.js";
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/javascript';
-// import 'highlight.js/styles/hybrid.css';
+import 'highlight.js/styles/xcode.css';
 // import 'highlight.js/styles/monokai-sublime.css';
 import {Throttle} from '../utils/utils.ts'
 export default defineComponent({
@@ -31,7 +31,7 @@ export default defineComponent({
     // console.log(222,this.introduce);
   },
   async mounted(){
-    this.introduce = await axios.get('/markdown/topology.md'); 
+    this.introduce = await axios.get('/markdown/demo.md'); 
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
@@ -68,8 +68,15 @@ export default defineComponent({
     startThrottle:new Throttle().use((val:string[])=>{
       (window as any).Store.set('anchorList', val);
     },300,false),
-    handleClick(event:any){ 
-      (window as any).Store.set('tryCode',true)
+    async handleClick(event:any){
+      console.log(event.target.dataset.set)
+      const key:any = event.target.dataset.set
+      const result = await axios.get('/apis/trycode.json');  
+      // console.log('result',key in result)
+      if(key in result){
+        (window as any).Store.set('tryCode',true);
+        (window as any).Store.set('updateCode',result[`${key}`]);
+      }
    }
   }
 });
