@@ -1,0 +1,4 @@
+    {
+        "rect":"const newNode=topology.addNode({\nrect:{x:10,y:10,width:50,height:50},name:'circle',strokeStyle:'red',\n});\ntopology.render()",
+        "strokeStyle":"const newNode=topology.addNode({rect:{x:10,y:10,width:500,height:500},name:'circle',strokeStyle:'red',});\ntopology.render()"
+    }

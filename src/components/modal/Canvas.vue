@@ -47,23 +47,27 @@ export default defineComponent({
 
       }
   },
-    methods: {
-        clearCanvas(){  
-        topology.data.pens.forEach((e:any)=>{
-            topology.activeLayer.pens = [topology.find(e.id)];
-            topology.find(e.id).locked = 0;
-            topology.delete();
-        })
-        } 
-    },
-    mounted(){
-        new Topology('topology-canvas',this.topologyOptions);
-        this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
-            this.clearCanvas()
-            topology.data.locked = 1;
-
-            eval(val);
-        }); 
+  methods: {
+    clearCanvas(){  
+      topology.data.pens.forEach((e:any)=>{
+        topology.activeLayer.pens = [topology.find(e.id)];
+        topology.find(e.id).locked = 0;
+        topology.delete();
+      })
+    } 
+  },
+  mounted(){
+    new Topology('topology-canvas',this.topologyOptions);
+    this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
+      console.log(1111,this.renderFlag,val)
+      if(!this.renderFlag){
+        this.renderFlag = true
+      }else{
+        this.clearCanvas()
+         topology.data.locked = 1;
+      }
+      eval(val);
+    });
     },
 //     destroyed() {
 //     this.subscribe.unsubscribe();

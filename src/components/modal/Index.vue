@@ -29,6 +29,11 @@ export default defineComponent({
         position: relative;
         height: 100%;
         .t-close{
+            color: #fff;
+            z-index: 10;
+            left: 4px;
+            font-size: 14px;
+            top: 4px;
             position: absolute;
             cursor: pointer;
         }

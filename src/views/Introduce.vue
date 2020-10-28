@@ -11,8 +11,9 @@ import marked from 'marked'
 import hljs from "highlight.js";
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/javascript';
-// import 'highlight.js/styles/hybrid.css';
+import 'highlight.js/styles/xcode.css';
 // import 'highlight.js/styles/monokai-sublime.css';
+import {Throttle} from '../utils/utils.ts'
 export default defineComponent({
   name: 'Introduce',
   components: { 
@@ -30,15 +31,15 @@ export default defineComponent({
     // console.log(222,this.introduce);
   },
   async mounted(){
-    this.introduce = await axios.get('/markdown/topology.md'); 
+    this.introduce = await axios.get('/markdown/demo.md'); 
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        console.log(111,this.anchorList,)
         if(level === 1 || level === 2){
           this.anchorList.push(text)
         }
-        (window as any).Store.set('anchorList', this.anchorList);
+        // 降低md里面的一级标题和二级标题渲染频率
+        this.startThrottle(this.anchorList)
         return '<h' + level + ' id='+text+'><a name="' +
                     escapedText +
                     '" class="anchor" href="#' +
@@ -64,9 +65,18 @@ export default defineComponent({
       this.introduce = marked(this.introduce)
   },
   methods:{
-    handleClick(event:any){ 
-      (window as any).Store.set('tryCode',true)
-//     console.log(event.target.dataset.set)
+    startThrottle:new Throttle().use((val:string[])=>{
+      (window as any).Store.set('anchorList', val);
+    },300,false),
+    async handleClick(event:any){
+      console.log(event.target.dataset.set)
+      const key:any = event.target.dataset.set
+      const result = await axios.get('/apis/trycode.json');  
+      // console.log('result',key in result)
+      if(key in result){
+        (window as any).Store.set('tryCode',true);
+        (window as any).Store.set('updateCode',result[`${key}`]);
+      }
    }
   }
 });
