@@ -95,7 +95,8 @@ export default defineComponent({
       margin-top: 20px;
     }
     .modal{
-      display: none;
+      // display: ;
+      visibility:hidden;
       position: fixed;
       border-left: 1px solid #eeeeee;;
       top:62px;
@@ -105,7 +106,8 @@ export default defineComponent({
       background: #ffffff;
       z-index: 9;
       &.isShow{
-        display: block
+        // display: block;
+        visibility:visible;
       }
     }
   }
