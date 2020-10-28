@@ -95,18 +95,16 @@ export default defineComponent({
       margin-top: 20px;
     }
     .modal{
-      // display: ;
       visibility:hidden;
       position: fixed;
       border-left: 1px solid #eeeeee;;
       top:62px;
       right: 20px;
       height: calc(100vh - #{$head-height});
-      width: 363px;
+      width: 28.4%;
       background: #ffffff;
       z-index: 9;
       &.isShow{
-        // display: block;
         visibility:visible;
       }
     }
