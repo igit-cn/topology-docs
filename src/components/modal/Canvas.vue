@@ -1,6 +1,6 @@
 <template>
   <div class="canvas">
-         <div
+        <div
       id="topology-canvas"
       ref="topology" 
     ></div>
@@ -26,17 +26,59 @@ registerSequence();
 registerChart();
  
 
+declare const topology: any;
 
 
 export default defineComponent({
   name: 'Canvas',
   components: {},
-    mounted(){
-        new Topology('topology-canvas');
-        // this.subscribe = Store.subscribe('t-data', (val) => {
-        //   topology.open(val.data);
-        // });
-    }, 
+  data():{
+      topologyOptions:any,
+      subscribe:any
+  }{
+      return{
+          topologyOptions:{
+                on: null,
+                rotateCursor: '/img/rotate.cur',
+            },
+            subscribe:null
+
+      }
+  },
+  mounted(){
+    new Topology('topology-canvas',this.topologyOptions);
+    this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
+      eval(val);
+    });
+
+    // const newNode = topology.addNode({
+    //     rect: {
+    //         x:10,
+    //         y: 10,
+    //         width: 50,
+    //         height: 50
+    //         },
+    //     name: 'circle',
+    //     strokeStyle: 'red',
+
+    //     });
+    //     topology.data.locked = 1;
+    //     topology.render();
+    },
+//     destroyed() {
+//     this.subscribe.unsubscribe();
+//     topology.destroy();
+//   }
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.canvas{
+    height: 43%;
+    #topology-canvas {
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      background-color: #f4f4f4;
+    }
+}
+</style>
