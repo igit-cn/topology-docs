@@ -142,3 +142,21 @@ react教程二： https://juejin.im/post/6888473068876857357
 
 vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
  
+
+ ## 使用bundle.js（已打包压缩的普通js文件）
+
+ 1. 下载最新压缩包
+
+  npm install topology
+
+ 2. 在 html 引入
+
+
+
+   ``` javascript
+   // npm 包下载的是index.js，文件名和下面的不直接一样
+// 已经导入官方图形库
+<script src="/node_modules/topology-bundle/index.js"></script>
+
+   ```
+ 3.  

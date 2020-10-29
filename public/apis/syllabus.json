@@ -21,107 +21,115 @@
     "active":false
   },
   {
-    "text": "介绍",
-    "router":"/",
-    "hide":true,
-    "children": [
-      {
-        "text": "Topology是什么",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "关于我们",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "企业版",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "网友作品",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "特别感谢",
-        "router": "/",
-        "active":false
-      }
-    ]
-  },
-  {
-    "text": "docker方式本地部署",
-    "router":"/",
-    "hide":true,
-    "children": [
-      {
-        "text": "单镜像部署",
-        "router": "/",
-        "active":false
-      }
-    ]
-  },
-  {
-    "text": "开发教程",
-    "router":"/",
-    "hide":true,
-    "children": [
-      {
-        "text": "安装",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "起步",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "angular/react/vue安装",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "使用bundle.js(已打包压缩的普通js文件)",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "typescript(es6)使用图形库",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "开发自己的图形库",
-        "router": "/",
-        "active":false
-      },
-      {
-        "text": "编译topology源码",
-        "router": "/",
-        "active":false
-      }
-    ]
-  },
-  {
     "text": "API文档",
     "router":"/",
     "hide":false,
     "children": [
       {
-        "text": "[重要] 注意事项",
+        "text": "画布",
         "router": "/",
         "active":false
       },
       {
-        "text": "设计概要",
+        "text": "区域Rect",
         "router": "/",
         "active":false
+      },{
+        "text":"点",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"画笔",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"节点",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"连线",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"箭头",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"锚点",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"控制点",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"动画",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"离屏层",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"选中层",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"浮动层",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"动画层",
+        "router":"/",
+        "active":false
+        
+      },{
+        "text":"消息事件",
+        "router":"/",
+        "active":false
+        
       }
     ]
+  },{
+    "text": "其他",
+    "router":"/",
+    "hide":false,
+    "children":[{
+      "text":"前端本地存储Stroe",
+      "router":"/",
+      "active":false
+    },{
+      "text":"消息通信",
+      "router":"/",
+      "active":false
+    },{
+      "text":"自定义图形库",
+      "router":"/",
+      "active":false
+    },{
+      "text":"使用echarts图表控件",
+      "router":"/",
+      "active":false
+    },{
+      "text":"在画布中封装第三方图形库，如echarts",
+      "router":"/",
+      "active":false
+    },{
+      "text":"排版布局",
+      "router":"/",
+      "active":false
+    }]
   }
 ]
 
