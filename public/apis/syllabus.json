@@ -27,7 +27,7 @@
     "children": [
       {
         "text": "画布",
-        "router": "/",
+        "router": "/canvas",
         "active":false
       },
       {
@@ -41,12 +41,12 @@
         
       },{
         "text":"画笔",
-        "router":"/",
+        "router":"/paint",
         "active":false
         
       },{
         "text":"节点",
-        "router":"/",
+        "router":"/node",
         "active":false
         
       },{

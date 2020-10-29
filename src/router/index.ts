@@ -44,12 +44,77 @@ const routes: Array<RouteRecordRaw> = [
         path: 'rect',
         name: 'Rect',
         component: () =>
-          import(/* webpackChunkName: "rect" */ '../views/Rect.vue')
+          import(/* webpackChunkName: "rect" */ '../views/apis/Rect.vue')
       },{
         path: 'point',
         name: 'Point',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Point.vue')
+      },{
+        path: 'paint',
+        name: 'Paint',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Paint.vue')
+      },{
+        path: 'canvas',
+        name: 'Canvas',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Canvas.vue')
+      },{
+        path: 'node',
+        name: 'Node',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Node.vue')
+      },{
+        path: 'line',
+        name: 'Line',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Line.vue')
+      },{
+        path: 'arrow',
+        name: 'Arrow',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Arrow.vue')
+      },{
+        path: 'anchor',
+        name: 'Anchor',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Anchor.vue')
+      },{
+        path: 'control',
+        name: 'Control',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Control.vue')
+      },{
+        path: 'animation',
+        name: 'Animation',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Animation.vue')
+      },{
+        path: 'offlineLayer',
+        name: 'OfflineLayer',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/OfflineLayer.vue')
+      },{
+        path: 'selectLayer',
+        name: 'SelectLayer',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/SelectLayer.vue')
+      },{
+        path: 'floatLayer',
+        name: 'FloatLayer',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/FloatLayer.vue')
+      },{
+        path: 'animationLayer',
+        name: 'AnimationLayer',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/AnimationLayer.vue')
+      },{
+        path: 'msgEvent',
+        name: 'MsgEvent',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/MsgEvent.vue')
       }
     ]
   },

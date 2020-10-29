@@ -1,6 +1,6 @@
 <template>
-  <div class="introduce">
-    <markdown-render ref="mdRender" :mdCode="introduce" :titleList="titleList"/>
+  <div class="arrow">
+    <markdown-render ref="mdRender" :mdCode="arrow" :titleList="titleList"/>
   </div>
 </template>
 
@@ -8,27 +8,29 @@
 import { defineComponent } from 'vue'; 
 import MarkdownRender from '@/components/MarkdownRender/Index.vue'
 export default defineComponent({
-  name: 'Introduce',
+  name: 'Arrow',
   components:{ MarkdownRender},
   data():{
-    introduce:string,
+    arrow:string,
     titleList:number[]}{
      return{
-        introduce:'',
+        arrow:'',
         titleList:[]
      }
   }, 
   async mounted(){
     this.titleList = [1,2];
-    this.introduce = await this.axios.get('/markdown/topology.md');
+    this.arrow = await this.axios.get('/markdown/arrow.md');
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
+  },
+  methods:{
   }
 });
 </script>
 <style lang="scss" scoped> 
-.introduce{
+.arrow{
   height: 100%;
 }
 </style>

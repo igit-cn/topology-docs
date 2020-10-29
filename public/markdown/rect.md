@@ -27,8 +27,9 @@ Le5leTopology.Rect
 |center|自定义Point|是|中心点|
 
 <div class="try-code">
-    ```javascript
-        const newNode = topology.addNode({
+
+``` javascript
+const newNode = topology.addNode({
         rect: {
             x:10,
             y: 10,
@@ -40,9 +41,13 @@ Le5leTopology.Rect
         name: 'circle',
         strokeStyle: 'red'
         });
-    ```
-    <p class="try-btn">试一试<p>
+
+```
+<a class="try" data-set="rect">试一试</a>
+
 </div>
+
+可以试着去修改宽高和xy轴的大小。
 
 
 
@@ -51,7 +56,7 @@ Le5leTopology.Rect
 ## 成员函数列表
 
 ### 构造函数
-```javascript
+``` javascript
 constructor(public x: number, public y: number, public width: number, public height: number)
 ```
 

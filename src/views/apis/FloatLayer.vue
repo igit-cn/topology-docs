@@ -1,6 +1,6 @@
 <template>
-  <div class="introduce">
-    <markdown-render ref="mdRender" :mdCode="introduce" :titleList="titleList"/>
+  <div class="float-layer">
+    <markdown-render ref="mdRender" :mdCode="floatLayer" :titleList="titleList"/>
   </div>
 </template>
 
@@ -8,27 +8,29 @@
 import { defineComponent } from 'vue'; 
 import MarkdownRender from '@/components/MarkdownRender/Index.vue'
 export default defineComponent({
-  name: 'Introduce',
+  name: 'FloatLayer',
   components:{ MarkdownRender},
   data():{
-    introduce:string,
+    floatLayer:string,
     titleList:number[]}{
      return{
-        introduce:'',
+        floatLayer:'',
         titleList:[]
      }
   }, 
   async mounted(){
     this.titleList = [1,2];
-    this.introduce = await this.axios.get('/markdown/topology.md');
+    this.floatLayer = await this.axios.get('/markdown/floatLayer.md');
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
+  },
+  methods:{
   }
 });
 </script>
 <style lang="scss" scoped> 
-.introduce{
+.float-layer{
   height: 100%;
 }
 </style>

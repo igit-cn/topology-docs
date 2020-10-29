@@ -1,6 +1,6 @@
 <template>
-  <div class="introduce">
-    <markdown-render ref="mdRender" :mdCode="introduce" :titleList="titleList"/>
+  <div class="selectLayer">
+    <markdown-render ref="mdRender" :mdCode="selectLayer" :titleList="titleList"/>
   </div>
 </template>
 
@@ -8,27 +8,29 @@
 import { defineComponent } from 'vue'; 
 import MarkdownRender from '@/components/MarkdownRender/Index.vue'
 export default defineComponent({
-  name: 'Introduce',
+  name: 'SelectLayer',
   components:{ MarkdownRender},
   data():{
-    introduce:string,
+    selectLayer:string,
     titleList:number[]}{
      return{
-        introduce:'',
+        selectLayer:'',
         titleList:[]
      }
   }, 
   async mounted(){
     this.titleList = [1,2];
-    this.introduce = await this.axios.get('/markdown/topology.md');
+    this.selectLayer = await this.axios.get('/markdown/selectLayer.md');
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
+  },
+  methods:{
   }
 });
 </script>
 <style lang="scss" scoped> 
-.introduce{
+.selectLayer{
   height: 100%;
 }
 </style>
