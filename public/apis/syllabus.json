@@ -51,52 +51,52 @@
         
       },{
         "text":"连线",
-        "router":"/",
+        "router":"/line",
         "active":false
         
       },{
         "text":"箭头",
-        "router":"/",
+        "router":"/arrow",
         "active":false
         
       },{
         "text":"锚点",
-        "router":"/",
+        "router":"/anchor",
         "active":false
         
       },{
         "text":"控制点",
-        "router":"/",
+        "router":"/control",
         "active":false
         
       },{
         "text":"动画",
-        "router":"/",
+        "router":"/animation",
         "active":false
         
       },{
         "text":"离屏层",
-        "router":"/",
+        "router":"/offlineLayer",
         "active":false
         
       },{
         "text":"选中层",
-        "router":"/",
+        "router":"/selectLayer",
         "active":false
         
       },{
         "text":"浮动层",
-        "router":"/",
+        "router":"/floatLayer",
         "active":false
         
       },{
         "text":"动画层",
-        "router":"/",
+        "router":"/animationLayer",
         "active":false
         
       },{
         "text":"消息事件",
-        "router":"/",
+        "router":"/msgEvent",
         "active":false
         
       }
