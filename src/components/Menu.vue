@@ -9,7 +9,7 @@
           v-if="item.children"
           @click.prevent="menuClick(index)"
         >
-          22{{ item.text }}
+          {{ item.text }}
           <i
             :class="
               item.children && item.hide ? 't-angle-right' : 't-angle-down'
@@ -17,19 +17,18 @@
             class="t-icon"
           ></i>
         </router-link>
-
-        <router-link :to="item.router" v-else>
-          11{{ item.text }}
+        <router-link :to="item.router"  :class="[{'active':item.active}]" @click.prevent="firstMenuClick(item)" v-else>
+          {{ item.text }}
         </router-link>
 
         <div
-          v-for="(e, i) in item.children"
+          v-for="(el, i) in item.children"
           :key="i"
           class="children"
-          :class="[item.hide ? 'hidden' : 'block',item.isActive?'active':'']"
+          :class="item.hide ? 'hidden' : 'block'"
         >
-          <router-link :to="e.router">
-            33{{ e.text }}
+          <router-link :to="el.router" :class="[{'active':el.active}]" @click.prevent="secondMenuClick(el)">
+            {{ el.text }}
           </router-link>
         </div>
       </div>
@@ -71,7 +70,9 @@ export default defineComponent({
         //     }
         //   ]
         // }
-      ]
+      ],
+      lastActive:{},
+      lastActiveFlag:false
     };
   },
   async created() {
@@ -79,7 +80,26 @@ export default defineComponent({
     console.log(111,this.menu)
   },
   methods: {
+    secondMenuClick(item:object){
+      console.log('index',item);
+      if(this.lastActiveFlag){
+        (this.lastActive as any).active = false
+      }
+      (item as any).active = true
+      this.lastActive = item
+      this.lastActiveFlag = true
+    },
+    firstMenuClick(item:object){
+      console.log('index',item);
+      if(this.lastActiveFlag){
+        (this.lastActive as any).active = false
+      }
+      (item as any).active = true
+      this.lastActive = item
+      this.lastActiveFlag = true
+    },
     menuClick(i: number) { 
+      console.log('helo');
       (this.menu[i]['hide'] as any) = (!this.menu[i]['hide'] as any)
     }
   }
@@ -105,6 +125,9 @@ export default defineComponent({
         font-weight: 400;
         text-align: left;
         color: #333333;
+        &.active{
+          color: #FB8501;
+        }
       }
       .children {
         margin-top: 25px;

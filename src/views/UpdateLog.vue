@@ -31,12 +31,8 @@ export default defineComponent({
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         if(level === 2){
           this.anchorList.push(text.substring(15,30))
-        } 
-        console.log(111,this.anchorList, this.startThrottle);
-        
-        // this.startThrottle(this.anchorList)
-
-        (window as any).Store.set('anchorList', this.anchorList);
+        }         
+        this.startThrottle(this.anchorList)
         return '<h' + level + ' id='+text+'><a name="' +
                     escapedText +
                     '" class="anchor" href="#' +
@@ -63,10 +59,8 @@ export default defineComponent({
   },
   methods:{
        startThrottle:new Throttle().use((val:string[])=>{
-           console.log(val,989898989);
-           
-      (window as any).Store.set('anchorList', val);
-    },300,false),
+          (window as any).Store.set('anchorList', val);
+       },300,false),
   }
 });
 </script>
