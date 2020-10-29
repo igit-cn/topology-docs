@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import axios from '@/http';
-import marked from 'marked'
+import marked from 'marked';
 import hljs from "highlight.js";
 import {Throttle} from '@/utils/utils.ts'
 
@@ -19,8 +19,8 @@ export default defineComponent({
       anchorList:string[]
   }{
       return{
-          updateLog:'',
-            anchorList:[]
+        updateLog:'',
+        anchorList:[]
 
       }
   },
@@ -30,8 +30,8 @@ export default defineComponent({
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         if(level === 2){
-          this.anchorList.push(text.substring(15,30))
-        }         
+          this.anchorList.push(text.substring(15))
+        } 
         this.startThrottle(this.anchorList)
         return '<h' + level + ' id='+text+'><a name="' +
                     escapedText +
