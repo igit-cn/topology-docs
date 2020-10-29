@@ -1,66 +1,35 @@
 <template>
   <div class="updateLog">
-    <div class="hljs" ref="hlDiv" @click.stop="handleClick" v-html="updateLog"></div>
+    <markdown-render ref="mdRender" :mdCode="updateLog" :titleList="titleList"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import marked from 'marked';
-import hljs from "highlight.js";
-import {Throttle} from '@/utils/utils.ts'
-
+import MarkdownRender from '@/components/MarkdownRender/Index.vue'
 export default defineComponent({
   name: 'UpdateLog',
-  components: {},
+  components: {MarkdownRender},
   data():{
       updateLog:string,
-      anchorList:string[]
+       titleList:number[]
   }{
       return{
         updateLog:'',
-        anchorList:[]
-
+        titleList:[]
       }
   },
   async mounted(){
-    this.updateLog = await this.axios.get('/markdown/updateLog.md'); 
-    const  renderer = new marked.Renderer();
-    renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
-        const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        if(level === 2){
-          this.anchorList.push(text.substring(15))
-        } 
-        this.startThrottle(this.anchorList)
-        return '<h' + level + ' id='+text+'><a name="' +
-                    escapedText +
-                    '" class="anchor" href="#' +
-                    text +
-                    '"><span class="header-link"></span></a>' +
-                      text + '</h' + level + '>';
-    };
-    marked.setOptions({
-          renderer,
-          highlight: function(code:any) {
-            return hljs.highlightAuto(code).value;
-          },
-          pedantic: false,
-          gfm: true,
-          tables: true,
-          breaks: false,
-          sanitize: false,
-          smartLists: true,
-          smartypants: false,
-          xhtml: false
-        }
-      );
-      this.updateLog = marked(this.updateLog)
-  },
-  methods:{
-       startThrottle:new Throttle().use((val:string[])=>{
-          (window as any).Store.set('anchorList', val);
-       },300,false),
+    this.titleList = [1,2];
+    this.updateLog = await this.axios.get('/markdown/updateLog.md');
+    this.$nextTick(()=>{
+      (this.$refs.mdRender as any).handleRender();
+    })
   }
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.updateLog{
+  height: 100%;
+}
+</style>

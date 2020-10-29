@@ -18,16 +18,12 @@ export default defineComponent({
         titleList:[]
      }
   },
-  async created(){
-  },
   async mounted(){
     this.titleList = [1,2];
     this.introduce = await this.axios.get('/markdown/topology.md');
     this.$nextTick(()=>{
-      this.$refs.mdRender.handleRender()
+      (this.$refs.mdRender as any).handleRender()
     })
-  },
-  methods:{
   }
 });
 </script>

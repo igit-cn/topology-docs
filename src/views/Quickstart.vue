@@ -1,62 +1,35 @@
 <template>
   <div class="quickstart">
-    <div class="hljs" ref="hlDiv" @click.stop="handleClick" v-html="quickstart"></div>
+    <markdown-render ref="mdRender" :mdCode="quickstart" :titleList="titleList"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import marked from 'marked'
-import hljs from "highlight.js";
-import 'highlight.js/styles/xcode.css';
-
+import MarkdownRender from '@/components/MarkdownRender/Index.vue'
 export default defineComponent({
   name: 'Quickstart',
-  components: {},
+  components: {MarkdownRender},
   data():{
       quickstart:string,
-      anchorList:string[]
+      titleList:number[]
   }{
       return{
           quickstart:'',
-          anchorList:[]
-
+          titleList:[]
       }
   },
   async mounted(){
-    this.quickstart = await this.axios.get('/markdown/quickstart.md'); 
-    const  renderer = new marked.Renderer();
-    renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
-        const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
-        console.log(111,this.anchorList,)
-        if(level === 2 || level === 1){
-          this.anchorList.push()
-        }
-        (window as any).Store.set('anchorList', this.anchorList);
-        return '<h' + level + ' id='+text+'><a name="' +
-                    escapedText +
-                    '" class="anchor" href="#' +
-                    text +
-                    '"><span class="header-link"></span></a>' +
-                      text + '</h' + level + '>';
-    };
-    marked.setOptions({
-          renderer,
-          highlight: function(code:any) {
-            return hljs.highlightAuto(code).value;
-          },
-          pedantic: false,
-          gfm: true,
-          tables: true,
-          breaks: false,
-          sanitize: false,
-          smartLists: true,
-          smartypants: false,
-          xhtml: false
-        }
-      );
-      this.quickstart = marked(this.quickstart)
+    this.titleList = [1,2];
+    this.quickstart = await this.axios.get('/markdown/quickstart.md');
+    this.$nextTick(()=>{
+      (this.$refs.mdRender as any).handleRender()
+    })
   },
 });
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.quickstart{
+  height: 100%;
+}
+</style>
