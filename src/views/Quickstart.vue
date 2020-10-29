@@ -1,7 +1,7 @@
 <template>
   <div class="quickstart">
     <div class="hljs" ref="hlDiv" @click.stop="handleClick" v-html="quickstart"></div>
-  </div>
+  </div> 
 </template>
 
 <script lang="ts">
@@ -31,7 +31,7 @@ export default defineComponent({
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
         console.log(111,this.anchorList,)
         if(level === 2 || level === 1){
-          this.anchorList.push()
+          this.anchorList.push(text)
         }
         (window as any).Store.set('anchorList', this.anchorList);
         return '<h' + level + ' id='+text+'><a name="' +

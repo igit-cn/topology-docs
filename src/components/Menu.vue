@@ -116,9 +116,15 @@ export default defineComponent({
 .menu {
   padding: 20px 0px 0px 45px;
   width: 258.5px;
+  max-height: 100vh;
   box-sizing: border-box;
-  border-right: 1px solid #eee;
+  overflow-y: scroll;
   .content {
+    position: fixed;
+    width: 205px;
+    border-right: 1px solid #eee;
+    height: 100vh;
+    overflow-y: scroll;
     .item {
       margin-bottom: 25px;
       a {
