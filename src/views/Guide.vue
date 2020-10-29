@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import axios from '@/http';
 
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
@@ -27,7 +26,7 @@ export default defineComponent({
     };
   },
   async created() {
-    this.syllabus = await axios.get('/apis/syllabus.json'); 
+    this.syllabus = await this.axios.get('/apis/syllabus.json'); 
   }
 });
 </script>

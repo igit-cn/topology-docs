@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import axios from '@/http';
 import marked from 'marked'
 import hljs from "highlight.js";
 import 'highlight.js/styles/xcode.css';
@@ -25,7 +24,7 @@ export default defineComponent({
       }
   },
   async mounted(){
-    this.quickstart = await axios.get('/markdown/quickstart.md'); 
+    this.quickstart = await this.axios.get('/markdown/quickstart.md'); 
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');

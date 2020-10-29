@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import axios from '@/http';
 import marked from 'marked';
 import hljs from "highlight.js";
 import {Throttle} from '@/utils/utils.ts'
@@ -24,7 +23,7 @@ export default defineComponent({
       }
   },
   async mounted(){
-    this.updateLog = await axios.get('/markdown/faq.md'); 
+    this.updateLog = await this.axios.get('/markdown/faq.md'); 
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');

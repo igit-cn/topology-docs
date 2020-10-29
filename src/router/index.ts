@@ -40,6 +40,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'UpdateLog',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/UpdateLog.vue')
+      },{
+        path: 'point',
+        name: 'Point',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Point.vue')
       }
     ]
   },

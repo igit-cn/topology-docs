@@ -44,7 +44,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import axios from '@/http';
 
 export default defineComponent({
   name: 'Menu',
@@ -82,7 +81,7 @@ export default defineComponent({
     };
   },
   async created() {
-    this.menu = await axios.get('/apis/syllabus.json');
+    this.menu = await this.axios.get('/apis/syllabus.json');
     console.log(111,this.menu)
   },
   methods: {
