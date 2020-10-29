@@ -17,12 +17,7 @@
             class="t-icon"
           ></i>
         </router-link>
-<<<<<<< HEAD
-
-        <router-link :to="item.router" v-else>
-=======
         <router-link :to="item.router"  :class="[{'active':item.active}]" @click.prevent="firstMenuClick(item)" v-else>
->>>>>>> 273f42a0d22d53f978f40e8c4e6f3ac977057095
           {{ item.text }}
         </router-link>
 
@@ -32,13 +27,8 @@
           class="children"
           :class="item.hide ? 'hidden' : 'block'"
         >
-<<<<<<< HEAD
-          <router-link :to="e.router">
-            {{ e.text }}
-=======
           <router-link :to="el.router" :class="[{'active':el.active}]" @click.prevent="secondMenuClick(el)">
             {{ el.text }}
->>>>>>> 273f42a0d22d53f978f40e8c4e6f3ac977057095
           </router-link>
         </div>
       </div>
