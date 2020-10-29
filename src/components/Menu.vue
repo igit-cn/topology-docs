@@ -4,30 +4,36 @@
   <div class="menu">
     <div class="content">
       <div class="item" v-for="(item, index) in menu" :key="index">
-        <router-link
-          :to="item.router"
-          v-if="item.children"
-          @click.prevent="menuClick(index)"
-        >
-          {{ item.text }}
-          <i
-            :class="
-              item.children && item.hide ? 't-angle-right' : 't-angle-down'
-            "
-            class="t-icon"
-          ></i>
-        </router-link>
-        <router-link :to="item.router"  :class="[{'active':item.active}]" @click.prevent="firstMenuClick(item)" v-else>
-          {{ item.text }}
-        </router-link>
+        <div @click.prevent="menuClick(index)" v-if="item.children">
+          <router-link
+            :to="item.router"
+            
+          >
+            {{ item.text }}
+            <i
+              :class="
+                item.children && item.hide ? 't-angle-right' : 't-angle-down'
+              "
+              class="t-icon"
+            ></i>
+          </router-link>
+        </div>
+        
+        <div @click.prevent="firstMenuClick(item)"  v-else>
+           <router-link :to="item.router"  :class="[{'active':item.active}]" >
+            {{ item.text }}
+          </router-link>
+        </div>
+       
 
         <div
           v-for="(el, i) in item.children"
           :key="i"
           class="children"
+          @click.prevent="secondMenuClick(el)"
           :class="item.hide ? 'hidden' : 'block'"
         >
-          <router-link :to="el.router" :class="[{'active':el.active}]" @click.prevent="secondMenuClick(el)">
+          <router-link :to="el.router" :class="[{'active':el.active}]" >
             {{ el.text }}
           </router-link>
         </div>
