@@ -31,7 +31,7 @@ export default defineComponent({
     // console.log(222,this.introduce);
   },
   async mounted(){
-    this.introduce = await axios.get('/markdown/demo.md'); 
+    this.introduce = await axios.get('/markdown/topology.md'); 
     const  renderer = new marked.Renderer();
     renderer.heading = (text:string, level:number,raw:number, slugger:object)=> {
         const  escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');

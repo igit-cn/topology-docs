@@ -9,7 +9,7 @@
           v-if="item.children"
           @click.prevent="menuClick(index)"
         >
-          22{{ item.text }}
+          {{ item.text }}
           <i
             :class="
               item.children && item.hide ? 't-angle-right' : 't-angle-down'
@@ -19,7 +19,7 @@
         </router-link>
 
         <router-link :to="item.router" v-else>
-          11{{ item.text }}
+          {{ item.text }}
         </router-link>
 
         <div
@@ -29,7 +29,7 @@
           :class="[item.hide ? 'hidden' : 'block',item.isActive?'active':'']"
         >
           <router-link :to="e.router">
-            33{{ e.text }}
+            {{ e.text }}
           </router-link>
         </div>
       </div>

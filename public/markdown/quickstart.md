@@ -1,3 +1,9 @@
+# 快速上手
+
+Topology 致力于提供给程序员愉悦的开发体验。
+
+
+
 ## 安装
 
 ### 使用 npm 或 yarn 安装
@@ -90,3 +96,49 @@ canvasRegister() {
 }
 canvasRegister();
 ```
+
+##  配合VS Code插件一起使用
+
+在vs code插件列表里搜索：le5le topology，或le5le-topology-plugin<br>
+[查看插件](https://www.oschina.net/p/topology)
+
+<img src="https://oscimg.oschina.net/oscnet/up-5fc6838bd6c9c51536109628f41fa47e0c1.png" style="max-width:80%">
+
+<br>
+<br>
+<br>
+
+## 快速集成使用
+ 
+es5使用示例：
+
+https://github.com/le5le-com/topology-es5-demo
+
+es6使用示例：
+
+
+https://github.com/le5le-com/topology-demo-es6
+
+typescript使用示例：
+
+
+https://github.com/le5le-com/topology/tree/master/examples/angular/src/app
+
+
+## angular/react/vue开发
+
+### angular
+直接参考GitHub源码：https://github.com/le5le-com/topology
+
+### react
+
+https://github.com/Summer-andy/topology-react
+
+react入门使用教程：https://juejin.im/post/5dcc074151882559c8061905
+
+react教程二： https://juejin.im/post/6888473068876857357
+
+### vue 
+
+vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
+ 

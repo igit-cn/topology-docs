@@ -28,103 +28,6 @@
 * 思维导图/脑图
 * SCADA
 
-
-## 安装
-
-### 使用 npm 或 yarn 安装
-
-我们推荐使用 npm 或 yarn 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
-
-```javascript
-# 安装绘图引擎
-npm  install @topology/core
-
-# 安装图形库 - 流程图
-npm  install @topology/flow-diagram
-
-# 安装图形库 - 活动图
-npm  install @topology/activity-diagram
-
-# 安装图形库 - 类图
-npm  install @topology/class-diagram
-
-# 安装图形库 - 时序图
-npm  install @topology/sequence-diagram
-
-# 其他共享图形库
-# ...
-
-
-# 集成打包版本
-npm install topology-bundle
-```
-
-
-## package.json参考
-<div class="try-code">
-
-```javascript
-{
-  "name": "topology-demo",
-  "version": "0.0.1",
-  "description": "ES6 + Babel: The demo",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "keywords": [
-    "es2018",
-    "webpack"
-  ],
-  "author": "alsmile123@qq.com",
-  "license": "MIT",
-  "dependencies": {
-    "@topology/core": "^0.3.2",
-    "@topology/activity-diagram": "^0.3.0",
-    "@topology/class-diagram": "^0.3.0",   
-    "@topology/flow-diagram": "^0.3.0",
-    "@topology/sequence-diagram": "^0.3.0",
-    "@topology/chart-diagram": "^0.3.0",
-    "@topology/layout": "^0.3.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "path": "^0.12.7",
-    "webpack": "^4.37.0",
-    "webpack-cli": "^3.3.6"
-  }
-}
-```
-
-<a class="try" data-set="1">试一试</a>
-</div>
-
-## 使用
-
-```typescript
-// 先导入库
-import { Topology, Options, registerNode } from '@topology/core';
-import { register as registerFlow } from '@topology/flow-diagram';
-import { register as registerActivity } from '@topology/activity-diagram';
-import { register as registerClass } from '@topology/class-diagram';
-import { register as registerSequence } from '@topology/sequence-diagram';
-import { register as registerChart } from '@topology/chart-diagram';
-
-// 注册图形库
-canvasRegister() {
-  registerFlow();
-  registerActivity();
-  registerClass();
-  registerSequence();
-  registerChart();
-  // ... 其他图形库
-}
-canvasRegister();
-```
-
 ## 谁在使用
 
 * 海云捷迅
@@ -135,6 +38,59 @@ canvasRegister();
 * 天津辰思科技
 * 上海层峰
 
+## 未来规划
+
+加入3D功能，全面、充分的可以实现智慧城市的3D可视化、SCADA 3D效果、物联网3D装配效果、安防等3D可视化场景。
+
+## 为什么重复造轮子
+
+* 笔者工作中遇到比较多的微服务架构、云资源运维、部署与运维可视化方面的需求
+* 开源、满足自己需求的不多
+* typescript + 纯粹canvas架构的不多
+* 以中间件方式可定制满足不同场景的不多
+* 动画支持
+* 音视频支持，满足安防、物联网（暂无3D效果）等实时监控需求
+  
+
+
+## 架构设计
+
+主要由：层、节点、连线和箭头等组成。
+
+<img src="https://static.oschina.net/uploads/img/201909/05153614_aduk.png" width="400px" >
+
+### 层
+这里的层，主要是为了提升性能的逻辑层；与类似ps里面的用户图层无关。
+
+**离屏层** ：包含所有绘图数据，是最稳定的图层。
+
+**选中层**：用户选中部分或全部节点/连线的高亮图层，并设置相关属性、缩放、和旋转等。
+
+**动画层**：主要用于演示动画。
+
+**活动层**：主要用于箭头鼠标交互事件，比如锚点和连线过程。
+
+### 节点
+
+是画布的主要组成部分，节点内部还可以包含图标或文字。
+
+### 连线和箭头
+
+连线和箭头是关联在一起的。连线两端可以选择设置或不设置箭头。
+
+节点可以通过控制点进行整体缩放、旋转。
+
+![](https://static.oschina.net/uploads/img/201909/05153614_10bJ.png)
+
+连线只表示节点描点间的连线，不存在缩放、旋转。节点缩放或旋转会造成控制点的重计算。连线形状可以由线的控制点改变。
+
+![](https://static.oschina.net/uploads/img/201909/05153614_G6x1.png)
+
+### 绘画与属性
+
+节点和连线各种有自身的绘画属性，同时还可以设置一个附加的自定义数据
+
+![](https://static.oschina.net/uploads/img/201909/05153615_2Kl8.png)
 
 ## 如何贡献
 

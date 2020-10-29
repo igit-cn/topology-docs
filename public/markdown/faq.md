@@ -59,7 +59,7 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 <br>
 <br>
 
- ![](https://cdn.nlark.com/yuque/0/2020/png/179380/1584586835723-ad9ce83b-c890-4403-9b72-b03c5f5edeb0.png?x-oss-process=image%2Fresize%2Cw_1492)
+<img src="https://cdn.nlark.com/yuque/0/2020/png/179380/1584586835723-ad9ce83b-c890-4403-9b72-b03c5f5edeb0.png?x-oss-process=image%2Fresize%2Cw_1492" style="max-width:80%">
 
  <font color=red>传给画布节点的iconFamily需要根据实际情况正确设置。</font>
  在源码中的iconFamily使用的是：topology。 开发者自己的项目，需要更加自己的字体库设置指定。
@@ -166,7 +166,7 @@ ctrl + 单击鼠标按下不放（移动）：移动子节点。
 ## 背景网格
 为了避免截图出现网格，目前需要自己实现，在父dom加一个svg（网上很多）就可以了。
 
-参考：[https://github.com/le5le-com/topology/blob/master/examples/angular/src/app/workspace/workspace.component.html](https://github.com/le5le-com/topology/blob/master/examples/angular/src/app/workspace/workspace.component.html)
+参考：https://github.com/le5le-com/topology/blob/master/examples/angular/src/app/workspace/workspace.component.html
 
 ## 节点特效切换后，为什么不播放了
 因为动画帧被清理了，需要重计算，执行node.initAnimateProps()即可。
