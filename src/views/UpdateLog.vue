@@ -59,9 +59,8 @@ export default defineComponent({
   },
   methods:{
        startThrottle:new Throttle().use((val:string[])=>{
-        console.log(val,989898989);
-        (window as any).Store.set('anchorList', val);
-    },300,false),
+          (window as any).Store.set('anchorList', val);
+       },300,false),
   }
 });
 </script>
