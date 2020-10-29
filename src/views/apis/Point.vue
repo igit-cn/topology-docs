@@ -7,8 +7,8 @@
 import { defineComponent } from 'vue'; 
 import marked from 'marked'
 import hljs from "highlight.js";
-import javascript from 'highlight.js/lib/languages/javascript';
-import typescript from 'highlight.js/lib/languages/typescript';
+// import javascript from 'highlight.js/lib/languages/javascript';
+// import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/xcode.css';
 // import 'highlight.js/styles/monokai-sublime.css';
 import {Throttle} from '../../utils/utils.ts'
@@ -23,8 +23,6 @@ export default defineComponent({
         introduce:'',
         anchorList:[]
      }
-  },
-  async created(){
   },
   async mounted(){
     this.introduce = await this.axios.get('/markdown/point.md'); 

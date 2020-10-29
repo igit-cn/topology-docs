@@ -44,12 +44,17 @@ const routes: Array<RouteRecordRaw> = [
         path: 'rect',
         name: 'Rect',
         component: () =>
-          import(/* webpackChunkName: "rect" */ '../views/Rect.vue')
+          import(/* webpackChunkName: "rect" */ '../views/apis/Rect.vue')
       },{
         path: 'point',
         name: 'Point',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Point.vue')
+      },{
+        path: 'paint',
+        name: 'Paint',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Paint.vue')
       }
     ]
   },

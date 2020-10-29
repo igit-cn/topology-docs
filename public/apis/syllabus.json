@@ -41,7 +41,7 @@
         
       },{
         "text":"画笔",
-        "router":"/",
+        "router":"/paint",
         "active":false
         
       },{

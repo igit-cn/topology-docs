@@ -8,8 +8,8 @@
 import { defineComponent } from 'vue'; 
 import marked from 'marked'
 import hljs from "highlight.js";
-import javascript from 'highlight.js/lib/languages/javascript';
-import typescript from 'highlight.js/lib/languages/typescript';
+// import javascript from 'highlight.js/lib/languages/javascript';
+// import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/xcode.css';
 import {Throttle} from '../../utils/utils.ts'
 export default defineComponent({
@@ -35,9 +35,7 @@ export default defineComponent({
         return []
       }
     }
-  },
-  async created(){
-  },
+  }, 
   async mounted(){
     console.log(11,this.mdCode);
   
