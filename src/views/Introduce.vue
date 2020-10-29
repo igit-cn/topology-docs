@@ -24,8 +24,6 @@ export default defineComponent({
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
-  },
-  methods:{
   }
 });
 </script>

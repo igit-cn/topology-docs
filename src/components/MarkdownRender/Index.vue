@@ -11,7 +11,7 @@ import hljs from "highlight.js";
 // import javascript from 'highlight.js/lib/languages/javascript';
 // import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/xcode.css';
-import {Throttle} from '../../utils/utils.ts'
+import {Throttle} from '@/utils/utils.ts'
 export default defineComponent({
   name: 'Introduce',
   components: { 
