@@ -45,6 +45,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Rect',
         component: () =>
           import(/* webpackChunkName: "rect" */ '../views/Rect.vue')
+      },{
+        path: 'point',
+        name: 'Point',
+        component: () =>
+          import(/* webpackChunkName: "support" */ '../views/apis/Point.vue')
       }
     ]
   },

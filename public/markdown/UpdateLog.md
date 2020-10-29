@@ -1,6 +1,6 @@
 # 版本发布记录
 
-## @topology/core@0.3.1
+## @0.3.1
 ### 2020.09.29
 
 * [feature]topology.data.tooltip控制是否显示提示
@@ -13,7 +13,7 @@
 * [bug]修复options.activeColor="[transparent](https://github.com/le5le-com/topology/commit/6eda94552e8b14e77dd7e17e976fffee81cb5dff)"时，图形本身也被透明了
 
 
-## @topology/core@0.2.18
+## @0.2.18
 ### 2020.07.04
 
 * 节点特效切换后，为什么不播放了(需要执行initAnimateProps())
@@ -27,7 +27,7 @@
 * 独立旋转子节点，移动父节点，旋转被重置
 * 自定义事件，新增：修改属性值
 
-## @topology/core@0.2.11
+## @0.2.11
 ### 2020.06.13
 
 * MQTT支持
@@ -37,7 +37,7 @@
 * 背景的渐变没反应
 * 先选中节点A，再点击节点B的子节点，依旧选中的A
 
-## @topology/core@0.2.5 
+## @0.2.5 
 ### 2020.05.26
 
 * 锁定状态 为1时， 节点的cursor 由 move改为pointer
