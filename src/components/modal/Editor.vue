@@ -64,7 +64,7 @@ export default defineComponent({
   },
   mounted() {
     const tryCode = (window as any).Store.subscribe('updateCode',(value:any) => {
-        console.log(value,'update');
+        console.log(value,'11update');
         this.code = value;
         (window as any).Store.set('t-data',value);
         this.randomKey = Math.random();
@@ -113,29 +113,4 @@ export default defineComponent({
   }
   
 
-.editor .monaco-editor.vs-dark .token.invalid{border-bottom:reddotted1px}
-.editor .monaco-editor.vs-dark .token.identifier{color: black;}
-.editor .monaco-editor.vs-dark .token.comment.doc{font-style:normal;}
-
-.editor .monaco-editor.vs-dark .token.type{color:teal;}
-.editor .monaco-editor.vs-dark .token.type.delimiter{color:teal;}
-.editor .monaco-editor.vs-dark .token.predefined{color:navy;}
-.editor .monaco-editor.vs-dark .token.namespace{color:navy;}
-.editor .monaco-editor.vs-dark .token.constructor{color:purple;}
-
-
-.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.type{color:darkcyan;}
-.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.predefined{color:darkorchid;}
-.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.namespace{color:lightsteelblue;}
-.editor .monaco-editor.vs-dark .monaco-editor.vs-dark.token.constructor{color:palegoldenrod;}
-
-.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.type{color:darkcyan;}
-.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.predefined{color:aquamarine;}
-.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.namespace{color:lightsteelblue;}
-.editor .monaco-editor.vs-dark .monaco-editor.high-contrast-black.token.constructor{color:palegoldenrod;}
-
-/*specialsforfunctionallanguages*/
-.token.keyword.dot{color:black;}
-.token.typeparam{color:#555;}
-.token.typevar{font-style:italic;}
 </style>

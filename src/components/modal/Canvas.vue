@@ -1,6 +1,7 @@
 <template>
   <div class="canvas">
-        <div
+    <div
+    :key="randomKey"
       id="topology-canvas"
       ref="topology" 
     ></div>
@@ -35,7 +36,8 @@ export default defineComponent({
   data():{
       topologyOptions:any,
       subscribe:any,
-      renderFlag:boolean
+      renderFlag:boolean,
+      randomKey:number
   }{
       return{
           topologyOptions:{
@@ -43,9 +45,9 @@ export default defineComponent({
                 rotateCursor: '/img/rotate.cur',
             },
             subscribe:null,
-            renderFlag:false
-
-      }
+            renderFlag:false,
+            randomKey:Math.random()
+      } 
   },
   methods: {
     clearCanvas(){  
@@ -67,6 +69,7 @@ export default defineComponent({
          topology.data.locked = 1;
       }
       eval(val);
+      this.randomKey = Math.random();
     });
     },
 //     destroyed() {

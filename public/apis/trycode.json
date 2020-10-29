@@ -1,4 +1,5 @@
     {
         "rect":"const newNode = topology.addNode({\n      rect:{ \n        x:10, \n        y:10,\n        width:50,\n        height:50\n      },\n      name:'circle',\n      strokeStyle:'red'\n});\ntopology.render()",
-        "strokeStyle":"const newNode = topology.addNode({\n      rect:{ \n        x:10, \n        y:10,\n        width:50,\n        height:50\n      },\n      name:'circle',\n      strokeStyle:'red'\n});\ntopology.render()"
+        "strokeStyle":"const newNode = topology.addNode({\n      rect:{ \n        x:10, \n        y:10,\n        width:50,\n        height:50\n      },\n      name:'circle',\n      strokeStyle:'red'\n});\ntopology.render()",
+        "pens1":"const newNode = topology.addNode({\n       rect: {\n           x:10,\n           y: 10,\n           width: 50,\n           height: 50,\n           },\n       name: 'triangle',\n        strokeStyle: 'red',\n        dash:0,\n       lineWidth:10,\n       fillStyle:'black',\n       globalAlpha:1,\n       rotate:90\n      });"
     }

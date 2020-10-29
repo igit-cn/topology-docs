@@ -14,7 +14,7 @@ Le5leTopology.Pen
 
 ## 成员变量列表
 
-|名称|类型|是否必选|描述|
+|名称|类型|默认值|描述|
 |:---|:---|:---|:---|
 |id|string|随机字符串|唯一标识|
 |type<br><font color=red>0.2.x后的版本新增</font>|enum PenType { <br>&nbsp;&nbsp;Node = 0,<br>&nbsp;&nbsp;Line = 1<br>&nbsp;&nbsp;}|Node|画笔类型：是节点还是连线|
@@ -57,6 +57,36 @@ Le5leTopology.Pen
 |shadowBlur|number||阴影的模糊级别（数值越大越模糊)|
 |shadowOffsetX|number||阴影与形状的水平距离|
 |shadowOffsetY|number||阴影与形状的垂直距离|
+
+## 设置线条样式和旋转
+
+<div class="try-code">
+
+``` javascript
+const newNode = topology.addNode({ 
+        rect: {
+            x:10,
+            y: 10,
+            width: 50,
+            height: 50,
+            ex:60,
+            ey:60
+            },
+        name: 'triangle',
+        strokeStyle: 'red',
+        dash:0,
+        lineWidth:10,
+        strokeStyle:'red',
+        fillStyle:'black',
+        globalAlpha:1,
+        rotate:90
+      });
+
+```
+<a class="try" data-set="pens1">试一试</a>
+
+</div>
+
 
 ## 成员函数列表
 
