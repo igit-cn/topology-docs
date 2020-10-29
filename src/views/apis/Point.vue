@@ -24,8 +24,6 @@ export default defineComponent({
         anchorList:[]
      }
   },
-  async created(){
-  },
   async mounted(){
     this.introduce = await this.axios.get('/markdown/point.md'); 
     const  renderer = new marked.Renderer();
