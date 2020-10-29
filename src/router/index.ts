@@ -16,13 +16,13 @@ const routes: Array<RouteRecordRaw> = [
         path:'/quickstart',
         name:'Quickstart',
         component:() =>
-          import(/* webpackChunkName: "introduce" */ '../views/Quickstart.vue')
+          import(/* webpackChunkName: "quickstart" */ '../views/Quickstart.vue')
       },
       {
         path: 'faq',
         name: 'Faq',
         component: () =>
-          import(/* webpackChunkName: "guide" */ '../views/Faq.vue')
+          import(/* webpackChunkName: "faq" */ '../views/Faq.vue')
       },
       {
         path: 'support',
@@ -34,12 +34,17 @@ const routes: Array<RouteRecordRaw> = [
         path: 'canvas',
         name: 'Canvas',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/Canvas.vue')
+          import(/* webpackChunkName: "canvas" */ '../views/Canvas.vue')
       },{
         path: 'updatelog',
         name: 'UpdateLog',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/UpdateLog.vue')
+          import(/* webpackChunkName: "updateLog" */ '../views/UpdateLog.vue')
+      },{
+        path: 'rect',
+        name: 'Rect',
+        component: () =>
+          import(/* webpackChunkName: "rect" */ '../views/Rect.vue')
       },{
         path: 'point',
         name: 'Point',

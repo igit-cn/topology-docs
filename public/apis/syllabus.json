@@ -32,7 +32,7 @@
       },
       {
         "text": "区域Rect",
-        "router": "/",
+        "router": "/rect",
         "active":false
       },{
         "text":"点",

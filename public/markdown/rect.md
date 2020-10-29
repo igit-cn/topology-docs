@@ -26,6 +26,28 @@ Le5leTopology.Rect
 |height|number|是|高|
 |center|自定义Point|是|中心点|
 
+<div class="try-code">
+    ```javascript
+        const newNode = topology.addNode({
+        rect: {
+            x:10,
+            y: 10,
+            width: 50,
+            height: 50,
+            ex:60,
+            ey:60
+            },
+        name: 'circle',
+        strokeStyle: 'red'
+        });
+    ```
+    <p class="try-btn">试一试<p>
+</div>
+
+
+
+
+
 ## 成员函数列表
 
 ### 构造函数

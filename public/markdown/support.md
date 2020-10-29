@@ -4,7 +4,7 @@ Topology 是基于 typescript + canvas 实现的在线绘图的引擎。采用�
 
 ## 一次性赞助
 
-[微信](https://cdn.nlark.com/yuque/0/2020/png/179380/1584515404421-31fb07ab-7c14-4aa4-a942-834447cb89f8.png)
+<a target="_blank" href="https://cdn.nlark.com/yuque/0/2020/png/179380/1584515404421-31fb07ab-7c14-4aa4-a942-834447cb89f8.png">微信</a>
 
 
 ## 企业赞助

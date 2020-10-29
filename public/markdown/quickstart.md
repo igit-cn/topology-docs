@@ -146,17 +146,23 @@ vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
  ## 使用bundle.js（已打包压缩的普通js文件）
 
  1. 下载最新压缩包
-
   npm install topology
-
  2. 在 html 引入
-
-
 
    ``` javascript
    // npm 包下载的是index.js，文件名和下面的不直接一样
 // 已经导入官方图形库
 <script src="/node_modules/topology-bundle/index.js"></script>
-
    ```
- 3.  
+ 3. 开始使用
+   <font color=red>开发文档，仍然参考api文档，只不过，所有的类名和方法前面，加上"Le5leTopology." </font>
+
+   ```javascript
+   // 在你的js文件中使用：
+    var topology = new Le5leTopology.Topology('topo-canvas', {});
+    // 空白数据图形数据，可以来自于官网下载的json
+    const json = {pens:[]};
+    topology.open(json);
+    console.log('data:',topology)
+    console.log('activeLayer', topology.activeLayer
+   ```

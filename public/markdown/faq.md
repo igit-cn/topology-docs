@@ -42,6 +42,10 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 }
  ```
 
+ <br>
+ <br>
+ <br>
+
  ## 阿里字体图标不显示
  需要index.html中加载阿里字体文件
 
@@ -63,6 +67,10 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 
  <font color=red>传给画布节点的iconFamily需要根据实际情况正确设置。</font>
  在源码中的iconFamily使用的是：topology。 开发者自己的项目，需要更加自己的字体库设置指定。
+
+ <br>
+ <br>
+ <br>
 
  ## 动态更新变化
  ``` javascript
@@ -111,7 +119,9 @@ fetch("/data.json", function(text) {
   // end.
 });
 ```
-
+ <br>
+ <br>
+ <br>
 
 ## 显示完整图像
 
@@ -131,6 +141,10 @@ const rect = canvas.getRect();
 canvas.translate(x,y);
 canvas.scaleTo(.5);
 ```
+ <br>
+ <br>
+ <br>
+
 
 ## 修改属性后，没有立刻生效
 通常情况，节点或连线属性变化后，需要执行：
@@ -148,25 +162,41 @@ canvas.updateProps(参数);
 ```
 参考文档，[updateProps](https://www.yuque.com/alsmile/topology/canvas#v4OFi)
 
+ <br>
+ <br>
+ <br>
+
 ## 修改连线的name：直线为曲线报错
 需要计算连线控制点：line.calcControlPoints();
 
+ <br>
+ <br>
+ <br>
 
 ## 子节点选择
 shift + 单击： 单选，可用于选择子节点/连线。<br>
 ctrl + 单击： 多选。<br>
 ctrl + 单击鼠标按下不放（移动）：移动子节点。
 
-
+ <br>
+ <br>
+ <br>
 
 ## 新版本节点修改
 新增了 square  节点，代表原来的rectangle；原来的rectangle 为更直观的长方形。
 
+ <br>
+ <br>
+ <br>
 
 ## 背景网格
 为了避免截图出现网格，目前需要自己实现，在父dom加一个svg（网上很多）就可以了。
 
 参考：https://github.com/le5le-com/topology/blob/master/examples/angular/src/app/workspace/workspace.component.html
 
+ <br>
+ <br>
+ <br>
+ 
 ## 节点特效切换后，为什么不播放了
 因为动画帧被清理了，需要重计算，执行node.initAnimateProps()即可。
