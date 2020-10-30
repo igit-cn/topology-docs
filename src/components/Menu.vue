@@ -115,6 +115,9 @@ export default defineComponent({
       this.lastActive = item
       this.lastActiveFlag = true
       sessionStorage.setItem('activeMenu',(item as any).text);
+      if((window as any).Store.get('tryCode')){
+        (window as any).Store.set('tryCode',false)
+      }
     },
     firstMenuClick(item:object){
       this.commonClick(item)
