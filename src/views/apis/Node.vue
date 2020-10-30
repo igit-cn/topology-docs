@@ -19,7 +19,7 @@ export default defineComponent({
      }
   }, 
   async mounted(){
-    this.titleList = [1,2];
+    this.titleList = [2,3];
     this.node = await this.axios.get('/markdown/node.md');
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
