@@ -87,6 +87,31 @@ const newNode = topology.addNode({
 
 </div>
 
+## 设置字体大小
+  你可以改变字体的样式和locked的状态。
+<div class="try-code">
+
+``` javascript
+const newNode = topology.addNode({ 
+      rect: {
+          x:10,
+          y: 10,
+          width: 150,
+          height: 50
+      },
+      text:'我是一个文本'
+      name: 'rectangle',
+      font:{
+         color:'#000',
+         background:'red',
+         fontSize:15
+        },
+        locked:1
+       });
+
+```
+<a class="try" data-set="font">试一试</a>
+</div>
 
 ## 成员函数列表
 
@@ -99,6 +124,9 @@ constructor(json?: any)
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |json|object|否|通过一个画笔或保存的json对象，创建一个新画笔对象|
+<br>
+<br>
+<br>
 
 ### draw绘画函数
 

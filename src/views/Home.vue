@@ -77,7 +77,7 @@ export default defineComponent({
     display: flex;
     .content {
       width: calc(100% - 149px - 258.5px);
-      max-height: calc(100vh - 61px);
+      max-height: calc(100vh - #{$head-height});
       padding: 20px 60px 0;
       box-sizing: border-box;
       overflow: auto;

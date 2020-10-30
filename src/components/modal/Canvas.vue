@@ -58,12 +58,10 @@ export default defineComponent({
   mounted(){
     new Topology('topology-canvas',this.topologyOptions);
     this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
-      console.log(1111,this.renderFlag,val)
       if(!this.renderFlag){
         this.renderFlag = true
       }else{
         this.clearCanvas()
-         topology.data.locked = 1;
       }
       eval(val);
       topology.render();
