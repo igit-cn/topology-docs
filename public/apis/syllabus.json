@@ -22,7 +22,7 @@
   },
   {
     "text": "API文档",
-    "router":"/",
+    "router":"",
     "hide":false,
     "children": [
       {
@@ -103,7 +103,7 @@
     ]
   },{
     "text": "其他",
-    "router":"/",
+    "router":"",
     "hide":false,
     "children":[{
       "text":"前端本地存储Stroe",

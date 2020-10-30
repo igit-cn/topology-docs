@@ -33,3 +33,5 @@ Le5leTopology.Node
 |gradientRadius|number||径向渐变半径|
 |iconFamily|string||字体图标字体名称<br>（字体文件css或字体项目设置中找，不知道的，请自行教程字体图标的使用）|
 |icon|string||[前提]：<br>1.<font color=red>加载字体文件</font><br>2.<font color=red>正确设置上面的iconFamily</font><br><br><font color=red>icon的值为：字体图标Unicode编码字符串</font>格式：'\ue64d'<br>icon是一个长度为1
+
+
