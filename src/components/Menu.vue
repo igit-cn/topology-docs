@@ -83,25 +83,41 @@ export default defineComponent({
   async created() {
     this.menu = await this.axios.get('/apis/syllabus.json');
     console.log(111,this.menu)
+    const activeMenu = sessionStorage.getItem('activeMenu')
+     if(activeMenu){
+        const activeItem = this.findActiveRouterPath(this.menu,activeMenu);
+        console.log('path',activeItem);
+        this.lastActiveFlag = true
+        this.lastActive = activeItem
+        activeItem.active = true
+    }
   },
   methods: {
+    findActiveRouterPath(menu:object[],activeMenu:string){
+      for (let i = 0; i < menu.length; i++) {
+        if((menu[i] as any).text === activeMenu){
+          return menu[i]
+        }else{
+          if(Object.prototype.hasOwnProperty.call(menu[i],'children')){
+            return this.findActiveRouterPath((menu[i] as any).children,activeMenu)
+          }
+        }
+      }
+    },
     secondMenuClick(item:object){
-      console.log('index',item);
+      this.commonClick(item)
+    },
+    commonClick(item:object){
       if(this.lastActiveFlag){
         (this.lastActive as any).active = false
       }
       (item as any).active = true
       this.lastActive = item
       this.lastActiveFlag = true
+      sessionStorage.setItem('activeMenu',(item as any).text);
     },
     firstMenuClick(item:object){
-      console.log('index',item);
-      if(this.lastActiveFlag){
-        (this.lastActive as any).active = false
-      }
-      (item as any).active = true
-      this.lastActive = item
-      this.lastActiveFlag = true
+      this.commonClick(item)
     },
     menuClick(i: number) { 
       console.log('helo');
