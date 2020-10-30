@@ -48,44 +48,29 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'Menu',
   props: {},
-  data() {
+  data():{
+    activeMenu:string|null,
+    hide:boolean,
+    selectIndex:string,
+    menu:any[],
+    lastActive:object,
+    lastActiveFlag:boolean
+  } {
     return {
       hide: false,
       selectIndex: '', 
-      menu: [
-        // {
-        //   text: '常见问题',
-        //   router: '/faq'
-        // },
-        // {
-        //   text: '支持我们',
-        //   router: '/support'
-        // },
-        // {
-        //   text: 'Components',
-        //   router: '/',
-        //   childer: [
-        //     {
-        //       text: '画布',
-        //       router: '/canvas'
-        //     },
-        //     {
-        //       text: 'Button按钮',
-        //       router: '/b'
-        //     }
-        //   ]
-        // }
-      ],
+      menu: [],
       lastActive:{},
-      lastActiveFlag:false
+      lastActiveFlag:false,
+      activeMenu:''
     };
   },
   async created() {
     this.menu = await this.axios.get('/apis/syllabus.json');
     console.log(111,this.menu)
-    const activeMenu = sessionStorage.getItem('activeMenu')
-     if(activeMenu){
-        const activeItem = this.findActiveRouterPath(this.menu,activeMenu);
+    this.activeMenu = sessionStorage.getItem('activeMenu')
+     if(this.activeMenu){
+        const activeItem = this.findActiveRouterPath(this.menu,this.activeMenu);
         console.log('path',activeItem);
         this.lastActiveFlag = true
         this.lastActive = activeItem
@@ -115,7 +100,8 @@ export default defineComponent({
       this.lastActive = item
       this.lastActiveFlag = true
       sessionStorage.setItem('activeMenu',(item as any).text);
-      if((window as any).Store.get('tryCode')){
+      // 如果试一试编辑器被打开，并且点击的路由菜单不是当前页面
+      if((window as any).Store.get('tryCode') && (item as any).text !== this.activeMenu){
         (window as any).Store.set('tryCode',false)
       }
     },
