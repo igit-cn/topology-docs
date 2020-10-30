@@ -49,7 +49,6 @@ export default defineComponent({
   mounted(){
     // 实时监听变化
     const subscribe = (window as any).Store.subscribe('anchorList',(value:any) => {
-        console.log(9999,value)
         this.anchorList = value
     });
     this.targetOffset = window.innerHeight / 2;
@@ -58,7 +57,6 @@ export default defineComponent({
 
 
     const tryCode = (window as any).Store.subscribe('tryCode',(value:any) => {
-        console.log(value,'show') 
         this.isShow = value
     });
 
