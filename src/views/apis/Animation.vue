@@ -7,6 +7,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'; 
 import MarkdownRender from '@/components/MarkdownRender/Index.vue'
+// import { Node } from 'topology-core/models/node';
 export default defineComponent({
   name: 'Animation',
   components:{ MarkdownRender},
@@ -24,6 +25,7 @@ export default defineComponent({
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
+    console.log('Node',Node);
   },
   methods:{
   }

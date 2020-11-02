@@ -96,6 +96,8 @@ export default defineComponent({
   ::v-deep .try-code{
     position: relative;
     background: #f8f8f8;
+    padding: 30px;
+    border: 1px solid #e8e8e8;
     .try{
       position: absolute;
       top: 10px;
