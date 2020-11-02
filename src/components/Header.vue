@@ -34,7 +34,7 @@
       
 
       <div class="user">
-        <!-- <img src="" alt="" /> -->
+          <img src="../../public/img/github.png" alt="" />
       </div>
     </div>
 
@@ -63,7 +63,7 @@ export default defineComponent({
         },
         {
           title: '开发文档',
-          url: 'https://www.yuque.com/alsmile/topology/umsiq3'
+          router: '/home'
         },
         {
           title: '视频教程',
@@ -101,7 +101,7 @@ export default defineComponent({
     align-items: center;
     img {
       height: 33px;
-      widows: 33px;
+      width: 33px;
     }
     span {
       font-size: 19px;
@@ -163,18 +163,17 @@ export default defineComponent({
     .language {
       cursor: pointer;
       margin-right: 38px;
+      height: 21.6px;
+      line-height: 21.6px;
     }
     .user {
       height: 27px;
       width: 27px;
-      border-radius: 50%;
-      background: black;
-
+      border-radius: 50%; 
       img {
         height: 27px;
         width: 27px;
         border-radius: 50%;
-        background: black;
       }
     }
   }

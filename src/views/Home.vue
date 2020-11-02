@@ -19,23 +19,20 @@
           :key="index" :href="'#'+item" :title="item"></a-anchor-link>
         </a-anchor>
       </div>
-    </section>
-    <Footer />
+    </section> 
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue'; 
 import Menu from '@/components/Menu.vue';
 import Modal from '@/components/modal/Index.vue'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    Header,
-    Footer,
+    Header, 
     Menu,
     Modal
   },

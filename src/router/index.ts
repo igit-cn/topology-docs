@@ -3,9 +3,16 @@ import Home from '../views/Home.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
+    path:'/',
+    name:'Index',
+    component:()=>
+      import(/* webpackChunkName: "index" */ '../views/Index.vue')
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home,
+    redirect:'/introduce',
     children: [
       {
         path:'/introduce',
@@ -19,54 +26,54 @@ const routes: Array<RouteRecordRaw> = [
           import(/* webpackChunkName: "quickstart" */ '../views/Quickstart.vue')
       },
       {
-        path: 'faq',
+        path: '/faq',
         name: 'Faq',
         component: () =>
           import(/* webpackChunkName: "faq" */ '../views/Faq.vue')
       },
       {
-        path: 'support',
+        path: '/support',
         name: 'Support',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/Support.vue')
       },
       {
-        path: 'canvas',
+        path: '/canvas',
         name: 'Canvas',
         component: () =>
           import(/* webpackChunkName: "canvas" */ '../views/Canvas.vue')
       },{
-        path: 'updatelog',
+        path: '/updatelog',
         name: 'UpdateLog',
         component: () =>
           import(/* webpackChunkName: "updateLog" */ '../views/UpdateLog.vue')
       },{
-        path: 'rect',
+        path: '/rect',
         name: 'Rect',
         component: () =>
           import(/* webpackChunkName: "rect" */ '../views/apis/Rect.vue')
       },{
-        path: 'point',
+        path: '/point',
         name: 'Point',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Point.vue')
       },{
-        path: 'paint',
+        path: '/paint',
         name: 'Paint',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Paint.vue')
       },{
-        path: 'canvas',
+        path: '/canvas',
         name: 'Canvas',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Canvas.vue')
       },{
-        path: 'node',
+        path: '/node',
         name: 'Node',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Node.vue')
       },{
-        path: 'line',
+        path: '/line',
         name: 'Line',
         component: () =>
           import(/* webpackChunkName: "support" */ '../views/apis/Line.vue')
