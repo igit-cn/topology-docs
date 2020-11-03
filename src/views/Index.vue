@@ -40,7 +40,6 @@
           <img src="../../public/img/img5.png" alt="">
           <div class="text">
             <h4>全新概念</h4>
-
             <p>高效、扩展、专注、丰富<br>
               插件式开发，无限扩展<br>
               0代码实现数据动态变化，解放程序员
@@ -350,6 +349,7 @@ export default defineComponent({
               font-family: Source Han Sans CN, Source Han Sans CN-Regular;
               font-weight: 400;
               color: #333333;
+              text-indent:0;
             }
           }
           img{
@@ -394,14 +394,16 @@ export default defineComponent({
                 font-family: Source Han Sans CN, Source Han Sans CN-Regular;
                 font-weight: 400;
                 color: #333333;
+                text-indent:0;
               }
             }
         }
       }
     }
+   
   }
 
-
+ 
 
 
 </style>

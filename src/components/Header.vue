@@ -163,8 +163,15 @@ export default defineComponent({
     .language {
       cursor: pointer;
       margin-right: 38px;
-      height: 21.6px;
-      line-height: 21.6px;
+      font-size: 14px;  
+      height: 21.5px;
+      line-height: 21.5px;
+      display: flex;
+      align-items: center;
+      .t-angle-down{
+        font-size: 12px;
+        margin-left: 5px;
+      }
     }
     .user {
       height: 27px;
