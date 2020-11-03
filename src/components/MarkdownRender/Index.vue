@@ -93,7 +93,7 @@ export default defineComponent({
 <style lang="scss" scoped> 
 .markdown-render{
   height: 100%;
-  ::v-deep .try-code{
+  ::v-deep(.try-code){
     position: relative;
     background: #f8f8f8;
     padding: 30px;

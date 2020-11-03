@@ -77,7 +77,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .point{
-  ::v-deep .try-code{
+  ::v-deep(.try-code){
     position: relative;
     background: #f8f8f8;
     .try{

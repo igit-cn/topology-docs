@@ -145,13 +145,13 @@ export default defineComponent({
       color: white!important;
       position: fixed;
       max-width: 100%;
-      ::v-deep .left{
+      ::v-deep(.left){
         color: white;
         span{
           color: white!important;
         }
       }
-      ::v-deep .right{
+      ::v-deep(.right){
         .nav{
           .item{
             a{
@@ -165,12 +165,12 @@ export default defineComponent({
       z-index: 9999;
       color: #333333!important;
       background: white;
-      ::v-deep .left{ 
+      ::v-deep(.left){ 
               span{
                 color: #333333!important;
               }
             }
-            ::v-deep .right{
+            ::v-deep(.right){
               .nav{
                 .item{
                   a{

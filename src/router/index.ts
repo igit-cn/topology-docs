@@ -1,6 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
-
+import { createRouter, createWebHashHistory,createWebHistory, RouteRecordRaw } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
   {
     path:'/',
@@ -11,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'Home',
-    component: Home,
+    component: () =>  import(/* webpackChunkName: "quickstart" */ '../views/Home.vue'),
     redirect:'/introduce',
     children: [
       {
@@ -146,7 +144,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  // history: createWebHistory(process.env.BASE_URL),
+  history:createWebHashHistory(),
   routes
 });
 router.beforeEach((to, from, next) => {
