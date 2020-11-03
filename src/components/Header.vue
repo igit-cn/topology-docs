@@ -20,7 +20,7 @@
     </div>
     <div class="right">
       <div class="nav">
-        <div class="item" v-for="(item, index) in nav" :key="index">
+        <div class="item" v-for="(item, index) in nav" :key="index" @click.stop="handleNavClick(item)">
           <router-link v-if="item.router" :to="item.router">{{
             item.title
           }}</router-link>
@@ -79,7 +79,14 @@ export default defineComponent({
         }
       ]
     };
-  }
+  },
+  methods: {
+    handleNavClick(item){
+      if(item.title === "开发文档"){
+        sessionStorage.setItem('activeMenu','Topology');
+      }
+    }
+  },
 });
 </script>
 
