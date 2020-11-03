@@ -1,6 +1,7 @@
 const CompressionPlugin = require('compression-webpack-plugin')
 module.exports = {
     publicPath: './',
+    assetsDir:'../',
     outputDir: 'dist',
     productionSourceMap: false,
     configureWebpack:{
@@ -12,14 +13,14 @@ module.exports = {
             })
         ]
     },
-    chainWebpack: config => {
-        config.module
-            .rule('images')
-            .use('image-webpack-loader')
-            .loader('image-webpack-loader')
-            .options({
-                bypassOnDebug: true
-            })
-            .end()
-    }   
+    // chainWebpack: config => {
+    //     config.module
+    //         .rule('images')
+    //         .use('image-webpack-loader')
+    //         .loader('image-webpack-loader')
+    //         .options({
+    //             bypassOnDebug: true
+    //         })
+    //         .end()
+    // }   
 }

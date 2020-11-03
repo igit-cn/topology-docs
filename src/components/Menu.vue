@@ -66,7 +66,7 @@ export default defineComponent({
     };
   },
   async created() {
-    this.menu = await this.axios.get('/apis/syllabus.json');
+    this.menu = await this.axios.get('apis/syllabus.json');
     console.log(111,this.menu)
     this.activeMenu = sessionStorage.getItem('activeMenu')
      if(this.activeMenu){

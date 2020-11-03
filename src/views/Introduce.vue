@@ -20,7 +20,7 @@ export default defineComponent({
   }, 
   async mounted(){
     this.titleList = [1,2];
-    this.introduce = await this.axios.get('/markdown/topology.md');
+    this.introduce = await this.axios.get('markdown/topology.md');
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
