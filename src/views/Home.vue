@@ -44,9 +44,25 @@ export default defineComponent({
       menu:[]
     }
   },
-  async created(){
-    // this.menu = await this.axios.get('/apis/syllabus.json');
-
+   async created(){ 
+      if(sessionStorage.getItem('navNow')){
+        const val = sessionStorage.getItem('navNow')
+       switch  (val) {
+            case '/enterprise':
+              (this.menu as any)  =  await this.axios.get('/apis/support.json');
+              break;
+            case '/home':
+              (this.menu as any) =  await this.axios.get('/apis/syllabus.json');
+              break;
+            case '/gtofficial':
+              (this.menu as any) =  await this.axios.get('/apis/community.json');
+              break;
+            case '/profile':
+              (this.menu as any) =  await this.axios.get('/apis/about.json');
+              break;
+          }
+      };
+      
   },
   mounted(){
     // 实时监听变化
@@ -57,14 +73,27 @@ export default defineComponent({
     const tryCode = (window as any).Store.subscribe('tryCode',(value:any) => {
         this.isShow = value
     });
+    
+
+
+    
   },
   methods:{
     async navclick(item:string){
-      if(item == '/enterprise'){
-          this.menu = await this.axios.get('/apis/support.json');
-      }else if(item == '/home'){
-        this.menu = await this.axios.get('/apis/syllabus.json');
-      }
+     switch  (item) {
+        case '/enterprise':
+          (this.menu as any)  =  await this.axios.get('/apis/support.json');
+          break;
+        case '/home':
+          (this.menu as any) =  await this.axios.get('/apis/syllabus.json');
+          break;
+        case '/gtofficial':
+          (this.menu as any) =  await this.axios.get('/apis/community.json');
+          break;
+        case '/profile':
+          (this.menu as any) =  await this.axios.get('/apis/about.json');
+          break;
+      }  
     }
   }
 });

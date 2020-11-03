@@ -121,44 +121,94 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Enterprise',
         component: () =>
           import(/* webpackChunkName: "Enterprise" */ '../views/support/Enterprise.vue')
-      },
+      },{
+        path:'/personal',
+        name:'Personal',
+        component:() => 
+          import(/* webpackChunkName: "Personal" */ '../views/support/Personal.vue')
+      },{
+        path:'/devote',
+        name:'Devote',
+        component:() => 
+          import(/* webpackChunkName: "Devote" */ '../views/support/Devote.vue')
+      },{
+        path:'/gtofficial',
+        name:'Gtofficial',
+        component:()=>
+          import(/* webpackChunkName: "Gtofficial" */ '../views/community/Gtofficial.vue'),
+      },{
+        path:'/works',
+        name:"Works",
+        component:()=>
+          import(/* webpackChunkName: "works" */ '../views/community/Works.vue'),
+      },{
+        path:'/twitter',
+        name:"Twitter",
+        component:()=>
+          import(/* webpackChunkName: "Twitter" */ '../views/community/Twitter.vue'),
+      },{
+        path:'/profile',
+        name:'Profile',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/about/Profile.vue')
+      },{
+        path:'/team',
+        name:'Team',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/about/Team.vue')
+      },{
+        path:'/roadmap',
+        name:'Roadmap',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/about/Roadmap.vue')
+      },{
+        path:'/discuss',
+        name:'Discuss',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/about/Discuss.vue')
+      },{
+        path:'/joinUs',
+        name:'JoinUs',
+        component:() => 
+          import(/* webpackChunkName: "introduce" */ '../views/about/JoinUs.vue')
+      }
     ]
   },
-  {
-      path:'/about',
-      name:'About',
-      component:() =>
-        import(/* webpackChunkName: "about" */ '../views/about/Index.vue'),
-      redirect:'/profile',
-      children:[
-        {
-          path:'/profile',
-          name:'Profile',
-          component:() => 
-            import(/* webpackChunkName: "introduce" */ '../views/about/Profile.vue')
-        },{
-          path:'/team',
-          name:'Team',
-          component:() => 
-            import(/* webpackChunkName: "introduce" */ '../views/about/Team.vue')
-        },{
-          path:'/roadmap',
-          name:'Roadmap',
-          component:() => 
-            import(/* webpackChunkName: "introduce" */ '../views/about/Roadmap.vue')
-        },{
-          path:'/discuss',
-          name:'Discuss',
-          component:() => 
-            import(/* webpackChunkName: "introduce" */ '../views/about/Discuss.vue')
-        },{
-          path:'/joinUs',
-          name:'JoinUs',
-          component:() => 
-            import(/* webpackChunkName: "introduce" */ '../views/about/JoinUs.vue')
-        }
-      ]
-  },
+  // {
+  //     path:'/about',
+  //     name:'About',
+  //     component:() =>
+  //       import(/* webpackChunkName: "about" */ '../views/about/Index.vue'),
+  //     redirect:'/profile',
+  //     children:[
+  //       {
+  //         path:'/profile',
+  //         name:'Profile',
+  //         component:() => 
+  //           import(/* webpackChunkName: "introduce" */ '../views/about/Profile.vue')
+  //       },{
+  //         path:'/team',
+  //         name:'Team',
+  //         component:() => 
+  //           import(/* webpackChunkName: "introduce" */ '../views/about/Team.vue')
+  //       },{
+  //         path:'/roadmap',
+  //         name:'Roadmap',
+  //         component:() => 
+  //           import(/* webpackChunkName: "introduce" */ '../views/about/Roadmap.vue')
+  //       },{
+  //         path:'/discuss',
+  //         name:'Discuss',
+  //         component:() => 
+  //           import(/* webpackChunkName: "introduce" */ '../views/about/Discuss.vue')
+  //       },{
+  //         path:'/joinUs',
+  //         name:'JoinUs',
+  //         component:() => 
+  //           import(/* webpackChunkName: "introduce" */ '../views/about/JoinUs.vue')
+  //       }
+  //     ]
+  // },
   // {
   //     path: '/support',
   //     name: 'Support',
@@ -184,30 +234,30 @@ const routes: Array<RouteRecordRaw> = [
   //       }
   //     ]
   // },
-  {
-    path:'/community',
-    name:'Community',
-    component:()=>
-      import(/* webpackChunkName: "community" */ '../views/community/Index.vue'),
-    redirect:'/gtofficial',
-    children:[{
-      path:'/gtofficial',
-      name:'Gtofficial',
-      component:()=>
-        import(/* webpackChunkName: "Gtofficial" */ '../views/community/Gtofficial.vue'),
-    },{
-      path:'/works',
-      name:"Works",
-      component:()=>
-        import(/* webpackChunkName: "works" */ '../views/community/Works.vue'),
-    },{
-      path:'/twitter',
-      name:"Twitter",
-      component:()=>
-        import(/* webpackChunkName: "Twitter" */ '../views/community/Twitter.vue'),
-    }]
+  // {
+  //   path:'/community',
+  //   name:'Community',
+  //   component:()=>
+  //     import(/* webpackChunkName: "community" */ '../views/community/Index.vue'),
+  //   redirect:'/gtofficial',
+  //   children:[{
+  //     path:'/gtofficial',
+  //     name:'Gtofficial',
+  //     component:()=>
+  //       import(/* webpackChunkName: "Gtofficial" */ '../views/community/Gtofficial.vue'),
+  //   },{
+  //     path:'/works',
+  //     name:"Works",
+  //     component:()=>
+  //       import(/* webpackChunkName: "works" */ '../views/community/Works.vue'),
+  //   },{
+  //     path:'/twitter',
+  //     name:"Twitter",
+  //     component:()=>
+  //       import(/* webpackChunkName: "Twitter" */ '../views/community/Twitter.vue'),
+  //   }]
     
-  },
+  // },
   {
     path: '/guide',
     name: 'Guide',

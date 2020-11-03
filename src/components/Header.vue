@@ -82,10 +82,10 @@ export default defineComponent({
         },
         {
           title: '社区',
-          router: '/community'
+          router: '/gtofficial'
         },{
           title:'关于我们',
-          router:'/about'
+          router:'/profile'
         }
         
       ]
@@ -96,10 +96,9 @@ export default defineComponent({
       if(item.title === "开发文档"){
         sessionStorage.setItem('activeMenu','Topology');
       }
-      
+      sessionStorage.setItem('navNow',item.router);
       if(item.router){
        console.log();
-
         // eslint-disable-next-line vue/custom-event-name-casing
         this.$emit('navclick',item.router)
       }
