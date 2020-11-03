@@ -47,8 +47,6 @@ const newNode = topology.addNode({
 
 </div>
 
-可以试着去修改宽高和xy轴的大小。
-
 
 
 
