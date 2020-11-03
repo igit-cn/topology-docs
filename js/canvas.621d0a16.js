@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["canvas"],{e605:function(n,e,a){"use strict";a.r(e);var c=a("7a23"),t={class:"canvas"};function o(n,e,a,o,r,s){return Object(c["openBlock"])(),Object(c["createBlock"])("div",t)}var r=Object(c["defineComponent"])({name:"Canvas",components:{},data:function(){return{}}});r.render=o;e["default"]=r}}]);
