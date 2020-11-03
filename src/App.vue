@@ -2,4 +2,8 @@
   <router-view />
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+  ::-webkit-scrollbar{
+    width: 0;
+  }
+</style>
