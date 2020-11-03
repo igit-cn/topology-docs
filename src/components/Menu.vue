@@ -3,7 +3,7 @@
 <template>
   <div class="menu">
     <div class="content">
-      <div class="item" v-for="(item, index) in menu" :key="index">
+      <div class="item" v-for="(item, index) in menus" :key="index">
         <div @click.prevent="menuClick(index)" v-if="item.children">
           <router-link
             :to="item.router"
@@ -47,38 +47,48 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Menu',
-  props: {},
+  props: {
+    menu:{
+      type:Array,
+      default:()=>{
+        return []
+      }
+    }
+  },
   data():{
     activeMenu:string|null,
     hide:boolean,
-    selectIndex:string,
-    menu:any[],
+    selectIndex:string,// 
     lastActive:object,
-    lastActiveFlag:boolean
+    lastActiveFlag:boolean,
+    menus:any[]
   } {
     return {
       hide: false,
-      selectIndex: '', 
-      menu: [],
+      selectIndex: '',  
       lastActive:{},
       lastActiveFlag:false,
-      activeMenu:''
+      activeMenu:'',
+      menus:this['menu']
     };
   },
-  async created() {
-    this.menu = await this.axios.get('/apis/syllabus.json');
-    console.log(111,this.menu)
+   watch: {
+      //正确给 cData 赋值的 方法
+      menu: function(newVal){
+        this.menus = newVal
+      }
+  },
+  created() {  
     this.activeMenu = sessionStorage.getItem('activeMenu')
      if(this.activeMenu){
-        const activeItem = this.findActiveRouterPath(this.menu,this.activeMenu);
-        console.log('path',activeItem);
+        const activeItem = this.findActiveRouterPath(this.menus,this.activeMenu);
         this.lastActiveFlag = true
         this.lastActive = activeItem
-        activeItem.active = true
+        // activeItem.active = true
     }
   },
   methods: {
-    findActiveRouterPath(menu:object[],activeMenu:string){
+    findActiveRouterPath(menu:object[],activeMenu:string):any{
       for (let i = 0; i < menu.length; i++) {
         if((menu[i] as any).text === activeMenu){
           return menu[i]
@@ -110,7 +120,7 @@ export default defineComponent({
     },
     menuClick(i: number) { 
       console.log('helo');
-      (this.menu[i]['hide'] as any) = (!this.menu[i]['hide'] as any)
+      (this.menus[i]['hide'] as any) = (!this.menus[i]['hide'] as any)
     }
   }
 });

@@ -31,7 +31,8 @@
       <div class="language">
         EN <i class="t-icon t-angle-down"></i>
         </div>
-      
+
+    
 
       <div class="user">
           <img src="../../public/img/github.png" alt="" />
@@ -62,26 +63,36 @@ export default defineComponent({
           router: '/'
         },
         {
-          title: '开发文档',
+          title: '文档',
           router: '/home'
+        },{
+          title:'案例',
+          url:'http://topology.le5le.com/workspace?id=5df3a2646025d729abf23681'
         },
         {
           title: '视频教程',
           url: 'https://www.baidu.com/'
+        },{
+          title:'服务',
+          router:'/service'
+        },
+        {
+          title: '支持与合作',
+          router: '/support'
         },
         {
           title: '社区',
           url: 'https://www.baidu.com/'
-        },
-        {
-          title: '支持我们',
-          router: '/support'
+        },{
+          title:'关于我们',
+          router:'/about'
         }
+        
       ]
     };
   },
   methods: {
-    handleNavClick(item){
+    handleNavClick(item:any){
       if(item.title === "开发文档"){
         sessionStorage.setItem('activeMenu','Topology');
       }
@@ -172,9 +183,8 @@ export default defineComponent({
       margin-right: 38px;
       font-size: 14px;  
       height: 21.5px;
-      line-height: 21.5px;
-      display: flex;
-      align-items: center;
+      line-height: 19.5px;
+      display: flex; 
       .t-angle-down{
         font-size: 12px;
         margin-left: 5px;

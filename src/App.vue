@@ -3,7 +3,7 @@
 </template>
 
 <style lang="scss">
-  ::-webkit-scrollbar{
-    width: 0;
+  ::-webkit-scrollbar {
+            display: none;
   }
 </style>

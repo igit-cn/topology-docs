@@ -1,0 +1,21 @@
+[{
+    "text":"公司简介",
+    "router":"/profile",
+    "active":false
+},{
+    "text":"团队介绍",
+    "router":"/team",
+    "active":false
+},{
+    "text":"产品规划",
+    "router":"/roadmap",
+    "active":false
+},{
+    "text":"技术交流群",
+    "router":"/discuss",
+    "active":false
+},{
+    "text":"加入我们",
+    "router":"/joinUs",
+    "active":false
+}]

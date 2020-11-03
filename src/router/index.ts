@@ -32,12 +32,6 @@ const routes: Array<RouteRecordRaw> = [
           import(/* webpackChunkName: "faq" */ '../views/Faq.vue')
       },
       {
-        path: '/support',
-        name: 'Support',
-        component: () =>
-          import(/* webpackChunkName: "support" */ '../views/Support.vue')
-      },
-      {
         path: '/canvas',
         name: 'Canvas',
         component: () =>
@@ -56,74 +50,134 @@ const routes: Array<RouteRecordRaw> = [
         path: '/point',
         name: 'Point',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Point.vue')
+          import(/* webpackChunkName: "Point" */ '../views/apis/Point.vue')
       },{
         path: '/paint',
         name: 'Paint',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Paint.vue')
+          import(/* webpackChunkName: "Paint" */ '../views/apis/Paint.vue')
       },{
         path: '/canvas',
         name: 'Canvas',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Canvas.vue')
+          import(/* webpackChunkName: "Canvas" */ '../views/apis/Canvas.vue')
       },{
         path: '/node',
         name: 'Node',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Node.vue')
+          import(/* webpackChunkName: "Node" */ '../views/apis/Node.vue')
       },{
         path: '/line',
         name: 'Line',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Line.vue')
+          import(/* webpackChunkName: "Line" */ '../views/apis/Line.vue')
       },{
         path: 'arrow',
         name: 'Arrow',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Arrow.vue')
+          import(/* webpackChunkName: "Arrow" */ '../views/apis/Arrow.vue')
       },{
         path: 'anchor',
         name: 'Anchor',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Anchor.vue')
+          import(/* webpackChunkName: "Anchor" */ '../views/apis/Anchor.vue')
       },{
         path: 'control',
         name: 'Control',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Control.vue')
+          import(/* webpackChunkName: "Control" */ '../views/apis/Control.vue')
       },{
         path: 'animation',
         name: 'Animation',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/Animation.vue')
+          import(/* webpackChunkName: "Animation" */ '../views/apis/Animation.vue')
       },{
         path: 'offlineLayer',
         name: 'OfflineLayer',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/OfflineLayer.vue')
+          import(/* webpackChunkName: "OfflineLayer" */ '../views/apis/OfflineLayer.vue')
       },{
         path: 'selectLayer',
         name: 'SelectLayer',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/SelectLayer.vue')
+          import(/* webpackChunkName: "SelectLayer" */ '../views/apis/SelectLayer.vue')
       },{
         path: 'floatLayer',
         name: 'FloatLayer',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/FloatLayer.vue')
+          import(/* webpackChunkName: "FloatLayer" */ '../views/apis/FloatLayer.vue')
       },{
         path: 'animationLayer',
         name: 'AnimationLayer',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/AnimationLayer.vue')
+          import(/* webpackChunkName: "AnimationLayer" */ '../views/apis/AnimationLayer.vue')
       },{
         path: 'msgEvent',
         name: 'MsgEvent',
         component: () =>
-          import(/* webpackChunkName: "support" */ '../views/apis/MsgEvent.vue')
+          import(/* webpackChunkName: "MsgEvent" */ '../views/apis/MsgEvent.vue')
       }
     ]
+  },
+  {
+      path:'/about',
+      name:'About',
+      component:() =>
+        import(/* webpackChunkName: "about" */ '../views/about/Index.vue'),
+      redirect:'/profile',
+      children:[
+        {
+          path:'/profile',
+          name:'Profile',
+          component:() => 
+            import(/* webpackChunkName: "introduce" */ '../views/about/Profile.vue')
+        },{
+          path:'/team',
+          name:'Team',
+          component:() => 
+            import(/* webpackChunkName: "introduce" */ '../views/about/Team.vue')
+        },{
+          path:'/roadmap',
+          name:'Roadmap',
+          component:() => 
+            import(/* webpackChunkName: "introduce" */ '../views/about/Roadmap.vue')
+        },{
+          path:'/discuss',
+          name:'Discuss',
+          component:() => 
+            import(/* webpackChunkName: "introduce" */ '../views/about/Discuss.vue')
+        },{
+          path:'/joinUs',
+          name:'JoinUs',
+          component:() => 
+            import(/* webpackChunkName: "introduce" */ '../views/about/JoinUs.vue')
+        }
+      ]
+  },
+  {
+      path: '/support',
+      name: 'Support',
+      component: () =>
+        import(/* webpackChunkName: "support" */ '../views/support/Index.vue'),
+      redirect:'/enterprise',
+      children:[
+        {
+          path: '/enterprise',
+          name: 'Enterprise',
+          component: () =>
+            import(/* webpackChunkName: "Enterprise" */ '../views/support/Enterprise.vue')
+        },{
+          path:'/personal',
+          name:'Personal',
+          component:() => 
+            import(/* webpackChunkName: "Personal" */ '../views/support/Personal.vue')
+        },{
+          path:'/devote',
+          name:'Devote',
+          component:() => 
+            import(/* webpackChunkName: "Devote" */ '../views/support/Devote.vue')
+        }
+      ]
   },
   {
     path: '/guide',

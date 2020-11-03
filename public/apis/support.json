@@ -1,0 +1,13 @@
+[{
+    "text":"企业支持",
+    "router":"/enterprise",
+    "active":false
+},{
+    "text":"个人支持",
+    "router":"/personal",
+    "active":false
+},{
+    "text":"贡献",
+    "router":"/devote",
+    "active":false
+}]

@@ -45,7 +45,7 @@ export default defineComponent({
     }
   },
   async created(){
-    this.menu = await this.axios.get('/apis/syllabus.json');
+    this.menu = await this.axios.get('/apis/about.json');
 
   },
   mounted(){

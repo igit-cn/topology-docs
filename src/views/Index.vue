@@ -11,7 +11,7 @@
           <p class="advantage">开源、便捷、功能丰富、良好扩展的可视化工具</p>
           <div class="btn">
             <router-link to="/introduce">
-              <button>起步</button>
+              <button>起&nbsp;&nbsp;步</button>
             </router-link>
             <div class="github">
               <img src="../../public/img/github.png" alt="">
@@ -58,7 +58,7 @@
             <div class="text">
               <h4>数据驱动显示</h4> 
               <p>数据与视图分离，<br>
-                视图数据与业务数据分离<br>
+                视图数据与业务数据分离
                 <br><br>
                 让数据专注于数据，让业务专注于业务<br>
                 来源于业务，却可以多维度数据展示<br>
@@ -207,10 +207,9 @@ export default defineComponent({
           left: 50%;
           transform: translate(-50%,-50%);
           .brand{
-            font-size: 56px;
+            font-size: 64px;
             font-family: Arial, Arial-Bold;
             font-weight: 700;
-            text-align: left;
             color: #ffffff;
             margin-bottom: 0;
             line-height: 63px;
@@ -223,13 +222,13 @@ export default defineComponent({
             text-align: left;
             color: #ffffff;
             text-align: center;
-            margin:20px 0 30px
+            margin:35px 0 50px
             
           }
           .btn{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 92px;
+            margin: 0 auto;
             justify-content: space-between;
             max-width: 223px;
             button{
@@ -248,6 +247,8 @@ export default defineComponent({
             .github{
               width: 98px;
               height: 36px;
+              padding: 0 8px;
+              box-sizing: border-box;
               background: #ffffff;
               border-radius: 18px; 
               display: flex;
@@ -367,6 +368,7 @@ export default defineComponent({
             .text{
               margin: 68px 0 0 65px;
               h4{
+                margin-top: 10px;
                 font-size: 26px;
                 font-family: Source Han Sans CN, Source Han Sans CN-Bold;
                 font-weight: 700;
@@ -390,6 +392,7 @@ export default defineComponent({
                 }
               }
               p{
+                margin-top: 32px;
                 font-size: 14px;
                 font-family: Source Han Sans CN, Source Han Sans CN-Regular;
                 font-weight: 400;

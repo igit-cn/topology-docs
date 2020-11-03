@@ -45,8 +45,7 @@ export default defineComponent({
     }
   },
   async created(){
-    this.menu = await this.axios.get('/apis/syllabus.json');
-
+    this.menu = await this.axios.get('/apis/support.json');
   },
   mounted(){
     // 实时监听变化
@@ -54,20 +53,9 @@ export default defineComponent({
         this.anchorList = value
     });
     this.targetOffset = window.innerHeight / 2;
-    console.log(this.targetOffset);
-
-
-
     const tryCode = (window as any).Store.subscribe('tryCode',(value:any) => {
         this.isShow = value
     });
-
-
-
-
-  },
-  methods:{
-    
   }
 });
 </script>
