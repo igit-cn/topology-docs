@@ -116,7 +116,12 @@ const routes: Array<RouteRecordRaw> = [
         name: 'MsgEvent',
         component: () =>
           import(/* webpackChunkName: "MsgEvent" */ '../views/apis/MsgEvent.vue')
-      }
+      }, {
+        path: '/enterprise',
+        name: 'Enterprise',
+        component: () =>
+          import(/* webpackChunkName: "Enterprise" */ '../views/support/Enterprise.vue')
+      },
     ]
   },
   {
@@ -154,30 +159,54 @@ const routes: Array<RouteRecordRaw> = [
         }
       ]
   },
+  // {
+  //     path: '/support',
+  //     name: 'Support',
+  //     component: () =>
+  //       import(/* webpackChunkName: "support" */ '../views/support/Index.vue'),
+  //     redirect:'/enterprise',
+  //     children:[
+  //       {
+  //         path: '/enterprise',
+  //         name: 'Enterprise',
+  //         component: () =>
+  //           import(/* webpackChunkName: "Enterprise" */ '../views/support/Enterprise.vue')
+  //       },{
+  //         path:'/personal',
+  //         name:'Personal',
+  //         component:() => 
+  //           import(/* webpackChunkName: "Personal" */ '../views/support/Personal.vue')
+  //       },{
+  //         path:'/devote',
+  //         name:'Devote',
+  //         component:() => 
+  //           import(/* webpackChunkName: "Devote" */ '../views/support/Devote.vue')
+  //       }
+  //     ]
+  // },
   {
-      path: '/support',
-      name: 'Support',
-      component: () =>
-        import(/* webpackChunkName: "support" */ '../views/support/Index.vue'),
-      redirect:'/enterprise',
-      children:[
-        {
-          path: '/enterprise',
-          name: 'Enterprise',
-          component: () =>
-            import(/* webpackChunkName: "Enterprise" */ '../views/support/Enterprise.vue')
-        },{
-          path:'/personal',
-          name:'Personal',
-          component:() => 
-            import(/* webpackChunkName: "Personal" */ '../views/support/Personal.vue')
-        },{
-          path:'/devote',
-          name:'Devote',
-          component:() => 
-            import(/* webpackChunkName: "Devote" */ '../views/support/Devote.vue')
-        }
-      ]
+    path:'/community',
+    name:'Community',
+    component:()=>
+      import(/* webpackChunkName: "community" */ '../views/community/Index.vue'),
+    redirect:'/gtofficial',
+    children:[{
+      path:'/gtofficial',
+      name:'Gtofficial',
+      component:()=>
+        import(/* webpackChunkName: "Gtofficial" */ '../views/community/Gtofficial.vue'),
+    },{
+      path:'/works',
+      name:"Works",
+      component:()=>
+        import(/* webpackChunkName: "works" */ '../views/community/Works.vue'),
+    },{
+      path:'/twitter',
+      name:"Twitter",
+      component:()=>
+        import(/* webpackChunkName: "Twitter" */ '../views/community/Twitter.vue'),
+    }]
+    
   },
   {
     path: '/guide',
@@ -190,12 +219,6 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Video',
     component: () =>
       import(/* webpackChunkName: "video" */ '../views/Video.vue')
-  },
-  {
-    path: '/community',
-    name: 'Community',
-    component: () =>
-      import(/* webpackChunkName: "community" */ '../views/Community.vue')
   }
 ];
 

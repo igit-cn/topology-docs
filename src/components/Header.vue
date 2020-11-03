@@ -78,11 +78,11 @@ export default defineComponent({
         },
         {
           title: '支持与合作',
-          router: '/support'
+          router: '/enterprise'
         },
         {
           title: '社区',
-          url: 'https://www.baidu.com/'
+          router: '/community'
         },{
           title:'关于我们',
           router:'/about'
@@ -95,6 +95,13 @@ export default defineComponent({
     handleNavClick(item:any){
       if(item.title === "开发文档"){
         sessionStorage.setItem('activeMenu','Topology');
+      }
+      
+      if(item.router){
+       console.log();
+
+        // eslint-disable-next-line vue/custom-event-name-casing
+        this.$emit('navclick',item.router)
       }
     }
   },

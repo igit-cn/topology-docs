@@ -12,10 +12,6 @@
     "router":"/faq",
     "active":false
   },{
-    "text":"支持我们",
-    "router":"/support",
-    "active":false
-  },{
     "text":"更新日志",
     "router":"/updatelog",
     "active":false

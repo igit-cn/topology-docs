@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Header @navclick="navclick" />
+    <Header />
     <section>
       <div class="menu">
         <Menu :menu="menu"/>
@@ -45,8 +45,7 @@ export default defineComponent({
     }
   },
   async created(){
-    // this.menu = await this.axios.get('/apis/syllabus.json');
-
+    this.menu = await this.axios.get('/apis/community.json');
   },
   mounted(){
     // 实时监听变化
@@ -57,15 +56,6 @@ export default defineComponent({
     const tryCode = (window as any).Store.subscribe('tryCode',(value:any) => {
         this.isShow = value
     });
-  },
-  methods:{
-    async navclick(item:string){
-      if(item == '/enterprise'){
-          this.menu = await this.axios.get('/apis/support.json');
-      }else if(item == '/home'){
-        this.menu = await this.axios.get('/apis/syllabus.json');
-      }
-    }
   }
 });
 </script>

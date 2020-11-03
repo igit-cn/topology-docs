@@ -1,0 +1,13 @@
+[{
+    "text":"GitHub官网",
+    "router":"/gtofficial",
+    "active":false
+},{
+    "text":"社区作品与博客",
+    "router":"/works",
+    "active":false
+},{
+    "text":"博客与Twitter",
+    "router":"/twitter",
+    "active":false
+}]

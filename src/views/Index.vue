@@ -133,7 +133,7 @@ export default defineComponent({
           opacity = 1
         }
         this.opacity = opacity   //实时返回给opacityStyle
-    }
+    },
   }
 });
 </script>

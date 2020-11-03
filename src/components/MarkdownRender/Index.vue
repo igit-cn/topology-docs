@@ -84,7 +84,7 @@ export default defineComponent({
       const result = await this.axios.get('/apis/trycode.json');  
       if(key in result){
         (window as any).Store.set('tryCode',true);
-        (window as any).Store.set('updateCode',result[`${key}`]);
+        (window as any).Store.set('updateCode',(result as any)[`${key}`] );
       }
    }
   }
