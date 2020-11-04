@@ -4,20 +4,20 @@
     "router": "/topology",
     "active":false
   },{
+    "text":"安装",
+    "router":"/install",
+    "active":false
+  },{
     "text":"快速上手",
     "router":"/quickstart",
     "active":false
   },{
-    "text":"常见问题",
-    "router":"/faq",
-    "active":false
-  },{
-    "text":"更新日志",
-    "router":"/updatelog",
+    "text":"注意事项",
+    "router":"/careful",
     "active":false
   },
   {
-    "text": "API文档",
+    "text": "详细介绍",
     "router":"",
     "hide":false,
     "children": [
@@ -49,22 +49,6 @@
         "text":"连线",
         "router":"/line",
         "active":false
-        
-      },{
-        "text":"箭头",
-        "router":"/arrow",
-        "active":false
-        
-      },{
-        "text":"锚点",
-        "router":"/anchor",
-        "active":false
-        
-      },{
-        "text":"控制点",
-        "router":"/control",
-        "active":false
-        
       },{
         "text":"动画",
         "router":"/animation",
@@ -79,50 +63,49 @@
         "text":"选中层",
         "router":"/selectLayer",
         "active":false
-        
       },{
         "text":"浮动层",
         "router":"/floatLayer",
         "active":false
-        
       },{
         "text":"动画层",
         "router":"/animationLayer",
         "active":false
-        
       },{
         "text":"消息事件",
         "router":"/msgEvent",
         "active":false
-        
+      },{
+        "text":"自定义图形库",
+        "router":"/custom",
+        "active":false
+      },      
+      {
+        "text":"封装第三方组件",
+        "router":"/thirdParty",
+        "active":false
+      },{
+        "text":"排版布局",
+        "router":"/layout",
+        "active":false
       }
     ]
   },{
+    "text":"常见问题",
+    "router":"/faq",
+    "active":false
+  },{
+    "text":"版本记录",
+    "router":"/updatelog",
+    "active":false
+  },
+  
+  {
     "text": "其他",
     "router":"",
     "hide":false,
     "children":[{
       "text":"前端本地存储Stroe",
-      "router":"/",
-      "active":false
-    },{
-      "text":"消息通信",
-      "router":"/",
-      "active":false
-    },{
-      "text":"自定义图形库",
-      "router":"/",
-      "active":false
-    },{
-      "text":"使用echarts图表控件",
-      "router":"/",
-      "active":false
-    },{
-      "text":"在画布中封装第三方图形库，如echarts",
-      "router":"/",
-      "active":false
-    },{
-      "text":"排版布局",
       "router":"/",
       "active":false
     }]

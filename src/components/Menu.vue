@@ -127,6 +127,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/index.scss';
+
 .menu {
   padding: 20px 0px 0px 45px;
   width: 258.5px;
@@ -137,7 +139,7 @@ export default defineComponent({
     position: fixed;
     width: 205px;
     border-right: 1px solid #eee;
-    height: 100vh;
+    height: calc(100vh - #{$head-height});
     overflow-y: scroll;
     .item {
       margin-bottom: 25px;

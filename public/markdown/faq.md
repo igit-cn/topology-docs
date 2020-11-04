@@ -200,3 +200,6 @@ ctrl + 单击鼠标按下不放（移动）：移动子节点。
  
 ## 节点特效切换后，为什么不播放了
 因为动画帧被清理了，需要重计算，执行node.initAnimateProps()即可。
+
+## vue卡顿 
+不要把topology对象或topology.data复制给vue的data

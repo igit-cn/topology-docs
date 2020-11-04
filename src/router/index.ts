@@ -20,6 +20,16 @@ const routes: Array<RouteRecordRaw> = [
         component:() => 
           import(/* webpackChunkName: "Topology" */ '../views/Topology.vue')
       },{
+        path:'/install',
+        name:'Install',
+        component:() => 
+          import(/* webpackChunkName: "Install" */ '../views/apis/Install.vue')
+      },{
+        path:'/careful',
+        name:'Careful',
+        component:() => 
+          import(/* webpackChunkName: "Careful" */ '../views/apis/Careful.vue')
+    },{
         path:'/quickstart',
         name:'Quickstart',
         component:() =>
@@ -72,56 +82,58 @@ const routes: Array<RouteRecordRaw> = [
         component: () =>
           import(/* webpackChunkName: "Line" */ '../views/apis/Line.vue')
       },{
-        path: 'arrow',
-        name: 'Arrow',
-        component: () =>
-          import(/* webpackChunkName: "Arrow" */ '../views/apis/Arrow.vue')
-      },{
-        path: 'anchor',
-        name: 'Anchor',
-        component: () =>
-          import(/* webpackChunkName: "Anchor" */ '../views/apis/Anchor.vue')
-      },{
-        path: 'control',
-        name: 'Control',
-        component: () =>
-          import(/* webpackChunkName: "Control" */ '../views/apis/Control.vue')
-      },{
-        path: 'animation',
+        path: '/animation',
         name: 'Animation',
         component: () =>
           import(/* webpackChunkName: "Animation" */ '../views/apis/Animation.vue')
       },{
-        path: 'offlineLayer',
+        path: '/offlineLayer',
         name: 'OfflineLayer',
         component: () =>
           import(/* webpackChunkName: "OfflineLayer" */ '../views/apis/OfflineLayer.vue')
       },{
-        path: 'selectLayer',
+        path: '/selectLayer',
         name: 'SelectLayer',
         component: () =>
           import(/* webpackChunkName: "SelectLayer" */ '../views/apis/SelectLayer.vue')
       },{
-        path: 'floatLayer',
+        path: '/floatLayer',
         name: 'FloatLayer',
         component: () =>
           import(/* webpackChunkName: "FloatLayer" */ '../views/apis/FloatLayer.vue')
       },{
-        path: 'animationLayer',
+        path: '/animationLayer',
         name: 'AnimationLayer',
         component: () =>
           import(/* webpackChunkName: "AnimationLayer" */ '../views/apis/AnimationLayer.vue')
       },{
-        path: 'msgEvent',
+        path: '/msgEvent',
         name: 'MsgEvent',
         component: () =>
           import(/* webpackChunkName: "MsgEvent" */ '../views/apis/MsgEvent.vue')
-      }, {
+      },{
+        path:'/layout',
+        name:'Layout',
+        component: () =>
+          import(/* webpackChunkName: "Layout" */ '../views/apis/Layout.vue')
+      },{
+        path:'/custom',
+        name:'Custom',
+        component: () =>
+          import(/* webpackChunkName: "Custom" */ '../views/apis/Custom.vue')
+      },
+      {
+        path:'/thirdParty',
+        name:'ThirdParty',
+        component: () =>
+          import(/* webpackChunkName: "ThirdParty" */ '../views/apis/ThirdParty.vue')
+      },{
         path: '/enterprise',
         name: 'Enterprise',
         component: () =>
           import(/* webpackChunkName: "Enterprise" */ '../views/support/Enterprise.vue')
-      },{
+      },
+      {
         path:'/personal',
         name:'Personal',
         component:() => 

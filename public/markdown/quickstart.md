@@ -4,74 +4,7 @@ Topology 致力于提供给程序员愉悦的开发体验。
 
 
 
-## 安装
 
-### 使用 npm 或 yarn 安装
-
-我们推荐使用 npm 或 yarn 的方式进行开发，不仅可在开发环境轻松调试，也可放心地在生产环境打包部署使用，享受整个生态圈和工具链带来的诸多好处。
-
-```javascript
-# 安装绘图引擎
-npm  install @topology/core
-
-# 安装图形库 - 流程图
-npm  install @topology/flow-diagram
-
-# 安装图形库 - 活动图
-npm  install @topology/activity-diagram
-
-# 安装图形库 - 类图
-npm  install @topology/class-diagram
-
-# 安装图形库 - 时序图
-npm  install @topology/sequence-diagram
-
-# 其他共享图形库
-# ...
-
-
-# 集成打包版本
-npm install topology-bundle
-```
-
-
-## package.json参考 
-
-```javascript
-{
-  "name": "topology-demo",
-  "version": "0.0.1",
-  "description": "ES6 + Babel: The demo",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "keywords": [
-    "es2018",
-    "webpack"
-  ],
-  "author": "alsmile123@qq.com",
-  "license": "MIT",
-  "dependencies": {
-    "@topology/core": "^0.3.2",
-    "@topology/activity-diagram": "^0.3.0",
-    "@topology/class-diagram": "^0.3.0",   
-    "@topology/flow-diagram": "^0.3.0",
-    "@topology/sequence-diagram": "^0.3.0",
-    "@topology/chart-diagram": "^0.3.0",
-    "@topology/layout": "^0.3.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "path": "^0.12.7",
-    "webpack": "^4.37.0",
-    "webpack-cli": "^3.3.6"
-  }
-}
-```
   
 
 ## 使用
@@ -96,6 +29,69 @@ canvasRegister() {
 }
 canvasRegister();
 ```
+
+<br>
+<br>
+<br>
+
+## 创建画布
+
+  ``` html
+    <div id="topology-canvas" ref="topology" ></div>
+  ```
+  ``` javascript
+    var topologyOptions ={
+         on: null,
+     },
+    new Topology('topology-canvas',topologyOptions);
+
+    //后期通过topologyOptions绑定事件给on
+  ```
+
+##  添加节点
+
+```javascript
+const newNode = topology.addNode({
+        rect: {
+            x:10,
+            y: 10,
+            width: 50,
+            height: 50
+            },
+        name: 'circle',
+        strokeStyle: 'red',
+
+        });
+topology.render()
+```
+
+## 添加连线
+
+```javascript
+
+const newLine = topology.addLine({
+    from:{
+        x:100,
+        y:100,
+        direction:2,
+        anchorIndex:2
+     },
+        to:{
+        x:250,
+        y:100,
+        direction:1,
+        anchorIndex:1
+    },
+    name:'line',
+    toArrowColor:'red',
+    fromArrow:'triangle',
+    toArrow:'circleSolid'
+}) 
+
+``` 
+ 
+更多使用方式：参考详细介绍或视频教程
+
 
 ##  配合VS Code插件一起使用
 
@@ -166,3 +162,41 @@ vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
     console.log('data:',topology)
     console.log('activeLayer', topology.activeLayer
    ```
+
+## package.json参考 
+
+```javascript
+{
+  "name": "topology-demo",
+  "version": "0.0.1",
+  "description": "ES6 + Babel: The demo",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [
+    "es2018",
+    "webpack"
+  ],
+  "author": "alsmile123@qq.com",
+  "license": "MIT",
+  "dependencies": {
+    "@topology/core": "^0.3.2",
+    "@topology/activity-diagram": "^0.3.0",
+    "@topology/class-diagram": "^0.3.0",   
+    "@topology/flow-diagram": "^0.3.0",
+    "@topology/sequence-diagram": "^0.3.0",
+    "@topology/chart-diagram": "^0.3.0",
+    "@topology/layout": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "path": "^0.12.7",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6"
+  }
+}
+```

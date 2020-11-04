@@ -12,7 +12,7 @@ Le5leTopology.Line
 
 
 
-你可以在这里修改连线类型，颜色等属性
+你可以在这里修改连线类型,颜色,箭头等属性
 
 <div class="try-code">
 
@@ -32,7 +32,9 @@ const newLine = topology.addLine({
         anchorIndex:1
     },
     name:'line',
-    toArrowColor:'red'
+    toArrowColor:'red',
+    fromArrow:'triangle',
+    toArrow:'circleSolid'
 }) 
 
 ``` 
@@ -79,6 +81,21 @@ constructor(json?: any)
 |:---|:---|:---|:---|
 |json|object|是。属性数据为上面的成员列表|通过一个连线对象或json，创建一个新连线|
 
+
+## 箭头参数
+
+|箭头值|箭头名称|箭头形状|
+|:---|:---|:---|
+|(空)|无箭头|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387509238-1aca52e9-02b6-489e-a981-89639dc2b82a.png?x-oss-process=image%2Fresize%2Cw_70" width="35.5px"> </img>|
+|triangleSolid|实心三角形|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387524726-93186131-b2fc-4042-80c7-402c00b7a346.png?x-oss-process=image%2Fresize%2Cw_62" width="35.5px"></img>|
+|triangle|空心三角形|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387540149-f36b1213-b7b5-429f-9129-571d24260ccf.png" width="35.5px"></img>|
+|diamondSolid|实心菱形|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387559591-2b2846c7-dc66-4aa7-af3e-9dc397a30108.png?x-oss-process=image%2Fresize%2Cw_70" width="35.5px"></img>|
+|diamond|空心菱形|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387581182-a87f2f21-3fd9-418a-bfb4-665991dc284d.png?x-oss-process=image%2Fresize%2Cw_56" width="35.5px"></img>|
+|circleSolid|实心圆|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387595107-818d0a0e-6dea-4027-bf06-096347216300.png?x-oss-process=image%2Fresize%2Cw_62" width="35.5px"></img>|
+|circle|空心圆|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387607798-c85e327c-5e0a-4e15-8feb-989f414002dc.png" width="35.5px"></img>|
+|line|线型箭头|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387618738-d6b8b161-f22a-44cb-a1b3-487fe3596392.png" width="35.5px"></img>|
+|lineUp|上单边线箭头|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387635119-efb84774-79fa-4723-b9bf-02e605bd1aaa.png?x-oss-process=image%2Fresize%2Cw_58" width="35.5px"></img>|
+|lineDown|下单边线箭头|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387645662-dd08fd99-a4ca-4220-b592-ff7621544c09.png?x-oss-process=image%2Fresize%2Cw_52" width="35.5px"></img>|
 
 ### setFrom设置起点
 ```javascript

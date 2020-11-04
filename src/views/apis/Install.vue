@@ -1,6 +1,6 @@
 <template>
-  <div class="anchor">
-    <markdown-render ref="mdRender" :mdCode="anchor" :titleList="titleList"/>
+  <div class="install">
+    <markdown-render ref="mdRender" :mdCode="introduce" :titleList="titleList"/>
   </div>
 </template>
 
@@ -8,19 +8,19 @@
 import { defineComponent } from 'vue'; 
 import MarkdownRender from '@/components/MarkdownRender/Index.vue'
 export default defineComponent({
-  name: 'Anchor',
+  name: 'Install',
   components:{ MarkdownRender},
   data():{
-    anchor:string,
+    introduce:string,
     titleList:number[]}{
      return{
-        anchor:'',
+        introduce:'',
         titleList:[]
      }
   }, 
   async mounted(){
     this.titleList = [1,2];
-    this.anchor = await this.axios.get('/markdown/anchor.md');
+    this.introduce = await this.axios.get('/markdown/install.md');
     this.$nextTick(()=>{  
        (this.$refs.mdRender as any).handleRender()
     })
@@ -30,7 +30,7 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped> 
-.anchor{
+.install{
   height: 100%;
 }
 </style>
