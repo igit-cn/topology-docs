@@ -134,6 +134,7 @@ export default defineComponent({
         }
         this.opacity = opacity   //实时返回给opacityStyle
     },
+    
   }
 });
 </script>

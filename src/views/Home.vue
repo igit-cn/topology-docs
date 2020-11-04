@@ -46,12 +46,13 @@ export default defineComponent({
   },
    async created(){ 
       if(sessionStorage.getItem('navNow')){
-        const val = sessionStorage.getItem('navNow')
+        const val =  sessionStorage.getItem('navNow')
+        
        switch  (val) {
             case '/enterprise':
               (this.menu as any)  =  await this.axios.get('/apis/support.json');
               break;
-            case '/home':
+            case '/topology':
               (this.menu as any) =  await this.axios.get('/apis/syllabus.json');
               break;
             case '/gtofficial':
@@ -59,6 +60,9 @@ export default defineComponent({
               break;
             case '/profile':
               (this.menu as any) =  await this.axios.get('/apis/about.json');
+              break;
+            case '/introduce':
+              (this.menu as any) =  await this.axios.get('/apis/service.json');
               break;
           }
       };
@@ -73,10 +77,28 @@ export default defineComponent({
     const tryCode = (window as any).Store.subscribe('tryCode',(value:any) => {
         this.isShow = value
     });
-    
 
+    const navNow = (window as any).Store.subscribe('navNow', async (value:any) => {
+           switch  (value) {
+            case '/enterprise':
+              (this.menu as any)  =  await this.axios.get('/apis/support.json');
+              break;
+            case '/topology':
+              (this.menu as any) =  await this.axios.get('/apis/syllabus.json');
+              break;
+            case '/gtofficial':
+              (this.menu as any) =  await this.axios.get('/apis/community.json');
+              break;
+            case '/profile':
+              (this.menu as any) =  await this.axios.get('/apis/about.json');
+              break;
+            case '/introduce':
+              (this.menu as any) =  await this.axios.get('/apis/service.json');
+              break;
+          }
+        
+    });
 
-    
   },
   methods:{
     async navclick(item:string){
@@ -84,7 +106,7 @@ export default defineComponent({
         case '/enterprise':
           (this.menu as any)  =  await this.axios.get('/apis/support.json');
           break;
-        case '/home':
+        case '/topology':
           (this.menu as any) =  await this.axios.get('/apis/syllabus.json');
           break;
         case '/gtofficial':
@@ -92,6 +114,9 @@ export default defineComponent({
           break;
         case '/profile':
           (this.menu as any) =  await this.axios.get('/apis/about.json');
+          break;
+        case '/introduce':
+          (this.menu as any) =  await this.axios.get('/apis/service.json');
           break;
       }  
     }

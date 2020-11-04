@@ -64,7 +64,7 @@ export default defineComponent({
         },
         {
           title: '文档',
-          router: '/home'
+          router: '/topology'
         },{
           title:'案例',
           url:'http://topology.le5le.com/workspace?id=5df3a2646025d729abf23681'
@@ -74,7 +74,7 @@ export default defineComponent({
           url: 'https://www.baidu.com/'
         },{
           title:'服务',
-          router:'/service'
+          router:'/introduce'
         },
         {
           title: '支持与合作',
@@ -97,11 +97,14 @@ export default defineComponent({
         sessionStorage.setItem('activeMenu','Topology');
       }
       sessionStorage.setItem('navNow',item.router);
+
+      
       if(item.router){
        console.log();
         // eslint-disable-next-line vue/custom-event-name-casing
         this.$emit('navclick',item.router)
       }
+      (window as any).Store.set('navNow',item.router);
     }
   },
 });
