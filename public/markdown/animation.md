@@ -255,8 +255,7 @@ onChangeAnimate() {
     this.onAnimateDuration();
   }
 
-```
-<a class="try" data-set="animation">试一试</a>
+``` 
 </div>
 
 # 三、连线动画
@@ -285,7 +284,6 @@ line.animateStart = 0
 // 3. 通知画布刷新动画绘画
 canvas.animate();
 ```
-<a class="try" data-set="animation">试一试</a>
 </div>
 
 # 四、自动播放动画

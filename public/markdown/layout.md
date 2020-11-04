@@ -19,6 +19,7 @@ layout(pens: Pen[], params: {
 ```
 
 **参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |pens|Pen[]|是|对哪些pen排版|
@@ -32,6 +33,7 @@ alignNodes(pens: Pen[], rect: Rect, align: string)
 ```
 
 **参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |pens|Pen[]|是|需要对齐的节点|

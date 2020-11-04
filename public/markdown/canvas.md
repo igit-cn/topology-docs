@@ -1,6 +1,7 @@
 # 画布
 
 画布（class `Topology`）是整个绘画整体。
+<div class="try-code">
 
 ```javascript
 // es6, npm lib
@@ -9,6 +10,7 @@ import { Topology } from "@topology/core";
 // es5, bundle.js
 Le5leTopology.Topology;
 ```
+</div>
 
 ## class Topology 的成员变量列表
 
@@ -26,6 +28,7 @@ Le5leTopology.Topology;
 <br>
 <br>
 <br>
+
 ## class TopologyData 画布数据的成员列表
 
 | 名称          | 类型                                                                                                         | 默认          | 描述                                                                                                                                |
@@ -57,19 +60,23 @@ Le5leTopology.Topology;
 <br>
 
 ### constructor构造函数
+<div class="try-code">
 
 ```javascript
 constructor(parent: string | HTMLElement, options?: Options)
 ```
+</div>
 
-#### 参数
+**参数**
 
 | 名称    | 类型                      | 是否必选 | 描述            |
 | :------ | :------------------------ | :------------ | :-------------- |
 | parent  | string &#124; HTMLElement | 是       | canvas 的父元素 |
 | options | Options                   | 否       | 画布选项        |
 
-## <font color=red face=黑体>画布选项</font>
+## 画布选项
+
+<div class="try-code">
 
 ```javascript
 import { Options, KeyType} from '@topology/core';
@@ -84,6 +91,7 @@ var canvas = new Le5leTopology.Topology("topo-canvas", {
   }
 });
 ```
+</div>
 
 | 名称               | 类型                                                                                                                                                                                                                   | 是否必选 | 描述            |
 | :----------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- | :-------------- |
@@ -126,12 +134,15 @@ var canvas = new Le5leTopology.Topology("topo-canvas", {
 <br>
 
 ## resize设置大小
+<div class="try-code">
 
 ```javascripit
 resize(size?: { width: number; height: number })
 ```
+</div>
 
-### 参数
+**参数**
+
 |名称 | 类型 |是否必选 |描述 |
 |:--- | :--- | :---|:---|
 |size|object|否|空：自动根据父元素计算非空：大小等于size的width和height|
@@ -142,13 +153,15 @@ resize(size?: { width: number; height: number })
 
 
 ## ondrop拖放接受函数
+<div class="try-code">
 
 ```javascript
 private ondrop(event: DragEvent)
 ```
-
+</div>
 私有函数，画布内部函数。允许接收一个拖曳事件，通过event.dataTransfer.getData('Text')获取一个表示节点数据的json字符串。<br>
 json格式如下：
+<div class="try-code">
 
 ```javascript
      {
@@ -167,7 +180,7 @@ json格式如下：
           iconSize: 30
         }
 ```
-
+</div>
 <br>
 <br>
 
@@ -190,12 +203,15 @@ json格式如下：
 
 
 ## addNode添加节点
+<div class="try-code">
+
 ``` javascript
 addNode(node: Node, focus = false): boolean
 ```
+</div>
 添加一个节点，返回是否成功
 
-### 参数：
+**参数**
 
 node: Node实例<br>
 focus：是否立刻获得焦点高亮
@@ -205,7 +221,7 @@ focus：是否立刻获得焦点高亮
 
 ### 示例
 <br>
-<br>
+<div class="try-code">
 
 ```javascript
   private ondrop(event: DragEvent) {
@@ -216,85 +232,121 @@ focus：是否立刻获得焦点高亮
     this.addNode(new Node(node), true);
   }
 ```
+</div>
 
 ## addLine添加连线
+<div class="try-code">
 ```javascript
 addLine(line,focus = false)
 ```
+</div>
 添加一个连线。
 
-### 参数：
+**参数**
 
   line:Line规范的对象<br>
   foucs:是否立刻获取焦点高亮
 
 ## open打开文件
+<div class="try-code">
+
 ```javascript
 open(data?:any)
 ```
+</div>
 打开文件
 
 <font color=red face=黑体> 参数</font><br>
 data-json对象或标准字符串的格式。<font color=red> 为空。表示打开新的空白文件。</font>
 
 ## render 重绘画布
+<div class="try-code">
+
 ```javascript
 render();
 ```
+</div>
 
 ## getRect获取图形大小，画布四周空白不计算在内
+<div class="try-code">
+
 ```javascript
 getRect();
 ```
+</div>
 
 如下图，仅计算框选的区域大小，画布四周空白不计算在内。
-![图片](https://cdn.nlark.com/yuque/0/2019/png/179380/1567390023525-b3b20aea-c3cd-4e73-a68c-6e1527f04d1d.png?x-oss-process=image%2Fresize%2Cw_1492)
+<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1567390023525-b3b20aea-c3cd-4e73-a68c-6e1527f04d1d.png?x-oss-process=image%2Fresize%2Cw_1492" style="max-width:100%"/>
 
 ## undo撤销
+
+<div class="try-code">
+
 ```javascript
 undo(noRedo = false)
 ```
+</div>
 
 撤销操作。
 
 参数：noRedo 表示不缓存历史记录，不会产生redo操作
 
 ## redo重做
+<div class="try-code">
 
 ```javascript
 redo()
 ```
+</div>
 
 ## delete删除选中元素
+<div class="try-code">
+
 ```javascript
 delete()
 ```
+</div>
 
 ## cut剪切
+<div class="try-code">
+
 ```javascript
 cut()
 ```
 
+</div>
+
 ## copy复制
+
+<div class="try-code">
+
 ```javascript
 copy()
 ```
+</div>
 
 ## paste粘贴
+<div class="try-code">
+
 ```javascript
 paste()
 ```
+</div>
 
 ## toImage保存图片
+<div class="try-code">
+
 ```javascript
 toImage(padding:Padding = 0 ,type = 'image/png',quality = 1,callback:any = null):string
 ```
+</div>
 
 转换画布为图片：<br>
 当callback为空时，返回图片url。参考canvas.toDataURL(type, quality)。<br>
 当callback不为空时，返回空；调用callback，传入图片blob。参考canvas.toBlob(callback)
 
-## 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |type|string|否|图片类型|
@@ -304,11 +356,14 @@ toImage(padding:Padding = 0 ,type = 'image/png',quality = 1,callback:any = null)
 
 
 ## saveAsImage保存画布为图片并下载
+<div class="try-code">
+
 ```javascript
 saveAsImage(name?:string,type?:string,quality?:any)
 ```
+</div>
 
-## 参数
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
@@ -319,39 +374,59 @@ saveAsImage(name?:string,type?:string,quality?:any)
 |thumbnail|boolean|否|默认为true。是否只保存有效显示区域，去掉。|
 
 ## lock锁定画布
+<div class="try-code">
+
 ```javascript
 lock(lock:Lock)
 ```
+</div>
+
 对画布锁定，影响整个画布
 
-## 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |lock|number|是|0 - 未锁定，可任意编辑。<br>1 - 全部锁定，不能做任何编辑，允许选中，并高亮<br>2 - 无法做任何操作，只能响应space事件| 
 
 ## lockPens 锁定画布
+<div class="try-code">
+
 ```javascript
   lockPens(pens:Pen[],lock:Lock)
 ```
+</div>
+
 Lock 枚举类型见上表
 
 ## cache缓存画布数据
+<div class="try-code">
+
 ```javascript
 cache()
 ```
+</div>
 缓存当前数据到undo/redo队列末尾，为撤销/重做增加一个数据状态。
 
 ## overflow图像溢出检查
+<div class="try-code">
+
 ```javascript
 overflow()
 ```
+</div>
 计算图形大小，是否溢出画布范围。是，重新设置画布大小。
 
 ## updataProps通知有数据属性更新
+<div class="try-code">
+
+```javascript
 updataProps(cache:boolean = true,pens?:Pen[])
+```
+</div>
 
+**参数**
 
-## 参数
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |cache | boolean | 否|是否新增一条历史操作记录，方便撤销重做。<br> 会消耗性能，不要做动画中使用。|
@@ -359,47 +434,70 @@ updataProps(cache:boolean = true,pens?:Pen[])
 <font color=rede>说明：传入参数node主要自动计算node大小。连线属性修改，无需传入参数。</font>
 
 ## animate渲染（播放）动画
+<div class="try-code">
 
 ```javascript
 animate()
 ```
+</div>
+
 修改节点、连线动画属性（包括帧、播放/停止状态）后，通知重绘动画。
 
 ## find查找画笔
+<div class="try-code">
+
 ```javascript
 find(idOrTag:string,pens?:pen[])
 ```
+</div>
+
 根据画笔ID或者Tag查找节点。（递归遍历子节点version > 0.2.11）
 
 ## up上移一个图层
+<div class="try-code">
+
 ```javascript
 up(pen: Pen)
 ```
+</div>
 上移一个节点/连接图层。
 
 ## down下移一个图层
+<div class="try-code">
+
 ```jacascript
 down(pen:Pen) 
 ```
+</div>
 下移一个节点/连线的图层。
 
 ## top置顶
+<div class="try-code">
+
 ```javascript
 top(pen:Pen)
 ```
+
+</div>
 置地一个节点/连线到画布顶层
 
 ## bottom置底
+<div class="try-code">
+
 ```javascript
 bottom(pen:Pen)
 ```
+</div>
 
 ## combine组合多个节点/连线，为一个新节点
+<div class="try-code">
+
 ```javascript  
 combine(pens?:Pen[],stand = false)
 ```
+</div>
 
-## 参数
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
@@ -407,9 +505,13 @@ combine(pens?:Pen[],stand = false)
 |stand|boolean|否|子节点是否能够独立选中移动|
 
 ## uncombine取消组合
+<div class="try-code">
+
 ```javascript  
 uncombine(node?: Node)
 ```
+</div>
+
 把一个组合节点取消组合，还原到以前多个节点的状态
 
 |名称|类型|是否必选|描述|
@@ -417,30 +519,37 @@ uncombine(node?: Node)
 |node|Node|否|要取消组合的节点<br>默认选中的第一个节点
 
 ## toComponent组合成一个复合节点
+<div class="try-code">
+
 ```javascript  
 toComponent(pens?: Pen[]): Node
 ```
+</div>
 
-## 参数
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |nodes|Node[]|否|要组合的节点<br>默认所有节点 
 
 ## uncombine取消组合
+<div class="try-code">
 
 ```javascript  
 uncombine(node?:Node) 
 ```
+</div>
 
 
 ## translate平移画布
+<div class="try-code">
 
 ```javascript
 translate(x: number, y: number)
 ```
+</div>
 
-## 参数
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
@@ -448,91 +557,134 @@ translate(x: number, y: number)
 |y|number|是|垂直移动距离 <br> >0 下移 <br> < 0 上移
 
 ## scale缩放画布
+<div class="try-code">
+
 ```javascript
 scaleTo(scale: number)
 ```
+</div>
+
 在原始视图基础上，缩放到指定比例。<br>
 
 为了避免缩放过程中精度丢失，默认限制了scale大小范围：0.25 < scale < 5 之间。<br>
 可以在画笔选项中设置范围。
 
 ## clearBkImg
+<div class="try-code">
+
 ```javascript
 clearBkImg
 ```
+</div>
 清空背景图片
 
 
 ## getValue 读取数据
+<div class="try-code">
+
 ```javascript
 getValue(idOrTag: string, attr = 'text')
 ```
+</div>
 查找data.pens中id或tags等于idOrTag的pen，并读取attr的属性值。默认读取text。
 
 
 ## setValue 设置数据
+<div class="try-code">
+
 ```javascript
 setValue(idOrTag: string, val: any, attr = 'text')
 ```
+</div>
 查找data.pens中id或tags等于idOrTag的pen，并设置attr的属性值为val。默认设置text
 
 
 ## showInput 显示文本输入框
+<div class="try-code">
+
 ```javascript
 showInput(item: Pen)
 ```
+</div>
 显示文本输入框。
 
 
 ## centerView 图形居中显示
+<div class="try-code">
+
 ``` javascript
 centerView(padding?: Padding)
 ```
+</div>
 居中显示图形。<br>
 padding - 画布view区域padding值
 
 ## fitView 自适应画布可见区域大小
+<div class="try-code">
+
 ``` javascript
 fitView(viewPadding?: Padding)
-``` 
+```
+</div> 
 缩放图形到画布屏幕屏幕大小，并居中显示。<br>
 viewPadding - 画布view区域padding值
 
 ## hasView 画布内容是否为空
+<div class="try-code">
+
 ```javascript
 hasView()
 ```
+</div>
 
 ## getViewCenter 获取画布可视区域view的中点
+<div class="try-code">
 
 ```javascript
 getViewCenter(viewPadding?: Padding)
 ```
+</div>
 viewPadding - 画布view区域padding值
 
 ## showGrid 显示/隐藏网格
+<div class="try-code">
+
 ```javascript
 showGrid(show?:boolean)
 ```
+</div>
 show - 是否显示网格。可缺省，缺省根据topology.data.grid标识显示
 
 ## openSocket 打开websocket连接
+<div class="try-code">
+
 ```javascript
 openSocket(url?: string)
 ```
+</div>
 
 ## closeSocket关闭websocket连接
+<div class="try-code">
+
 ```javascript
 closeSocket()
 ```
+</div>
 
 ## openMqtt 打开mqtt连接
+<div class="try-code">
+
 ```javascript
 openMqtt(url?: string, options?: any)
 ```
+</div>
 
 ## destroy 清理资源
+<div class="try-code">
+
 ```javascript
 destroy()
 ```
+</div>
+
 清理画布申请创建的资源。

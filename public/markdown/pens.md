@@ -1,8 +1,13 @@
 # 画笔
+<div class="try-code">
+
 ```javascript
 export abstract class Pen
 ```
+</div>
+
 具有公共绘画属性的抽象类
+<div class="try-code">
 
 ```javascript
 // es6, npm lib
@@ -11,6 +16,7 @@ import { Pen } from 'topology-core/models/pen';
 // es5, bundle.js
 Le5leTopology.Pen
 ```
+</div>
 
 ## 成员变量列表
 
@@ -116,11 +122,15 @@ const newNode = topology.addNode({
 ## 成员函数列表
 
 ### constructor构造函数
+<div class="try-code">
+
 ```javascript
 constructor(json?: any)
 ```
+</div>
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |json|object|否|通过一个画笔或保存的json对象，创建一个新画笔对象|
@@ -130,26 +140,32 @@ constructor(json?: any)
 <br>
 
 ### draw绘画函数
+<div class="try-code">
 
 ```javascript
 abstract draw(ctx: CanvasRenderingContext2D): void
 ``` 
+</div>
+
 抽象类绘画函数，需要继承者自己实现绘画功能。
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |ctx|CanvasRenderingContext2D|是|canvas上下文|
 
 
 ### hit判断点是否命中此画笔
+<div class="try-code">
 
 ```javascript
 hit(point: Point, padding = 0)
 ``` 
+</div>
 
+**参数**
 
-### 参数
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |point|自定义Point|是|点坐标|
@@ -163,6 +179,7 @@ hit(point: Point, padding = 0)
 其中client为websocket或mqtt的连接客户端。mqtt使用的是mqtt.js。
 
 pen.events示例
+<div class="try-code">
 
 ```javascript
 // pen.events = 
@@ -195,8 +212,10 @@ pen.events示例
   params: '{xxxxx,xxxx}'  // 传递给函数的参数，必须为字符串。可以为json字符串，开发者自己parse
 }]
 ```
+</div>
 
 ### websocket示例
+<div class="try-code">
 
 ```javascript
 // pen.events = 
@@ -210,16 +229,21 @@ pen.events示例
   params: '不推荐。仅当websocket.data为空时，此params有效'
 }]
 ```
+</div>
 
 ### websocket事件推送的消息格式
+<div class="try-code">
+
 ```javascript
 {
   event: '消息名，如socketTest', 
   data: 消息数据
 }
 ```
+</div>
 
 ### websocket/mqtt事件推送更新属性的数据格式
+<div class="try-code">
 
 ```javascript
 // 必须为标准的数组对象或json.stringfy格式
@@ -228,4 +252,4 @@ pen.events示例
   "data": "属性值"
 }]
 ```
-
+</div>

@@ -17,6 +17,7 @@
 import { defineComponent } from 'vue';
 import MonacoEditor from 'vue-monaco-editor'
 import {Debounced} from '@/utils/utils.ts'
+import {Node} from '@topology/core';
 
 export default defineComponent({
   name: 'Editor',

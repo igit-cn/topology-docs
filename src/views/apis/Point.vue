@@ -7,10 +7,7 @@
 import { defineComponent } from 'vue'; 
 import marked from 'marked'
 import hljs from "highlight.js";
-// import javascript from 'highlight.js/lib/languages/javascript';
-// import typescript from 'highlight.js/lib/languages/typescript';
 import 'highlight.js/styles/xcode.css';
-// import 'highlight.js/styles/monokai-sublime.css';
 import {Throttle} from '../../utils/utils.ts'
 export default defineComponent({
   name: 'Introduce',
@@ -80,6 +77,8 @@ export default defineComponent({
   ::v-deep .try-code{
     position: relative;
     background: #f8f8f8;
+    padding: 10px 10px 0;
+    border: 1px solid #e8e8e8;
     .try{
       position: absolute;
       top: 10px;

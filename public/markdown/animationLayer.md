@@ -19,19 +19,49 @@
 ### constructor构造函数
 constructor(parent: HTMLElement, public options: Options)
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |parent|HTMLElement|是|父dom元素|
 |options|Options|否|画布大小、颜色、字体等初始状态<br>参考：<a target="_blank" href="http://localhost:8080/canvas#%E5%8F%82%E6%95%B0">Options</a>|
 
 ### render渲染画布
-render()<br>
+<div class="try-code">
+
+``` javascript
+render()
+```
+</div>
+
 ### resize重置画布大小
-resize(width: number, height: number)<br>
+<div class="try-code">
+
+``` javascript
+resize(width: number, height: number)
+```
+</div>
+
 ### addNode添加节点到动画层
-addNode(node: Node)<br>
+<div class="try-code">
+
+``` javascript
+addNode(node: Node)
+```
+</div>
+
 ### addLine添加连线到动画层
-addLine(line: Line)<br>
+<div class="try-code">
+
+``` javascript
+addLine(line: Line)
+```
+</div>
+
 ### animate播放动画
-animate()<br>
+<div class="try-code">
+
+``` javascript
+animate()
+```
+</div>

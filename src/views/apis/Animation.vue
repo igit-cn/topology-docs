@@ -7,7 +7,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue'; 
 import MarkdownRender from '@/components/MarkdownRender/Index.vue'
-// import { Node } from 'topology-core/models/node';
+import {Node, Topology} from '@topology/core';
+
 export default defineComponent({
   name: 'Animation',
   components:{ MarkdownRender},

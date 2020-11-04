@@ -1,6 +1,7 @@
 # 节点
 
 画布基本元素之一，继承于[画笔](https://www.yuque.com/alsmile/topology/pen)
+<div class="try-code">
 
 ```javascript
 // es6, npm lib
@@ -10,6 +11,7 @@ import { Node } from 'topology-core/models/node';
 Le5leTopology.Node
 
 ```
+</div>
 
 ## 成员变量列表
 继承于[画笔](https://www.yuque.com/alsmile/topology/pen)的成员变量这里省略，请参考[画笔](https://www.yuque.com/alsmile/topology/pen)
@@ -128,7 +130,8 @@ const newNode = topology.addNode({
 ### constructor构造函数
 constructor(json?: any)
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |json|object|是。属性数据为上面的成员列表|通过一个节点或保存的json对象，创建一个新节点|
@@ -139,157 +142,213 @@ constructor(json?: any)
 <br> 
 
 ### init初始化函数
+<div class="try-code">
+
 ```javascript
 init()
 //通过节点属性，动态计算节点图标区域、文字区域、锚点等。
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### getIconRect计算图标区域函数
+<div class="try-code">
+
 ``` javascript
 getIconRect()
 ```
+</div>
+
 <br>
 <br>
 <br>
 
 ### getTextRect计算文字区域函数
+<div class="try-code">
+
 ```javascript
 getTextRect()
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### calcAnchors计算锚点函数
+<div class="try-code">
+
 ```javascript
 calcAnchors()
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### calcRotateAnchors计算旋转后的锚点函数
+<div class="try-code">
+
 ```javascript
 calcRotateAnchors()
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### getDockWatchers计算移动节点时，停靠点的参考位置函数
+<div class="try-code">
+
 ```javascript
 getDockWatchers()
 ```
+</div>
+
 
 <br>
 <br>
 <br>
 
 ### emitRender通知画布刷新绘画函数
+<div class="try-code">
+
 ```javascript
 emitRender()
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### drawImg绘画图片函数
+<div class="try-code">
+
 ```javascript
 drawImg(ctx: CanvasRenderingContext2D)
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### draw绘画函数
+<div class="try-code">
+
 ```javascript
 draw(ctx: CanvasRenderingContext2D)
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### animate显示动画
+<div class="try-code">
+
 ```javascript
 animate(ctx: CanvasRenderingContext2D, now: number)
 //渲染节点动画。其中，now - 当前时间Date.now
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### scale缩放
+<div class="try-code">
+
 ```javascript
 scale(scale: number, center?: Point)
 //根据中心点（默认为节点中心）缩放节点。
 ```
+</div>
+
 <br>
 <br>
 <br>
 
 ### setChild设置子节点
+<div class="try-code">
+
 ```javascript
 setChild(children: any[])
 //传入json数组，自动new Node并push到节点children里面。
 //【注意】所有子节点必须包含rectInParent
 ```
+</div>
 
 手工临时给节点添加子节点：
+<div class="try-code">
+
 ```javascript
 // 伪代码，下面代码默认包含递归添加
 const parent = new Node(...);
 parent.setChild([{...}]);
 canvas.render();
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ### calcChildrenRect 作为父节点，计算子节点计算位置
+<div class="try-code">
+
 ```javascript
 calcChildrenRect()
 ```
+</div>
 <br>
 <br>
 <br>
 
 ### calcRectByParent 作为子节点，计算在父节点计算位置
+<div class="try-code">
+
 ```javascript
 calcRectByParent(parent: Pen)
 // 根据子节点rectInParent属性，计算实际在画布中位置
 ```
+</div>
+
 <br>
 <br>
 <br>
 
 ### calcRectInParent 根据子节点当前画布位置，计算在父节点的位置
+<div class="try-code">
+
 ``` javascript
 calcRectInParent(parent: Pen)
 // 计算子节点的rectInParent属性
 ```
-
+</div>
 <br>
 <br>
 <br>
 
 ### setChild 设置子节点
+<div class="try-code">
+
 ```javascript
 setChild(children: any[])
 //子节点json对象数组或Node数组
 ```
+</div>
+
 手工临时给节点添加子节点：
+<div class="try-code">
 
 ```javascript
 // 伪代码，下面代码默认不含递归添加
@@ -298,3 +357,4 @@ const child = new Node(...);
 parent.setChild([child]);
 canvas.render();
 ```
+</div>

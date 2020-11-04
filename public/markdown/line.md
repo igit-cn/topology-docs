@@ -1,6 +1,7 @@
 # 连线
 
 画布基本元素之一，继承于画笔
+<div class="try-code">
 
 ``` javascript
 // es6, npm lib
@@ -9,7 +10,7 @@ import { Line } from 'topology-core/models/line';
 // es5, bundle.js
 Le5leTopology.Line
 ```
-
+</div>
 
 
 你可以在这里修改连线类型,颜色,箭头等属性
@@ -70,13 +71,17 @@ const newLine = topology.addLine({
 
 ## 成员函数列表
 
-constructor构造函数
+
+<div class="try-code">
 
 ```javascript
+constructor构造函数
 constructor(json?: any)
 ```
+</div>
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |json|object|是。属性数据为上面的成员列表|通过一个连线对象或json，创建一个新连线|
@@ -98,26 +103,34 @@ constructor(json?: any)
 |lineDown|下单边线箭头|<img src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571387645662-dd08fd99-a4ca-4220-b592-ff7621544c09.png?x-oss-process=image%2Fresize%2Cw_52" width="35.5px"></img>|
 
 ### setFrom设置起点
+<div class="try-code">
+
 ```javascript
 setFrom(from: Point, fromArrow: string = '')
 ```
+</div>
 <br>
 <br>
 <br>
 
 ### setTo设置终点
+<div class="try-code">
+
 ```javascript
 setTo(to: Point, toArrow: string = 'triangleSolid')
 ```
+</div>
 <br>
 <br>
 <br>
 
 ### calcControlPoints计算默认控制点
+<div class="try-code">
 
 ```javascript
 calcControlPoints()
 ```
+</div>
 根据默认算法，计算控制点。默认控制点并不一定是最终用户想要的，用户可以调整控制点；因此，除了初始状态，不应该过度依赖此算法。
 
 <br>
@@ -125,34 +138,42 @@ calcControlPoints()
 <br>
 
 ### draw绘画
+<div class="try-code">
 
 ```javascript
 draw(ctx: CanvasRenderingContext2D)
 ```
+</div>
 <br>
 <br>
 <br>
 
 ### pointIn判断指定点十分在连线上
+<div class="try-code">
 
 ```javascript
 pointIn(pt: Point)
 ```
+</div>
 <br>
 <br>
 <br>
 
 ### getLen获取连线长度
+<div class="try-code">
 
 ```javascript
 getLen()
 ```
+</div>
 <br>
 <br>
 <br>
 
 ### animate显示动画
+<div class="try-code">
 
 ```javascript
 animate(ctx: CanvasRenderingContext2D)
 ```
+</div>

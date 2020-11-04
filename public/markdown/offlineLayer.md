@@ -21,7 +21,17 @@
 |options|Options |否|画布大小、颜色、字体等初始状态<br>参考：<a target="_blank" href="http://localhost:8080/canvas#%E5%8F%82%E6%95%B0">Options</a>|
 
 ### render渲染画布
-render()
+<div class="try-code">
 
-### resize重置画布大小**
+```javascript
+render()
+```
+</div>
+
+### resize重置画布大小
+<div class="try-code">
+
+```javascript
 resize(width: number, height: number)
+```
+</div>

@@ -11,6 +11,8 @@
 import { defineComponent } from 'vue';
 import Tcanvas from './Canvas'
 import Teditor from './Editor'
+import {Node} from '@topology/core';
+
 export default defineComponent({
   name: 'Modal',
   components: {

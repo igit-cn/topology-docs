@@ -34,24 +34,54 @@
 |options|Options|否|画布大小、颜色、字体等初始状态<br>参考：<a target="_blank" href="http://localhost:8080/canvas#%E5%8F%82%E6%95%B0">Options</a>|
 
 ### render渲染画布
+<div class="try-code">
+
+``` javascript
 render()
+```
+</div>
 
 ### resize重置画布大小
+<div class="try-code">
+
+``` javascript
 resize(width: number, height: number)
+```
+</div>
 
 ### calcControlPoints计算4个顶点的大小控制点
+<div class="try-code">
+
+``` javascript
 calcControlPoints()
+```
+</div>
 
 ### getPoints计算选中节点的顶点
-getPoints() <br>
+<div class="try-code">
+
+``` javascript
+getPoints()
+```
+</div>
 遍历计算选中节点的顶点，方便计算选中区域和控制点
 
 ### saveNodeRects缩放前，备份初始位置
-saveNodeRects() <br>
+<div class="try-code">
+
+``` javascript
+saveNodeRects() 
+```
+</div>
 备份初始位置，方便缩放、移动等功能计算最终位置。
 
 ### resizeNodes改变选中节点大小
+<div class="try-code">
+
+``` javascript
 resizeNodes(type: number, pt: Point)
+```
+</div>
 
 **参数**
 
@@ -61,32 +91,84 @@ resizeNodes(type: number, pt: Point)
 |pt|Point|是|鼠标位置|
 
 ### moveNodes移动节点
+<div class="try-code">
+
+``` javascript
 moveNodes(x: number, y: number)
+```
+</div>
 
 ### updateChildren父节点发送变化后，更新子节点
+<div class="try-code">
+
+``` javascript
 updateChildren(node: Node)
+```
+</div>
 
 ### updateLines节点变化后，重新计算默认连线
+<div class="try-code">
+
+``` javascript
 updateLines(nodes?: Node[])
+```
+</div>
 
 ### changeLineType连线类型改变，重新计算连线属性
+<div class="try-code">
+
+``` javascript
 changeLineType()
+```
+</div>
 
 ### offsetRotate鼠标点击旋转控制点旋转多少度
+<div class="try-code">
+
+``` javascript
 offsetRotate(angle: number)
 
+```
+</div>
+
 ### updateRotate旋转结束，计算最终旋转了多少度
+<div class="try-code">
+
+``` javascript
 updateRotate() 
 
+```
+</div>
+
 ### addNode添加节点到选中层
+<div class="try-code">
+
+``` javascript
 addNode(node: Node)
+```
+</div>
 
 ### setNodes设置选中节点
+<div class="try-code">
+
+``` javascript
 setNodes(nodes: Node[])
 
+```
+</div>
+
 ### hasNode是否包含节点
+<div class="try-code">
+
+``` javascript
 hasNode(node: Node)
+```
+</div>
 
 ### getDockWatchers获取移动时的停靠点
-getDockWatchers()
+<div class="try-code">
 
+``` javascript
+getDockWatchers()
+```
+</div>

@@ -1,9 +1,13 @@
 # 点
+<div class="try-code">
+
 
 ``` javascript
 export class Point 
 ```
+</div>
 除了x,y坐标，还带有辅助数据和锚点方向的类。
+<div class="try-code">
 
 ``` javascript
 // es6, npm lib
@@ -12,6 +16,7 @@ import { Point } from 'topology-core/models/point';
 // es5, bundle.js
 Le5leTopology.Point
 ```
+</div>
 
 ## 成员变量列表
 
@@ -30,6 +35,7 @@ Le5leTopology.Point
 ## 成员函数列表
 
 ### 构造函数
+<div class="try-code">
 
 ```javascript
 constructor(
@@ -41,8 +47,10 @@ constructor(
     hidden?: boolean
   )
 ```
+</div>
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |x|number|是|x坐标|
@@ -54,33 +62,43 @@ constructor(
 
 
 ### hit指定点pt是否命中当前点
+<div class="try-code">
+
 ```javascript
 hit(pt: Point, radius = 5)
 ```
+</div>
 
+**参数**
 
-### 参数
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |pt|自定义Point|是|指定点|
 |radius|number|否|扩大半径判断命中|
 
 ### rotate旋转
+<div class="try-code">
+
 ```javascript
 rotate(angle: number, center: { x: number; y: number }): Point
 ```
+</div>
 指定中心点，围绕中心的旋转，得到一个新的点
 
-### 参数
+**参数**
+
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |angle|number|是|旋转角度|
 |center|{x,y}坐标|是|中心的|
 
 ### clone克隆
+<div class="try-code">
+
 ```javascript
 clone(): Point
 ``` 
+</div>
 克隆当前点，返回一个新的点
 
 
@@ -103,6 +121,7 @@ clone(): Point
 只允许锚点作为起点或终点。
 
 对于自定义图形库，计算锚点函数里给锚点设置mode属性即可。
+<div class="try-code">
 
 ```javascript
 
@@ -123,6 +142,7 @@ export function myAnchors(node: Node) {
 }
 
 ```
+</div>
 
 <br>
 <br>
@@ -131,6 +151,7 @@ export function myAnchors(node: Node) {
 ## 给已有图形库，重新定义并覆盖为自己的锚点函数
 
 仅覆盖注册即可
+<div class="try-code">
 
 ```javscript
 import { registerNode } from 'topology-core/middles';
@@ -142,6 +163,7 @@ export function register() {
   registerNode('rectangle', rectangle, myAnchors, null, null, true);
 }
 ```
+</div>
 
 
 # 控制点

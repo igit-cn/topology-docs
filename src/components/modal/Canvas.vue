@@ -10,12 +10,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { Topology, anchorsFns } from '@topology/core';
+import { Topology, anchorsFns ,Node} from '@topology/core';
 import { register as registerFlow } from '@topology/flow-diagram';
 import { register as registerActivity } from '@topology/activity-diagram';
 import { register as registerClass } from '@topology/class-diagram';
 import { register as registerSequence } from '@topology/sequence-diagram';
 import { register as registerChart } from '@topology/chart-diagram';
+
 
 
 // 注册图形库
@@ -27,6 +28,7 @@ registerChart();
  
 
 declare const topology: any;
+declare const window: any;
 
 
 export default defineComponent({
@@ -56,14 +58,18 @@ export default defineComponent({
     } 
   },
   mounted(){
+    
     new Topology('topology-canvas',this.topologyOptions);
-    this.subscribe = (window as any).Store.subscribe('t-data', (val:any) => {
+    this.subscribe = window.Store.subscribe('t-data', (val:any) => {
       if(!this.renderFlag){
         this.renderFlag = true
       }else{
         this.clearCanvas()
       }
-      eval(val);
+      
+        eval(val);
+        // const node = topology.addNode({rect:{x:10,y:10,height:100,width:100},name:'circle'});const state=Node.cloneState(node);state.rect.y-=10;state.rect.ey-=10;node.animateFrames.push({duration:100,linear:true,state});const state2=Node.cloneState(node);node.animateFrames.push({duration:100,linear:true,state:state2});node.animateDuration=0;for(const item of node.animateFrames){node.animateDuration+=item.duration;};node.animateStart=Date.now();topology.animate();
+      
       topology.render();
     });
     },

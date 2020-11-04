@@ -3,11 +3,13 @@ import App from './App.vue';
 import router from './router';
 import '@/styles/index.scss';
 import { Button, Menu, Anchor,Dropdown } from 'ant-design-vue';
+import {Node} from '@topology/core';
+
 import { Store } from 'le5le-store';
 import axios from '@/http';
 import VueAxios from 'vue-axios'
-(window as any).Store= Store
-
+(window as any).Store= Store;
+(window as any).Node = Node;
 
 createApp(App)
   .use(Button)
