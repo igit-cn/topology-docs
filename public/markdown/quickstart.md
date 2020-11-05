@@ -9,6 +9,8 @@ Topology 致力于提供给程序员愉悦的开发体验。
 
 ## 使用
 
+<div class="try-code">
+
 ```typescript
 // 先导入库
 import { Topology, Options, registerNode } from '@topology/core';
@@ -29,12 +31,14 @@ canvasRegister() {
 }
 canvasRegister();
 ```
+</div>
 
 <br>
 <br>
 <br>
 
 ## 创建画布
+<div class="try-code">
 
   ``` html
     <div id="topology-canvas" ref="topology" ></div>
@@ -47,8 +51,10 @@ canvasRegister();
 
     //后期通过topologyOptions绑定事件给on
   ```
+  </div>
 
 ##  添加节点
+<div class="try-code">
 
 ```javascript
 const newNode = topology.addNode({
@@ -64,8 +70,10 @@ const newNode = topology.addNode({
         });
 topology.render()
 ```
+</div>
 
 ## 添加连线
+<div class="try-code">
 
 ```javascript
 
@@ -89,6 +97,7 @@ const newLine = topology.addLine({
 }) 
 
 ``` 
+</div>
  
 更多使用方式：参考详细介绍或视频教程
 
@@ -152,6 +161,8 @@ vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
    ```
  3. 开始使用
    <font color=red>开发文档，仍然参考api文档，只不过，所有的类名和方法前面，加上"Le5leTopology." </font>
+   
+<div class="try-code">
 
    ```javascript
    // 在你的js文件中使用：
@@ -162,8 +173,11 @@ vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
     console.log('data:',topology)
     console.log('activeLayer', topology.activeLayer
    ```
+</div>
 
 ## package.json参考 
+
+<div class="try-code">
 
 ```javascript
 {
@@ -200,3 +214,4 @@ vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
   }
 }
 ```
+</div>

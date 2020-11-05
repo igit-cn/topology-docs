@@ -12,6 +12,8 @@ topology-vue和topology-react目前只是使用示例，精力有限，暂不完
 核心库已经支持拖曳事件，我们实现左边拖拉拽的时候，只需要:<br>
  1. 在html上定义ondragstart函数 （html拖曳详细教程请百度）
  2. 定义ondrag函数：
+  
+<div class="try-code">
 
  ```javascript
  onDrag(event) {
@@ -22,9 +24,10 @@ topology-vue和topology-react目前只是使用示例，精力有限，暂不完
 // @topology/core < 0.2.26
 event.dataTransfer.setData('Text', JSON.stringify(json));
  ```
-
+</div>
 
  上面json格式为 [API](https://www.yuque.com/alsmile/topology/design)文档 中的[节点](https://www.yuque.com/alsmile/topology/node)格式，例如：
+<div class="try-code">
 
  ```javascript
  {
@@ -41,6 +44,7 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
   name: 'rectangle'
 }
  ```
+ </div>
 
  <br>
  <br>
@@ -84,6 +88,9 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 
 参考： [https://github.com/le5le-com/topology-es5-demo](https://github.com/le5le-com/topology-es5-demo)
 
+
+<div class="try-code">
+
 ```javascript
 
 fetch("/data.json", function(text) {
@@ -119,6 +126,8 @@ fetch("/data.json", function(text) {
   // end.
 });
 ```
+
+</div>
  <br>
  <br>
  <br>
