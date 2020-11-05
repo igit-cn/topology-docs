@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import '@/styles/index.scss';
-import { Button, Menu, Anchor,Dropdown } from 'ant-design-vue';
+import { Button, Menu, Anchor,Dropdown,Checkbox } from 'ant-design-vue';
 import {Node} from '@topology/core';
 
 import { Store } from 'le5le-store';
@@ -16,6 +16,7 @@ createApp(App)
   .use(Menu)
   .use(Anchor)
   .use(Dropdown)
+  .use(Checkbox)
   .use(router)
   .use(VueAxios, axios)
   .mount('#app');

@@ -71,7 +71,7 @@ export default defineComponent({
         },
         {
           title: '视频教程',
-          url: 'https://www.baidu.com/'
+          url: 'https://i.youku.com/i/UNDU0OTEzNDA0MA==?spm=a2hbt.13141534.1_1.1'
         },{
           title:'服务',
           router:'/introduce'
@@ -120,6 +120,7 @@ export default defineComponent({
   box-sizing: border-box;
   margin: 0px auto;
   display: flex;
+  z-index: 9999;
   justify-content: space-between;
   white-space: nowrap;
   border-bottom: 1px solid #eeeeee;

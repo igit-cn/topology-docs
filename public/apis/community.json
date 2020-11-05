@@ -3,7 +3,7 @@
     "router":"/gtofficial",
     "active":false
 },{
-    "text":"社区作品与博客",
+    "text":"社区作品",
     "router":"/works",
     "active":false
 },{

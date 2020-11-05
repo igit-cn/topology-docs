@@ -16,7 +16,6 @@ const onMessage = (event: string, data: any) => {
 }
 canvasOptions.on = onMessage;
 ```
-<a class="try" data-set="msg">试一试</a>
 </div>
 
 ## 使用方式2
