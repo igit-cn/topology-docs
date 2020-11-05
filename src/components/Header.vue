@@ -93,12 +93,16 @@ export default defineComponent({
   },
   methods: {
     handleNavClick(item:any){
-      if(item.title === "开发文档"){
+      if(item.title === "文档"){
         sessionStorage.setItem('activeMenu','Topology');
+      }else if(item.title === "支持与合作"){
+        sessionStorage.setItem('activeMenu','企业支持');
+      }else if(item.title === "社区"){
+        sessionStorage.setItem('activeMenu','GitHub官网');
+      }else if(item.title === "关于我们"){
+        sessionStorage.setItem('activeMenu','公司简介');
       }
       sessionStorage.setItem('navNow',item.router);
-
-      
       if(item.router){
        console.log();
         // eslint-disable-next-line vue/custom-event-name-casing

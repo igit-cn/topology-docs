@@ -69,25 +69,29 @@ export default defineComponent({
       lastActive:{},
       lastActiveFlag:false,
       activeMenu:'',
-      menus:this['menu']
+      menus:[]
     };
   },
    watch: {
       //正确给 cData 赋值的 方法
       menu: function(newVal){
         this.menus = newVal
+        this.setActiveMenu()
       }
   },
-  created() {  
-    this.activeMenu = sessionStorage.getItem('activeMenu')
-     if(this.activeMenu){
-        const activeItem = this.findActiveRouterPath(this.menus,this.activeMenu);
-        this.lastActiveFlag = true
-        this.lastActive = activeItem
-        // activeItem.active = true
-    }
-  },
   methods: {
+    setActiveMenu(){
+        this.activeMenu = sessionStorage.getItem('activeMenu')
+        if(this.activeMenu){
+            const activeItem = this.findActiveRouterPath(this.menus,this.activeMenu);
+            console.log('find',activeItem)
+            if(activeItem){
+              this.lastActiveFlag = true
+              this.lastActive = activeItem
+              activeItem.active = true
+            }
+        }
+    },
     findActiveRouterPath(menu:object[],activeMenu:string):any{
       for (let i = 0; i < menu.length; i++) {
         if((menu[i] as any).text === activeMenu){
