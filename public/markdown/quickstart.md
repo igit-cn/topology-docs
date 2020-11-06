@@ -53,6 +53,10 @@ canvasRegister();
   ```
   </div>
 
+<br>
+<br>
+<br>
+
 ##  添加节点
 <div class="try-code">
 
@@ -71,6 +75,10 @@ const newNode = topology.addNode({
 topology.render()
 ```
 </div>
+
+<br>
+<br>
+<br>
 
 ## 添加连线
 <div class="try-code">
@@ -101,6 +109,9 @@ const newLine = topology.addLine({
  
 更多使用方式：参考详细介绍或视频教程
 
+<br>
+<br>
+<br>
 
 ##  配合VS Code插件一起使用
 
@@ -129,6 +140,9 @@ typescript使用示例：
 
 https://github.com/le5le-com/topology/tree/master/examples/angular/src/app
 
+<br>
+<br>
+<br>
 
 ## angular/react/vue开发
 
@@ -147,6 +161,9 @@ react教程二： https://juejin.im/post/6888473068876857357
 
 vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
  
+<br>
+<br>
+<br>
 
  ## 使用bundle.js（已打包压缩的普通js文件）
 
@@ -174,6 +191,10 @@ vue入门使用教程：https://juejin.im/post/5dd73e85518825731c34b2ca
     console.log('activeLayer', topology.activeLayer
    ```
 </div>
+
+<br>
+<br>
+<br>
 
 ## package.json参考 
 

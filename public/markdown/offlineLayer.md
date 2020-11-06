@@ -12,7 +12,14 @@
 
 ## 成员函数列表
 ### constructor构造函数
-**constructor(public options: Options = {})**
+
+<div class="try-code">
+
+```javascript
+constructor(public options: Options = {})
+```
+</div>
+<br>
 
 **参数**
 
@@ -27,6 +34,8 @@
 render()
 ```
 </div>
+<br>
+<br>
 
 ### resize重置画布大小
 <div class="try-code">

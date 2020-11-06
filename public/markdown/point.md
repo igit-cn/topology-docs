@@ -7,6 +7,8 @@ export class Point
 ```
 </div>
 除了x,y坐标，还带有辅助数据和锚点方向的类。
+<br>
+<br>
 <div class="try-code">
 
 ``` javascript
@@ -17,6 +19,9 @@ import { Point } from 'topology-core/models/point';
 Le5leTopology.Point
 ```
 </div>
+<br>
+<br>
+<br>
 
 ## 成员变量列表
 
@@ -48,6 +53,8 @@ constructor(
   )
 ```
 </div>
+<br>
+<br>
 
 **参数**
 
@@ -68,6 +75,8 @@ constructor(
 hit(pt: Point, radius = 5)
 ```
 </div>
+<br>
+<br>
 
 **参数**
 
@@ -84,6 +93,8 @@ rotate(angle: number, center: { x: number; y: number }): Point
 ```
 </div>
 指定中心点，围绕中心的旋转，得到一个新的点
+<br>
+<br>
 
 **参数**
 
@@ -91,6 +102,8 @@ rotate(angle: number, center: { x: number; y: number }): Point
 |:---|:---|:---|:---|
 |angle|number|是|旋转角度|
 |center|{x,y}坐标|是|中心的|
+
+<br>
 
 ### clone克隆
 <div class="try-code">
@@ -101,6 +114,8 @@ clone(): Point
 </div>
 克隆当前点，返回一个新的点
 
+<br>
+<br>
 
 # 锚点
 
@@ -164,7 +179,8 @@ export function register() {
 }
 ```
 </div>
-
+<br>
+<br>
 
 # 控制点
 <img  src="https://cdn.nlark.com/yuque/0/2019/png/179380/1571389800584-3823b65c-cf2a-45d9-88f6-6d8038a4372e.png" width="48%" height="auto">

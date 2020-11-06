@@ -17,7 +17,13 @@
 ## 成员函数列表
 
 ### constructor构造函数
+<div class="try-code">
+
+``` javascript
 constructor(parent: HTMLElement, public options: Options)
+```
+</div>
+<br>
 
 **参数**
 
@@ -33,6 +39,8 @@ constructor(parent: HTMLElement, public options: Options)
 render()
 ```
 </div>
+<br>
+<br>
 
 ### resize重置画布大小
 <div class="try-code">
@@ -41,6 +49,8 @@ render()
 resize(width: number, height: number)
 ```
 </div>
+<br>
+<br>
 
 ### addNode添加节点到动画层
 <div class="try-code">
@@ -49,6 +59,8 @@ resize(width: number, height: number)
 addNode(node: Node)
 ```
 </div>
+<br>
+<br>
 
 ### addLine添加连线到动画层
 <div class="try-code">
@@ -57,6 +69,8 @@ addNode(node: Node)
 addLine(line: Line)
 ```
 </div>
+<br>
+<br>
 
 ### animate播放动画
 <div class="try-code">

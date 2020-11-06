@@ -43,6 +43,8 @@ const newLine = topology.addLine({
 <a class="try" data-set="line">试一试</a>
 
 </div>
+<br>
+<br>
 
 ## 成员变量列表
 
@@ -79,6 +81,7 @@ constructor构造函数
 constructor(json?: any)
 ```
 </div>
+<br>
 
 **参数**
 
@@ -86,6 +89,8 @@ constructor(json?: any)
 |:---|:---|:---|:---|
 |json|object|是。属性数据为上面的成员列表|通过一个连线对象或json，创建一个新连线|
 
+<br>
+<br>
 
 ## 箭头参数
 
@@ -110,8 +115,7 @@ setFrom(from: Point, fromArrow: string = '')
 ```
 </div>
 <br>
-<br>
-<br>
+<br> 
 
 ### setTo设置终点
 <div class="try-code">
@@ -121,8 +125,7 @@ setTo(to: Point, toArrow: string = 'triangleSolid')
 ```
 </div>
 <br>
-<br>
-<br>
+<br> 
 
 ### calcControlPoints计算默认控制点
 <div class="try-code">
@@ -132,10 +135,8 @@ calcControlPoints()
 ```
 </div>
 根据默认算法，计算控制点。默认控制点并不一定是最终用户想要的，用户可以调整控制点；因此，除了初始状态，不应该过度依赖此算法。
-
 <br>
-<br>
-<br>
+<br> 
 
 ### draw绘画
 <div class="try-code">
@@ -144,7 +145,6 @@ calcControlPoints()
 draw(ctx: CanvasRenderingContext2D)
 ```
 </div>
-<br>
 <br>
 <br>
 
@@ -157,7 +157,6 @@ pointIn(pt: Point)
 </div>
 <br>
 <br>
-<br>
 
 ### getLen获取连线长度
 <div class="try-code">
@@ -166,7 +165,6 @@ pointIn(pt: Point)
 getLen()
 ```
 </div>
-<br>
 <br>
 <br>
 

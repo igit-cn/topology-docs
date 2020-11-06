@@ -29,8 +29,18 @@
       </div>
 
       <div class="language">
-        EN <i class="t-icon t-angle-down"></i>
+        <div class="now-lang" @click="langClick">
+          {{nowLang}} <i class="t-icon t-angle-down"></i>
         </div>
+
+        <div class="select-lang" :class="langIsShow ? 'show':''">
+          <div class="item" @click="selectLang('中文')">中文</div>
+          <div class="item" @click="selectLang('EN')">EN</div>
+        </div>
+
+
+
+      </div>
 
     
 
@@ -88,7 +98,9 @@ export default defineComponent({
           router:'/profile'
         }
         
-      ]
+      ],
+      nowLang:'中文',
+      langIsShow:false
     };
   },
   methods: {
@@ -101,6 +113,8 @@ export default defineComponent({
         sessionStorage.setItem('activeMenu','GitHub官网');
       }else if(item.title === "关于我们"){
         sessionStorage.setItem('activeMenu','公司简介');
+      }else if(item.title === "服务"){
+        sessionStorage.setItem('activeMenu','服务介绍');
       }
       sessionStorage.setItem('navNow',item.router);
       if(item.router){
@@ -109,6 +123,15 @@ export default defineComponent({
         this.$emit('navclick',item.router)
       }
       (window as any).Store.set('navNow',item.router);
+    },
+    langClick(){
+      this.langIsShow = !this.langIsShow
+    },
+    selectLang(lang:string){
+      this.nowLang = lang;
+      console.log(this.nowLang);
+      
+      this.langIsShow = false;
     }
   },
 });
@@ -195,13 +218,37 @@ export default defineComponent({
     .language {
       cursor: pointer;
       margin-right: 38px;
-      font-size: 14px;  
+      font-size: 14px;
       height: 21.5px;
-      line-height: 19.5px;
-      display: flex; 
+      line-height: 21.5px;
+      position: relative;
+      .now-lang{
+        display: flex;
+      }
       .t-angle-down{
         font-size: 12px;
         margin-left: 5px;
+      }
+      .select-lang{
+        height: 70px;
+        width: 40px;
+        position: absolute;
+        z-index: 9;
+        top: 20px;
+        background: #ffffff;
+        border-radius: 3px;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,.15);
+        outline: none;
+        color: #CCC;
+        display: none;
+        .item{
+          margin-top: 10px;
+          text-align: center;
+        }
+      }
+      .show{
+        display: block!important;
       }
     }
     .user {

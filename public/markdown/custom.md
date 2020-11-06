@@ -50,7 +50,7 @@ export function myShape(ctx: CanvasRenderingContext2D, node: Node) {
 
 </div>
 
-1) 定义一个可导出的函数，例如：myShape
+1 ) 定义一个可导出的函数，例如：myShape
 
 **参数**
 
@@ -59,7 +59,7 @@ export function myShape(ctx: CanvasRenderingContext2D, node: Node) {
 |ctx|CanvasRenderingContext2D|是|canvas的绘画上下文。你想怎么画，你决定。|
 |node|Node|是|节点信息。参考 <a href="/node">节点</a>|
 
-2) 建立一个新绘画路径，避免干扰其他图形绘画。【必须】
+2 ) 建立一个新绘画路径，避免干扰其他图形绘画。【必须】
 
 <div class="try-code">
 
@@ -68,11 +68,12 @@ ctx.beginPath();
 ```
 
 </div>
+<br>
 
-3) 利用ctx和node，开始自己的canvas图形绘画
+3 ) 利用ctx和node，开始自己的canvas图形绘画
+<br>
 
-
-4) 可选性的，总结性的，填充或涂边框
+4 ) 可选性的，总结性的，填充或涂边框
 
 <div class="try-code">
 
@@ -80,6 +81,8 @@ ctx.beginPath();
 ctx.beginPath();
 ```
 </div>
+<br>
+<br>
 
 ### 2. 计算图标/图片位置
 
@@ -103,6 +106,8 @@ ctx.beginPath();
 
    * iconRect - 有文字存在时的区域。
    * fullIconRect - 没有文字时的区域。
+<br>
+<br>
 
 ### 3.文字位置
 
@@ -128,6 +133,8 @@ ctx.beginPath();
 
    * textRect- 有图片存在时的区域。
    * fullTextRect- 没有图片时的区域。
+<br>
+<br>
 
 ### 4.计算锚点
 
@@ -166,12 +173,16 @@ export function myAnchors(node: Node) {
 
 传入node节点参数，计算并赋值anchors。其中：如果point.hidden为true，表示鼠标移动到节点时，不显示锚点；仅到鼠标移动到锚点自身才显示。<br><br>
 例如上面代码：默认鼠标移动到节点，显示4个锚点，其他锚点只有鼠标在锚点位置才显示。
+<br>
+<br>
 
 ## 发布图形库 （可选）
 主要指发布到npm上。
 
 可以参考：[https://github.com/le5le-com/topology/tree/master/libs/topology-flow-diagram/data](https://github.com/le5le-com/topology/tree/master/libs/topology-flow-diagram/data)<br>
 这个项目模板、package.json、tsconfig.json相关配置，然后编译，用npm发布即可
+<br>
+<br>
 
 ## 使用自定义图形库
 
@@ -220,6 +231,8 @@ export function registerNode(
 ```
 </div>
 
+<br>
+
 ### 2.调用，使用自定义图形
 
 当向画布添加节点时，就会使用自定义图形的相关函数。例如：
@@ -242,6 +255,8 @@ canvas.addNode({
 
 左侧工具栏拖曳的数据，也是上面的addNode参数，参考：
 https://www.yuque.com/alsmile/topology/faq#O7ntD
+<br>
+<br>
 
 ## 修改默认图形锚点
 例如，修改矩形锚点方法，为自己的锚点计算函数myAnchorFn。直接重新注册即可。

@@ -24,7 +24,14 @@
 ## 成员函数列表
 
 ### constructor构造函数
-**onstructor(parent: HTMLElement, public options: Options)**
+
+<div class="try-code">
+
+```javascript
+onstructor(parent: HTMLElement, public options: Options)
+```
+</div>
+<br>
 
 **参数**
 
@@ -40,6 +47,7 @@
 render()
 ```
 </div>
+<br>
 
 ### resize重置画布大小
 <div class="try-code">
@@ -48,6 +56,7 @@ render()
 resize(width: number, height: number)
 ```
 </div>
+<br>
 
 ### calcControlPoints计算4个顶点的大小控制点
 <div class="try-code">
@@ -56,6 +65,7 @@ resize(width: number, height: number)
 calcControlPoints()
 ```
 </div>
+<br>
 
 ### getPoints计算选中节点的顶点
 <div class="try-code">
@@ -65,6 +75,7 @@ getPoints()
 ```
 </div>
 遍历计算选中节点的顶点，方便计算选中区域和控制点
+<br>
 
 ### saveNodeRects缩放前，备份初始位置
 <div class="try-code">
@@ -73,7 +84,11 @@ getPoints()
 saveNodeRects() 
 ```
 </div>
+<br>
+
 备份初始位置，方便缩放、移动等功能计算最终位置。
+
+<br>
 
 ### resizeNodes改变选中节点大小
 <div class="try-code">
@@ -82,6 +97,7 @@ saveNodeRects()
 resizeNodes(type: number, pt: Point)
 ```
 </div>
+<br>
 
 **参数**
 
@@ -97,6 +113,7 @@ resizeNodes(type: number, pt: Point)
 moveNodes(x: number, y: number)
 ```
 </div>
+<br>
 
 ### updateChildren父节点发送变化后，更新子节点
 <div class="try-code">
@@ -105,6 +122,7 @@ moveNodes(x: number, y: number)
 updateChildren(node: Node)
 ```
 </div>
+<br>
 
 ### updateLines节点变化后，重新计算默认连线
 <div class="try-code">
@@ -113,6 +131,7 @@ updateChildren(node: Node)
 updateLines(nodes?: Node[])
 ```
 </div>
+<br>
 
 ### changeLineType连线类型改变，重新计算连线属性
 <div class="try-code">
@@ -121,6 +140,7 @@ updateLines(nodes?: Node[])
 changeLineType()
 ```
 </div>
+<br>
 
 ### offsetRotate鼠标点击旋转控制点旋转多少度
 <div class="try-code">
@@ -130,6 +150,7 @@ offsetRotate(angle: number)
 
 ```
 </div>
+<br>
 
 ### updateRotate旋转结束，计算最终旋转了多少度
 <div class="try-code">
@@ -139,6 +160,7 @@ updateRotate()
 
 ```
 </div>
+<br>
 
 ### addNode添加节点到选中层
 <div class="try-code">
@@ -147,6 +169,7 @@ updateRotate()
 addNode(node: Node)
 ```
 </div>
+<br>
 
 ### setNodes设置选中节点
 <div class="try-code">
@@ -156,6 +179,7 @@ setNodes(nodes: Node[])
 
 ```
 </div>
+<br>
 
 ### hasNode是否包含节点
 <div class="try-code">
@@ -164,6 +188,7 @@ setNodes(nodes: Node[])
 hasNode(node: Node)
 ```
 </div>
+<br>
 
 ### getDockWatchers获取移动时的停靠点
 <div class="try-code">

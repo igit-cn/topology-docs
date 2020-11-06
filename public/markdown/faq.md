@@ -25,6 +25,7 @@ topology-vue和topology-react目前只是使用示例，精力有限，暂不完
 event.dataTransfer.setData('Text', JSON.stringify(json));
  ```
 </div>
+<br>
 
  上面json格式为 [API](https://www.yuque.com/alsmile/topology/design)文档 中的[节点](https://www.yuque.com/alsmile/topology/node)格式，例如：
 <div class="try-code">
@@ -48,22 +49,27 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 
  <br>
  <br>
- <br>
 
  ## 阿里字体图标不显示
+ <br>
+
  需要index.html中加载阿里字体文件
 
  公网地址:
+ <div class="try-code">
+
  ``` javascript
  // 左侧工具栏图标
 <link href="//at.alicdn.com/t/font_1113798_m8wtja2grda.css" rel="stylesheet" />
 // 右侧图形库图标
 <link href="//at.alicdn.com/t/font_1331132_5lvbai88wkb.css" rel="stylesheet" />
  ```
+ </div>
+ <br>
  <font color=red>由于官网用了两套阿里字体文件，为了避免冲突，需要设置不同的字体名称：</font>
+
  ![](https://cdn.nlark.com/yuque/0/2020/png/179380/1584586826729-a259fb9a-ef7a-4635-bad0-a9fa8713cdcc.png?x-oss-process=image%2Fresize%2Cw_700)
 
-<br>
 <br>
 <br>
 
@@ -74,12 +80,14 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 
  <br>
  <br>
- <br>
 
  ## 动态更新变化
+ <div class="try-code">
+ 
  ``` javascript
  canvas = new Topology(...)
  ```
+  </div>
 
  可以通过下面3种方式实现：
  1. 通过canvas.data得到画布实时数据，遍历查找canvas.data.nodes、canvas.data.lines等，修改你需要修改的属性，然后执行 canvas.render()
@@ -130,13 +138,13 @@ fetch("/data.json", function(text) {
 </div>
  <br>
  <br>
- <br>
 
 ## 显示完整图像
 
 默认画布以100%比例显示图像，超出部分，可以给父元素设置overflow:auto滚动条属性。
 
 如果要显示完整图像，则需要缩放显示比例 ：
+<div class="try-code">
 
 ``` javascript
 canvas = new Topology(...);
@@ -150,35 +158,38 @@ const rect = canvas.getRect();
 canvas.translate(x,y);
 canvas.scaleTo(.5);
 ```
- <br>
+</div>
  <br>
  <br>
 
 
 ## 修改属性后，没有立刻生效
 通常情况，节点或连线属性变化后，需要执行：
+<div class="try-code">
+
 ```javascript
 // 节点或连线属性变化后, 执行画布重绘
 canvas.render()
 ```
+</div>
 
 涉及到node/line的位置、控制点等的修改，需要执行：
+<div class="try-code">
+
 ```javascript
 // 为了稳妥，可以统一使用此函数。
 canvas.updateProps(参数);
 
 // 此函数会只计算有关位置、点等属性
 ```
-参考文档，[updateProps](https://www.yuque.com/alsmile/topology/canvas#v4OFi)
+</div>
 
- <br>
+参考文档，<a href="/canvas" target="_blank">updateProps</a>
  <br>
  <br>
 
 ## 修改连线的name：直线为曲线报错
 需要计算连线控制点：line.calcControlPoints();
-
- <br>
  <br>
  <br>
 
@@ -186,15 +197,11 @@ canvas.updateProps(参数);
 shift + 单击： 单选，可用于选择子节点/连线。<br>
 ctrl + 单击： 多选。<br>
 ctrl + 单击鼠标按下不放（移动）：移动子节点。
-
- <br>
  <br>
  <br>
 
 ## 新版本节点修改
 新增了 square  节点，代表原来的rectangle；原来的rectangle 为更直观的长方形。
-
- <br>
  <br>
  <br>
 
@@ -202,8 +209,6 @@ ctrl + 单击鼠标按下不放（移动）：移动子节点。
 为了避免截图出现网格，目前需要自己实现，在父dom加一个svg（网上很多）就可以了。
 
 参考：https://github.com/le5le-com/topology/blob/master/examples/angular/src/app/workspace/workspace.component.html
-
- <br>
  <br>
  <br>
  

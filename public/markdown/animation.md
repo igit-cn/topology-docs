@@ -13,6 +13,8 @@
 
 ## 播放动画方式一
 打开画布canvas.open前，设置好json节点/连线的动画属性。需要open时，自动播放的，设置节点/连线的**animatePlay**自动播放属性即可。
+<br>
+<br>
 
 ## 播放动画方式二
 已经打开画布canvas.open后:
@@ -24,6 +26,8 @@
 3. 调用**canvas.animate()**去播放
 
 节点/连线都是通过**animateStart**表示是否播放动画，何时开始播放，通过Date.now() - animateStart表示正在播放第几帧。
+<br>
+<br>
 
 # 二、节点动画
 节点动画用帧表示，帧的数据为Node的**animateFrames**。
@@ -78,7 +82,7 @@ node.animateStart = 0
 // 3. 通知画布刷新动画绘画
 canvas.animate();
 ```
-<a class="try" data-set="animation">试一试</a>
+<a class="try" data-set="animationNode">试一试</a>
 </div>
 
 <br>
@@ -257,6 +261,8 @@ onChangeAnimate() {
 
 ``` 
 </div>
+<br>
+<br>
 
 # 三、连线动画
 连线动画，目前仅为从起点到终点的动态流量显示。<br><br>
@@ -284,11 +290,22 @@ line.animateStart = 0
 // 3. 通知画布刷新动画绘画
 canvas.animate();
 ```
+<a class="try" data-set="animationLine">试一试</a>
+
+
 </div>
+<br>
+<br>
 
 # 四、自动播放动画
-设置节点/连线的animatePlay属性即可。canvas.open的时候，就好自动播放。<br>
+设置节点/连线的animatePlay属性即可。canvas.open的时候，就好自动播放。
+<br>
+<br>
+
 # 五、自动播放下一个动画
-设置节点/连线的nextAnimate属性值为下一个节点/连线的tags数组中的一个值。此节点/连线动画播放结束时，<br>自动播放下一个动画<br>
+设置节点/连线的nextAnimate属性值为下一个节点/连线的tags数组中的一个值。此节点/连线动画播放结束时，<br>自动播放下一个动画
+<br>
+<br>
+
 # 六、动画时长
 节点的动画时长由动画帧数组决定；连线的动画时长与连线长度和播放速度**animateSpan**有关。

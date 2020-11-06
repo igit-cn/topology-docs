@@ -1,6 +1,8 @@
 # 消息事件
 
 当用户和topology交互时，会通过回调函数，给用户发送消息通知。
+<br>
+<br>
 
 ## 使用方式1
 在new Topology(id || HtmlElement, options)时，给options设置一个on的回调函数即可。
@@ -17,6 +19,8 @@ const onMessage = (event: string, data: any) => {
 canvasOptions.on = onMessage;
 ```
 </div>
+<br>
+<br>
 
 ## 使用方式2
 监听消息
@@ -28,6 +32,8 @@ topology.on('addNode', (e) => {});
 topology.on('addNode addLine', (e) => {})
 ```
 </div>
+
+<br>
 
 ## 消息列表
 
@@ -49,7 +55,7 @@ topology.on('addNode addLine', (e) => {})
 |translate|{ x, y }|平移画布|
 |moveOutParent|mouse position|按住鼠标拖曳超出父dom元素大小|
 |resize|{width, height}|画布大小改变|
-|locked|number|锁定画布：<br>0 - 未锁定，可任意编辑。<br>1 - 锁定连线。不能编辑连线<br>-1 - 全部锁定。不能做任何编辑|
+|locked|number|锁定画布：<br>0 - 未锁定，可任意编辑。<br>1 - 锁定连线,不能编辑连线。<br>-1 - 全部锁定,不能做任何编辑。|
 |delete|Pen[]|删除节点/连线|
 |addNode|Node|添加节点|
 |addLine|Line|添加连线|

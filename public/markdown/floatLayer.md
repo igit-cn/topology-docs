@@ -21,49 +21,94 @@
 ## 成员函数列表
 ### constructor构造函数
 
-constructor(parent: HTMLElement, public options: Options)
+<div class="try-code">
 
-### 参数
+```javascript
+constructor(parent: HTMLElement, public options: Options)
+```
+</div>
+<br>
+
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |parent|HTMLElement|是|父dom元素|
-|options|Options|否|画布大小、颜色、字体等初始状态。<br>参考：<a target="_blank" href="http://localhost:8080/canvas#%E5%8F%82%E6%95%B0">Options</a>|
+|options|Options|否|画布大小、颜色、字体等初始状态。<br>参考：<a target="_blank" href="/canvas">Options</a>|
 
 ### render渲染画布
+<div class="try-code">
+
+```javascript
 render()
+```
+</div>
+<br>
+<br>
 
 ### resize重置画布大小
+<div class="try-code">
+
+```javascript
 resize(width: number, height: number)
+```
+</div>
+<br>
+<br>
 
 ### setLine开始绘画新的连线，设置起点和连线类型
-setLine(from: Point, fromArrow = '', lineName = 'curve')
+<div class="try-code">
 
-### 参数
+```javascript
+setLine(from: Point, fromArrow = '', lineName = 'curve')
+```
+</div>
+<br>
+
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |from|Point|是|起点|
-|fromArrow|string|否|起点箭头类型<br>箭头类型参考：<a target="_blank" href="http://localhost:8080/arrow">箭头</a>|
-|lineName|string|否|连线类型，参考： <a target="_blank" href="http://localhost:8080/line">连线</a>|
+|fromArrow|string|否|起点箭头类型<br>箭头类型参考：<a target="_blank" href="/line">箭头</a>|
+|lineName|string|否|连线类型，参考： <a target="_blank" href="/line">连线</a>|
 
 ### lineTo设置连线终点
-lineTo(to: Point, toArrow: string = 'triangleSolid')
+<div class="try-code">
 
-### 参数
+```javascript
+lineTo(to: Point, toArrow: string = 'triangleSolid')
+```
+</div>
+<br>
+
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |to|Point|是|起点|
-|toArrow|string|否|终点箭头类型<br>箭头类型参考：<a target="_blank" href="http://localhost:8080/arrow">箭头</a>|
+|toArrow|string|否|终点箭头类型<br>箭头类型参考：<a target="_blank" href="/line">箭头</a>|
 
 ### lineFrom修改连线起点
+<div class="try-code">
+
+```javascript
 lineFrom(from: Point)
+```
+</div>
+<br>
+<br>
 
 ### lineMove平移连线
-lineMove(pt: Point, initPos: { x: number; y: number })
+<div class="try-code">
 
-### 参数
+```javascript
+lineMove(pt: Point, initPos: { x: number; y: number })
+```
+</div>
+<br>
+
+**参数**
 
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|

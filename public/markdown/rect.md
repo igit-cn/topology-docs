@@ -7,6 +7,8 @@ export class Rect
 ```
 </div>
 矩形区域位置信息
+<br>
+<br>
 
 <div class="try-code">
 
@@ -18,6 +20,8 @@ import { Rect } from 'topology-core/models/rect';
 Le5leTopology.Rect
 ```
 </div>
+<br>
+<br>
 
 ## 成员变量列表
 <font color = red>所有整数类型，需要用户确保是数字类型,否则可能出错。</font>
@@ -53,11 +57,14 @@ const newNode = topology.addNode({
 
 </div>
 
-
-
+<br>
+<br>
+<br>
 
 
 ## 成员函数列表
+
+<br>
 
 ### 构造函数
 ``` javascript
@@ -81,7 +88,8 @@ clone():Rect
 </div>
 
 克隆当前区域，返回一个新对象
-
+<br>
+<br>
 
 ### hit判断点是否命中此区域
 <div class="try-code">
@@ -90,6 +98,8 @@ clone():Rect
 hit(point: Point, padding = 0)
 ```
 </div>
+<br>
+<br>
 
 ### 参数
 |名称|类型|是否必选|描述|
@@ -105,6 +115,9 @@ hitRect(rect: Rect)
 ```
 </div>
 
+<br>
+<br>
+
 ### hitRotate判断点是否命中旋转后的区域
 <div class="try-code">
 
@@ -112,6 +125,8 @@ hitRect(rect: Rect)
 hitRotate(point: Point, rotate: number, center: Point)
 ```
 </div>
+<br>
+<br>
 
 ### 参数
 |名称|类型|是否必选|描述|
@@ -126,7 +141,9 @@ hitRotate(point: Point, rotate: number, center: Point)
 ```javascript
 calceCenter()
 ```
-</div>
+</div> 
+<br>
+<br>
 
 ### toPoints转换为4个顶点坐标
 <div class="try-code">
@@ -135,6 +152,8 @@ calceCenter()
 toPoints()
 ```
 </div>
+<br>
+<br>
 
 ### scale缩放
 <div class="try-code">

@@ -101,10 +101,10 @@ const newNode = topology.addNode({
 |hideAnchor|boolean||不显示锚点|
 |onlySizeX|boolean|否|控制点只能改变节点width|
 |onlySizeY|boolean|否|控制点只能改变节点height|
-|rectInParent|{<br>x:number&#124;string,<br>y:number&#124;string,<br>width:number&#124;string;<br>height:number&#124;string,<br>marginTop?:number&#124;string,<br>marginRight?:number&#124;string,<br>marginBottom?:number&#124;string,<br>marginLeft?:number&#124;string,<br>rotate?:number<br>}||<font color=red>如果作为子节点，必须包括</font><br>x、y-相对于父节点的坐标<br>width、height-宽高<br>margin-间隔<br>rotate-旋转<br><br>其中x、y、width、height数字表示像素；%表示父节点的百分比。<br>具体计算方法，见下图2：|
+|rectInParent|{<br>&nbsp;x:number&#124;string,<br>&nbsp;y:number&#124;string,<br>&nbsp;width:number&#124;string;<br>&nbsp;height:number&#124;string,<br>&nbsp;marginTop?:number&#124;string,<br>&nbsp;marginRight?:number&#124;string,<br>&nbsp;marginBottom?:number&#124;string,<br>&nbsp;marginLeft?:number&#124;string,<br>&nbsp;rotate?:number<br>}||<font color=red>如果作为子节点，必须包括</font><br>x、y-相对于父节点的坐标<br>width、height-宽高<br>margin-间隔<br>rotate-旋转<br><br>其中x、y、width、height数字表示像素；%表示父节点的百分比。<br>具体计算方法，见下图2：|
 |animateType|number|0|动画辅助数据，给业务层用。比如，业务层默认设置了10种动画效果，可以用此数据表示用户选择了第几个动画。|
 |animateDuration|number|0|动画总时长|
-|animateFrames|{<br>duration: number,<br>start?:number,<br>end?:number,<br>initState?:Node,<br>linear: boolean,<br>state: Node,<br>}[]||动画帧，详细见动画|
+|animateFrames|{<br>&nbsp;duration: number,<br>&nbsp;start?:number,<br>&nbsp;end?:number,<br>&nbsp;initState?:Node,<br>&nbsp;linear: boolean,<br>&nbsp;state: Node,<br>}[]||动画帧，详细见动画|
 |iframe|string||显示外部网页，类似iframe|
 |elementId|string||和节点绑定的dom元素。一般用于临时生成，显示一段自己的dom元素。比如画布里使用echart用到的|
 |elementRendered|boolean||外部dom是否已经渲染。当需要重绘时，设置为false（用于第三方库辅助变量）比如修改echarts数据后|
