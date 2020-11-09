@@ -20,7 +20,7 @@
         </div>
         
         <div @click.prevent="firstMenuClick(item)"  v-else>
-           <router-link :to="item.router"  :class="[{'active':item.active}]" >
+           <router-link :to="item.router"  :class="nowMenu === item.router?'active':''" >
             {{ item.text }}
           </router-link>
         </div>
@@ -33,7 +33,7 @@
           @click.prevent="secondMenuClick(el)"
           :class="item.hide ? 'hidden' : 'block'"
         >
-          <router-link :to="el.router" :class="[{'active':el.active}]" >
+          <router-link :to="el.router" :class="nowMenu === el.router?'active':''" >
             {{ el.text }}
           </router-link>
         </div>
@@ -61,7 +61,8 @@ export default defineComponent({
     selectIndex:string,// 
     lastActive:object,
     lastActiveFlag:boolean,
-    menus:any[]
+    menus:any[],
+    nowMenu:string
   } {
     return {
       hide: false,
@@ -69,7 +70,8 @@ export default defineComponent({
       lastActive:{},
       lastActiveFlag:false,
       activeMenu:'',
-      menus:[]
+      menus:[],
+      nowMenu:''
     };
   },
    watch: {
@@ -77,8 +79,15 @@ export default defineComponent({
       menu: function(newVal){
         this.menus = newVal
         this.setActiveMenu()
+      },
+       $route(to){
+        this.nowMenu = to.path
+        // sessionStorage.setItem('activeMenu',to.path)
       }
   },
+  created(){ 
+    this.nowMenu = this.$route.path
+  },  
   methods: {
     setActiveMenu(){
         this.activeMenu = sessionStorage.getItem('activeMenu')
@@ -113,7 +122,7 @@ export default defineComponent({
       (item as any).active = true
       this.lastActive = item
       this.lastActiveFlag = true
-      sessionStorage.setItem('activeMenu',(item as any).text);
+      // sessionStorage.setItem('activeMenu',(item as any).text);
       // 如果试一试编辑器被打开，并且点击的路由菜单不是当前页面
       if((window as any).Store.get('tryCode') && (item as any).text !== this.activeMenu){
         (window as any).Store.set('tryCode',false)
@@ -145,6 +154,7 @@ export default defineComponent({
     border-right: 1px solid #eee;
     height: calc(100vh - #{$head-height});
     overflow-y: scroll;
+    padding-bottom: 20px;
     .item {
       margin-bottom: 25px;
       a {

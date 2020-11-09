@@ -76,7 +76,6 @@ export default defineComponent({
           this.markdownHtml = marked(this.markdownHtml)
     },
     startThrottle:new Throttle().use((val:string[])=>{
-      console.log('hello');
       (window as any).Store.set('anchorList', val);
     },300,false),
     async handleClick(event:any){

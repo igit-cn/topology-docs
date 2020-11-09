@@ -1,8 +1,11 @@
 # Topology
 
-[官网-免费使用](http://topology.le5le.com/)
+<a href="http://topology.le5le.com/" target="_blank">官网 - 免费使用</a>
 
-[Topology](https://github.com/le5le-com/topology)是一款 **开源** 的基于canvas+typescript的**绘图引擎**，可用于实现**软件架构图**、**微服务部署结构图**、**流程图**、**活动图**、**类图**、**时序图**、**SCADA**等；我们也可以按照自己的想法实现任何我们想要的图形库。
+<a href="https://github.com/le5le-com/topology" target="_blank">Topology</a>是一款 **开源** 的基于canvas+typescript的**绘图引擎**，可用于实现**软件架构图**、**微服务部署结构图**、**流程图**、**活动图**、**类图**、**时序图**、**SCADA**等；我们也可以按照自己的想法实现任何我们想要的图形库。
+
+<br>
+<br>
 
 ## 特性
 
@@ -17,6 +20,9 @@
 * 图片保存/预览
 * typescript + canvas
 
+<br>
+<br>
+
 ## 使用场景
 
 * 微服务架构图
@@ -28,6 +34,9 @@
 * 思维导图/脑图
 * SCADA
 
+<br>
+<br>
+
 ## 谁在使用
 
 * 海云捷迅
@@ -38,9 +47,15 @@
 * 天津辰思科技
 * 上海层峰
 
+<br>
+<br>
+
 ## 未来规划
 
 加入3D功能，全面、充分的可以实现智慧城市的3D可视化、SCADA 3D效果、物联网3D装配效果、安防等3D可视化场景。
+
+<br>
+<br>
 
 ## 为什么重复造轮子
 
@@ -51,13 +66,15 @@
 * 动画支持
 * 音视频支持，满足安防、物联网（暂无3D效果）等实时监控需求
   
-
+<br>
+<br>
 
 ## 架构设计
 
 主要由：层、节点、连线和箭头等组成。
 
 <img src="https://static.oschina.net/uploads/img/201909/05153614_aduk.png" width="400px" >
+<br> 
 
 ### 层
 这里的层，主要是为了提升性能的逻辑层；与类似ps里面的用户图层无关。
@@ -70,9 +87,14 @@
 
 **活动层**：主要用于箭头鼠标交互事件，比如锚点和连线过程。
 
+<br> 
+
+
 ### 节点
 
 是画布的主要组成部分，节点内部还可以包含图标或文字。
+
+<br> 
 
 ### 连线和箭头
 
@@ -86,15 +108,41 @@
 
 ![](https://static.oschina.net/uploads/img/201909/05153614_G6x1.png)
 
+<br> 
+
 ### 绘画与属性
 
 节点和连线各种有自身的绘画属性，同时还可以设置一个附加的自定义数据
 
 ![](https://static.oschina.net/uploads/img/201909/05153615_2Kl8.png)
 
+<br> 
+<br> 
+
+## 画布坐标系
+
+<br> 
+
+### 2D坐标轴
+![](https://cdn.nlark.com/yuque/0/2019/png/179380/1567389834752-00cada28-4bf8-408f-a2a1-d28bdecfad9a.png)
+
+<br> 
+
+### 3D坐标轴
+
+![](https://cdn.nlark.com/yuque/0/2019/png/179380/1567389803997-857e50d0-c7ca-40af-a2cb-35eae34a0ee0.png)
+
+<br> 
+<br> 
+
+
 ## 如何贡献
 
 如果你希望参与贡献，请[star](https://github.com/le5le-com/topology)鼓励我们
+
+<br> 
+<br> 
+
 
 ## 特别感谢
 

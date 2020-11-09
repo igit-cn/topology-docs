@@ -1,6 +1,9 @@
 # 自定义组件
 
-可参考：https://github.com/le5le-com/topology/tree/master/packages/flow-diagram
+<br>
+<br>
+
+可参考：<a href="https://github.com/le5le-com/topology/tree/master/packages/flow-diagram" target="https://github.com/le5le-com/topology/tree/master/packages/flow-diagram">https://github.com/le5le-com/topology/tree/master/packages/flow-diagram</a>
 
 自定义图形库，主要指自定义节点。
 
@@ -49,6 +52,8 @@ export function myShape(ctx: CanvasRenderingContext2D, node: Node) {
 ```
 
 </div>
+<br>
+<br>
 
 1 ) 定义一个可导出的函数，例如：myShape
 
@@ -57,7 +62,7 @@ export function myShape(ctx: CanvasRenderingContext2D, node: Node) {
 |名称|类型|是否必选|描述|
 |:---|:---|:---|:---|
 |ctx|CanvasRenderingContext2D|是|canvas的绘画上下文。你想怎么画，你决定。|
-|node|Node|是|节点信息。参考 <a href="/node">节点</a>|
+|node|Node|是|节点信息。参考 <a href="/node" target="_blank">节点</a>|
 
 2 ) 建立一个新绘画路径，避免干扰其他图形绘画。【必须】
 
@@ -179,7 +184,7 @@ export function myAnchors(node: Node) {
 ## 发布图形库 （可选）
 主要指发布到npm上。
 
-可以参考：[https://github.com/le5le-com/topology/tree/master/libs/topology-flow-diagram/data](https://github.com/le5le-com/topology/tree/master/libs/topology-flow-diagram/data)<br>
+可以参考 ：<a href="https://github.com/le5le-com/topology/tree/master/libs/topology-flow-diagram/data" target="_blank">https://github.com/le5le-com/topology/tree/master/libs/topology-flow-diagram/data</a> <br>
 这个项目模板、package.json、tsconfig.json相关配置，然后编译，用npm发布即可
 <br>
 <br>
@@ -254,7 +259,8 @@ canvas.addNode({
 </div>
 
 左侧工具栏拖曳的数据，也是上面的addNode参数，参考：
-https://www.yuque.com/alsmile/topology/faq#O7ntD
+<a href="https://www.yuque.com/alsmile/topology/faq#O7ntD" target="_blank">https://www.yuque.com/alsmile/topology/faq#O7ntD</a>
+
 <br>
 <br>
 

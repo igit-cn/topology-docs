@@ -10,7 +10,7 @@
           <p class="brand">Le5le Topology</p>
           <p class="advantage">开源、便捷、功能丰富、良好扩展的可视化工具</p>
           <div class="btn">
-            <router-link to="/introduce">
+            <router-link to="/topology" @click="go">
               <button>起&nbsp;&nbsp;步</button>
             </router-link>
             <div class="github">
@@ -134,7 +134,10 @@ export default defineComponent({
         }
         this.opacity = opacity   //实时返回给opacityStyle
     },
-    
+    go(){
+      sessionStorage.setItem('activeMenu','Topology');
+      sessionStorage.setItem('navNow','/topology');
+    }
   }
 });
 </script>

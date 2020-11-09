@@ -1,4 +1,7 @@
 # 常见问题
+<br>
+<br>
+<br>
 
 ## 左边图形库和右边属性栏
 核心库只有画布，左边图形库和右边属性栏属于上层业务，每个项目的需求和产品原型可能不同，需要自己调用api文档里面的接口去实现。
@@ -27,7 +30,7 @@ event.dataTransfer.setData('Text', JSON.stringify(json));
 </div>
 <br>
 
- 上面json格式为 [API](https://www.yuque.com/alsmile/topology/design)文档 中的[节点](https://www.yuque.com/alsmile/topology/node)格式，例如：
+ 上面json格式为API文档 中的<a href="/node" target="_blank">节点</a>格式，例如：
 <div class="try-code">
 
  ```javascript
@@ -214,6 +217,8 @@ ctrl + 单击鼠标按下不放（移动）：移动子节点。
  
 ## 节点特效切换后，为什么不播放了
 因为动画帧被清理了，需要重计算，执行node.initAnimateProps()即可。
+ <br>
+ <br>
 
 ## vue卡顿 
 不要把topology对象或topology.data复制给vue的data

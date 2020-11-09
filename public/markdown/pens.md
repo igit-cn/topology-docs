@@ -38,29 +38,29 @@ Le5leTopology.Pen
 |offsetRotate|number|0|临时偏移旋转角度, 单位°|
 |font|json|{<br>&nbsp;&nbsp;color: '',<br>&nbsp;&nbsp;background: '',<br>&nbsp;&nbsp;fontFamily: '"Hiragino Sans GB", "Microsoft YaHei",<br>&nbsp; "Helvetica Neue", "Helvetica", "Arial"',<br>&nbsp;&nbsp;fontSize: 12,<br>&nbsp;&nbsp;lineHeight: 1.5,<br>&nbsp;&nbsp;fontStyle: 'normal',<br>&nbsp;&nbsp;fontWeight: 'normal',<br>&nbsp;&nbsp;textAlign: 'center' as CanvasTextAlign,<br>&nbsp;&nbsp;textBaseline: 'middle' as CanvasTextBaseline<br>}|字体设置|
 |animatePlay|boolean||是否自动播放|
-|animateStart|number||动画开始时间。Date.now<br>执行canvas.animate()开始播放动画<br>需要停止动画时，设置animateStart = 0，再执行canvas.animate()|
+|animateStart|number||动画开始时间。Date.now<br>执行canvas.animate()开始播放动画<br>需要停止动画时，设置animateStart = 0，<br>再执行canvas.animate()|
 |animateCycle|number||循环播放次数。默认为空，表示无限循环|
 |animateCycleIndex|boolean|false|当前循环播放了第几次。|
 |nextAnimate|string||自动播放下一个动画的节点/连线的tag|
 |animateAlone<br><br><font color=red>version > 0.2.6</font>|boolean|false|播放动画时，是否孤立，不影响其他节点/连线。<br>比如，关联的连线不跟着大小位置改变。|
 |locked|enum Lock {<br>&nbsp;None,<br>&nbsp;Readonly,<br>&nbsp;NoEvent<br>}||是否锁定<br>0 - 默认，没有锁；<br>1 - 只读，可选中，可单击等<br>2 - 不处理任何事件|
-|stand <br><br>version > 0.2.10|boolean||当为子节点时，stand为true,单击直接选中子节点。默认Shift + 单击选中子节点|
+|stand <br><br>version > 0.2.10|boolean||当为子节点时，stand为true,<br>单击直接选中子节点。<br>默认Shift + 单击选中子节点|
 |text|string||文字内容|
 |textMaxLine|number||文字最大行数|
 |textRect|Rect||文字区域|
-|fullTextRect|Rect||为节点时，节点没图标时，文字区域。一般指此时文字区域占据了整个节点|
+|fullTextRect|Rect||为节点时，节点没图标时，文字区域。<br>一般指此时文字区域占据了整个节点|
 |textOffsetX|number||文字相对偏移|
 |textOffsetY|number||文字相对偏移|
 |tags|string[]|tag标签数组|
 |data|any||用于保存自定义数据（业务数据）。|
-|markdown|string||只读模式下，鼠标移动上去，显示markdown提示<br>依赖[https://cdn.jsdelivr.net/npm/marked/marked.min.js](https://cdn.jsdelivr.net/npm/marked/marked.min.js)需要自行加载|
-|tipId|string||只读模式下，鼠标移动上去，显示用户自定义的dom提示。dom元素的id属性值|
-|title|string||只读模式下，鼠标移动上去，显示元素html的title提示|
+|markdown|string||只读模式下，鼠标移动上去，显示markdown提示依赖[https://cdn.jsdelivr.net/npm/marked/marked.<br>min.js](https://cdn.jsdelivr.net/npm/marked/marked.min.js)<br>需要自行加载|
+|tipId|string||只读模式下，鼠标移动上去，<br>显示用户自定义的dom提示。dom元素的id属性值|
+|title|string||只读模式下，鼠标移动上去，<br>显示元素html的title提示|
 |visible|boolean||节点是否显示。<br>默认显示|
 |hideRotateCP|boolean|false|是否禁止旋转控制点|
 |hideSizeCP|boolean|false|是否禁止缩放控制点|
 |hideAnchor|boolean|false|是否禁止连线锚点控制点|
-|events|{<br>type: EventType;<br>action: EventAction;<br>value: string;<br>params:string; <br>name?: string;<br>}[]<br>}||事件数组。<br>如果想执行vue、react等源码中的函数，请用[消息事件](https://www.yuque.com/alsmile/topology/apis)<br>type:枚举类型，事件类型enum EventType{<br>Click,<br>DblClick,<br>WebSocket,<br>MQTT<br>}<br>action:枚举类型，事件行为 enum EventAction {<br>  Link,         // 跳转链接，0<br>  Animate,   // 执行动画，1<br> Function,   // 执行函数，2<br>WindowFn // 执行window下的全局函数，3<br>SetProps // 更新属性数据，4<br>}<br>value: （字符串）事件数据<br>根据事件行为分别为：<br> 1.链接地址；<br>2.要播放动画的画笔tag;<br>3.自定义函数js代码；<br>4.window函数名;<br>paramas:（字符串，多个参数，可以用json字符串）<br>事件参数，可用于给函数传递的参数，当action=SetProps时，params==='false'，不重绘画布。|
+|events|{<br>type: EventType;<br>action: EventAction;<br>value: string;<br>params:string; <br>name?: string;<br>}[]<br>}||事件数组。<br>如果想执行vue、react等源码中的函数，<br>请用<a href="https://www.yuque.com/alsmile/topology/apis">消息事件</a>type:枚举类型，<br>事件类型enum EventType{<br>&nbsp;&nbsp;Click,<br>&nbsp;&nbsp;DblClick,<br>&nbsp;&nbsp;WebSocket,<br>&nbsp;&nbsp;MQTT<br>}<br>action:枚举类型，事件行为 enum EventAction {<br>&nbsp;Link,         // 跳转链接，0<br>&nbsp;&nbsp;Animate,   // 执行动画，1<br>&nbsp;&nbsp;Function,   // 执行函数，2<br>&nbsp;&nbsp;WindowFn // 执行window下的全局函数，3<br>&nbsp;&nbsp;SetProps // 更新属性数据，4<br>}<br>value: （字符串）事件数据<br>根据事件行为分别为：<br> 1.链接地址；<br>2.要播放动画的画笔tag;<br>3.自定义函数js代码；<br>4.window函数名;<br>paramas:（字符串，多个参数，可以用json字符串）<br>事件参数，可用于给函数传递的参数，<br>当action=SetProps时，params==='false'，<br>不重绘画布。|
 |shadowColor|string||阴影颜色。|
 |shadowBlur|number||阴影的模糊级别（数值越大越模糊)|
 |shadowOffsetX|number||阴影与形状的水平距离|

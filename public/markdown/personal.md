@@ -1,5 +1,5 @@
 #  赞助 Ant Design Vue 的研发
-script + canvas 实现的在线绘图的引擎。采用引擎 + 图形库中间件的思路能够方便、快速的扩展、集成到前端项目。
+Topology 是基于 typescript + canvas 实现的在线绘图的引擎。采用引擎 + 图形库中间件的思路能够方便、快速的扩展、集成到前端项目。
 
 <br>
 <br>

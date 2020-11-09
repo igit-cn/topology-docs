@@ -30,10 +30,10 @@ Le5leTopology.Point
 |x|number|是|x坐标|
 |y|number|是|y坐标|
 |direction|Direction<br> export enum Direction<br>{<br>&nbsp;&nbsp;Node,<br>&nbsp;&nbsp;Up,<br>&nbsp;&nbsp;Right,<br>&nbsp;&nbsp;Bottom,<br>&nbsp;&nbsp;Left<br>}|否|方向：上、下、左、右。主要为了计算初始连线方向|
-|id|string|否|为node id：标记与哪个node关联。与anchorIndex 一起表示关联了哪个节点的哪个锚点|
+|id|string|否|为node id：标记与哪个node关联。<br>与anchorIndex 一起表示关联了哪个节点的哪个锚点|
 |anchorIndex|number|否|与第几个锚点关联|
 |data|any|否|用户数据|
-|hidden|boolean|否|作为锚点时，鼠标在节点上时是否隐藏，仅鼠标移动到锚点自身才显示。<br> 默认false|
+|hidden|boolean|否|作为锚点时，鼠标在节点上时是否隐藏，<br>仅鼠标移动到锚点自身才显示。<br> 默认false|
 |mode|enum AnchorMode {<br>&nbsp;&nbsp;Default,<br>&nbsp;&nbsp;In,<br>&nbsp;&nbsp;Out<br>}|否|作为锚点时，允许连线方向。默认双向。|
 
 
@@ -64,8 +64,8 @@ constructor(
 |y|number|是|y坐标|
 |direction|Direction|否|用于表示节点锚点的方向（上下左右），好生成默认的连线控制点|
 |anchorIndex|number|否|与node的第几个锚点关联|
-|id|number&#124;string|否|为node id：标记与哪个node关联。与anchorIndex 一起表示关联了哪个节点的哪个锚点|
-|hidden|boolean|否|作为锚点时，鼠标在节点上时是否隐藏，仅鼠标移动到锚点自身才显示。|
+|id|number&#124;string|否|为node id：标记与哪个node关联。<br>与anchorIndex 一起表示关联了哪个节点的哪个锚点|
+|hidden|boolean|否|作为锚点时，鼠标在节点上时是否隐藏，<br>仅鼠标移动到锚点自身才显示。|
 
 
 ### hit指定点pt是否命中当前点

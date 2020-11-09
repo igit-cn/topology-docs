@@ -1,6 +1,6 @@
 [{
     "text":"服务介绍",
-    "router":"/Introduce",
+    "router":"/introduce",
     "active":false
 },{
     "text":"版本价格",

@@ -1,6 +1,6 @@
 # 节点
 
-画布基本元素之一，继承于[画笔](https://www.yuque.com/alsmile/topology/pen)
+画布基本元素之一，继承于<a href="/paint" target="_blank">画笔</a>
 <div class="try-code">
 
 ```javascript
@@ -12,9 +12,11 @@ Le5leTopology.Node
 
 ```
 </div>
+<br>
+<br>
 
 ## 成员变量列表
-继承于[画笔](https://www.yuque.com/alsmile/topology/pen)的成员变量这里省略，请参考[画笔](https://www.yuque.com/alsmile/topology/pen)
+继承于<a href="/paint" target="_blank">画笔</a>的成员变量这里省略，请参考<a href="/paint" target="_blank">画笔</a>
 
 <font color=red>仅仅标*字段和rect里面的width、height为必须，其他字段可按需选择<br>
 
@@ -50,6 +52,8 @@ const newNode = topology.addNode({
 
 
 
+<br>
+<br>
 
 
 
